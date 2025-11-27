@@ -21,25 +21,31 @@ let
   defaultConfig = builtins.fromJSON (builtins.readFile ../defaults/config.json);
 
   # Convert extension package → Burp JSON entry
-  mkExtensionEntry = pkg: {
-    bapp_serial_version = pkg.passthru.burp.serialversion;
-    bapp_uuid = pkg.passthru.burp.uuid;
-    errors = "ui";
-    extension_file = "${pkg}/lib/${pkg.pname}.jar";
-    extension_type =
-      if pkg.passthru.burp.extensiontype == "1" then
-        "java"
-      else if pkg.passthru.burp.extensiontype == "2" then
-        "python"
-      else if pkg.passthru.burp.extensiontype == "3" then
-        "python"
-      else
-        "unknown";
-
-    loaded = true;
-    name = pkg.passthru.burp.name;
-    output = "ui";
-  };
+  # Convert extension package → Burp JSON entry
+  mkExtensionEntry =
+    ext:
+    let
+      pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
+      loaded = if builtins.isAttrs ext && builtins.hasAttr "loaded" ext then ext.loaded else true;
+    in
+    {
+      bapp_serial_version = pkg.passthru.burp.serialversion;
+      bapp_uuid = pkg.passthru.burp.uuid;
+      errors = "ui";
+      extension_file = "${pkg}/lib/${pkg.pname}.jar";
+      extension_type =
+        if pkg.passthru.burp.extensiontype == "1" then
+          "java"
+        else if pkg.passthru.burp.extensiontype == "2" then
+          "python"
+        else if pkg.passthru.burp.extensiontype == "3" then
+          "python"
+        else
+          "unknown";
+      loaded = loaded;
+      name = pkg.passthru.burp.name;
+      output = "ui";
+    };
 
 in
 {
