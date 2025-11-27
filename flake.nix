@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    home-manager.url = "github:nix-community/home-manager";
   };
 
   outputs =
@@ -28,6 +29,9 @@
     in
     {
       packages.${system} = bappPackages;
+
+      # This exposes your module for others to import:
+      homeManagerModules.default = ./modules/burp.nix;
     };
 
   nixConfig = {

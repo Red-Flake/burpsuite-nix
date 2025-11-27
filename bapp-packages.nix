@@ -40,6 +40,15 @@ lib.foldlAttrs (
         license = lib.licenses.unfree;
         homepage = "https://github.com/portswigger/${pname}";
       };
+
+      passthru = {
+        burp = {
+          uuid = pkg.uuid;
+          serialversion = pkg.serialversion;
+          name = pkg.name;
+          extensiontype = pkg.extensiontype;
+        };
+      };
     });
   in
   acc // { ${pname} = drv; }
