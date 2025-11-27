@@ -91,3 +91,11 @@ programs.burp = {
     };
 };
 ```
+
+## TODO
+
+- [] Add a Github Action Workflow that updates the Extensions
+- [] Only prefetch changed Extensions, not all Extensions on a Change
+- [] Implement more abstract options as darkmode
+- [] Explore compiling the Extensions from Source
+- [] reimplement javas cursed directory name generation to declaratively modify burp extension settings

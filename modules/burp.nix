@@ -30,14 +30,14 @@ let
       # Read the manifest shipped in the derivation
       manifestContent = builtins.readFile pkg.passthru.burp.manifest;
 
-      # Parse EntryPoint: <path/to/file>
-      entrypoint =
-        let
-          line = lib.findFirst (
-            l: lib.hasPrefix "EntryPoint:" l
-          ) (throw "Missing EntryPoint in ${pkg.pname}") (lib.splitString "\n" manifestContent);
-        in
-        lib.trim (lib.removePrefix "EntryPoint:" line);
+      # Parse EntryPoint from the manifest
+      entrypoint = lib.trim (
+        lib.removePrefix "EntryPoint:" (
+          lib.findFirst (l: lib.hasPrefix "EntryPoint:" l) (throw "Missing EntryPoint in ${pkg.pname}") (
+            lib.splitString "\n" manifestContent
+          )
+        )
+      );
     in
     {
       bapp_serial_version = pkg.passthru.burp.serialversion;
@@ -155,8 +155,11 @@ in
           text = builtins.toJSON (
             recursiveUpdate defaultConfig (
               recursiveUpdate {
-                user_options.extender.extensions = map mkExtensionEntry cfg.extensions;
-                user_options.display.user_interface.look_and_feel = if cfg.darkMode then "Dark" else null;
+                # Automatically include user_options for all settings
+                user_options = recursiveUpdate {
+                  extender.extensions = map mkExtensionEntry cfg.extensions;
+                  display.user_interface.look_and_feel = if cfg.darkMode then "Dark" else null;
+                } cfg.settings;
               } (recursiveUpdate extraInterpreterConfig cfg.settings)
             )
           );
