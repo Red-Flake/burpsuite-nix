@@ -28,7 +28,7 @@ let
       loaded = if builtins.isAttrs ext && builtins.hasAttr "loaded" ext then ext.loaded else true;
 
       # Read the manifest shipped in the derivation
-      manifestContent = builtins.readFile pkg.passthru.burp.manifest;
+      manifestContent = builtins.readFile "${pkg}/lib/${pkg.pname}/BappManifest.bmf";
 
       # Parse EntryPoint from the manifest
       entrypoint = lib.trim (
