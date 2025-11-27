@@ -43,42 +43,51 @@ extensions, interpreters, UI settings, and Burp’s `UserConfig.json` are all ge
 
 ## Usage
 
+Note that this Module does not install Burpsuite, this needs to be done separately!
+
 Import this Repo as a Flake Input:
+
 ```nix
 burpsuite-nix = {
     url = "github:Red-Flake/burpsuite-nix";
     inputs.nixpkgs.follows = "nixpkgs";
-    inputs.home-manager.follows = "home-manager";
 };
 ```
 
 Then you need to import the Module in your Home-Manager Configuration and configure it:
+
 ```nix
 imports = [ inputs.burpsuite-nix.homeManagerModules.default ];
 
-    programs.burp = {
-        enable = true;
+programs.burp = {
+    enable = true;
 
-        extensions = [
-            # Loaded by default
-            inputs.burpsuite-nix.packages.${pkgs.system}."403-bypasser"
-            inputs.burpsuite-nix.packages.${pkgs.system}.adhoc-payload-processors
-            inputs.burpsuite-nix.packages.${pkgs.system}.buby
-            inputs.burpsuite-nix.packages.${pkgs.system}.dradis-framework
-            inputs.burpsuite-nix.packages.${pkgs.system}.file-upload-traverser
+    extensions = [
+        # Loaded by default
+        inputs.burpsuite-nix.packages.${pkgs.system}."403-bypasser"
+        inputs.burpsuite-nix.packages.${pkgs.system}.adhoc-payload-processors
+        inputs.burpsuite-nix.packages.${pkgs.system}.buby
+        inputs.burpsuite-nix.packages.${pkgs.system}.dradis-framework
+        inputs.burpsuite-nix.packages.${pkgs.system}.file-upload-traverser
 
-            # Installed but not loaded
-            {
-                package = inputs.burpsuite-nix.packages.${pkgs.system}.js-miner;
-                loaded = false;
-            }
-            ];
+        # Installed but not loaded
+        {
+            package = inputs.burpsuite-nix.packages.${pkgs.system}.js-miner;
+            loaded = false;
+        }
+    ];
 
-        edition = [
-        "Community"
-        "Pro"
-        ];
+    edition = [
+    "Community"
+    "Pro"
+    ];
 
-        darkMode = true;
+    # Some common options are 
+    darkMode = true;
+
+    # Manual Settings that are deep-merged into the default config
+    settings = {
+        user_options.display.user_interface.font_size = "20";
     };
+};
 ```
