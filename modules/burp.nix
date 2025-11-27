@@ -20,26 +20,33 @@ let
   # All config options can be found here in the User Section: https://gist.github.com/asadasivan/9d8f5be51ce08745c2bd50f69296b1ab#file-burp_defaults_combined-json-L513
   defaultConfig = builtins.fromJSON (builtins.readFile ../defaults/config.json);
 
-  # Convert extension package → Burp JSON entry
   mkExtensionEntry =
     ext:
     let
       pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
+
       loaded = if builtins.isAttrs ext && builtins.hasAttr "loaded" ext then ext.loaded else true;
+
+      # Read the manifest shipped in the derivation
+      manifestContent = builtins.readFile pkg.passthru.burp.manifest;
+
+      # Parse EntryPoint: <path/to/file>
+      entrypoint =
+        let
+          line = lib.findFirst (
+            l: lib.hasPrefix "EntryPoint:" l
+          ) (throw "Missing EntryPoint in ${pkg.pname}") (lib.splitString "\n" manifestContent);
+        in
+        lib.trim (lib.removePrefix "EntryPoint:" line);
     in
     {
       bapp_serial_version = pkg.passthru.burp.serialversion;
       bapp_uuid = pkg.passthru.burp.uuid;
       errors = "ui";
-      extension_file =
-        if pkg.passthru.burp.extensiontype == "1" then
-          "${pkg}/lib/${pkg.pname}/${pkg.pname}.jar"
-        else if pkg.passthru.burp.extensiontype == "2" then
-          "${pkg}/lib/${pkg.pname}/${pkg.pname}.py"
-        else if pkg.passthru.burp.extensiontype == "3" then
-          "${pkg}/lib/${pkg.pname}/${pkg.pname}.rb"
-        else
-          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}";
+
+      # Use the real Entrypoint path
+      extension_file = "${pkg}/lib/${pkg.pname}/${entrypoint}";
+
       extension_type =
         if pkg.passthru.burp.extensiontype == "1" then
           "java"
@@ -49,6 +56,7 @@ let
           "ruby"
         else
           throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype} in ${pkg.pname}";
+
       loaded = loaded;
       name = pkg.passthru.burp.name;
       output = "ui";
