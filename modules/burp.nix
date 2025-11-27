@@ -84,8 +84,6 @@ in
           } cfg.settings
         )
       );
-
-      mkdirParents = true;
       force = true;
     };
   };
