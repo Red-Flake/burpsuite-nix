@@ -59,29 +59,9 @@ in
     };
 
     extensions = mkOption {
-      type = types.listOf (
-        types.union {
-          types = [
-            types.package
-            (types.attrsOf (
-              types.submodule {
-                options = {
-                  package = mkOption { type = types.package; };
-                  loaded = mkOption {
-                    type = types.bool;
-                    default = true;
-                  };
-                };
-              }
-            ))
-          ];
-        }
-      );
+      type = types.listOf types.attrs;
       default = [ ];
-      description = ''
-        List of Burp extension packages (Nix derivations) or records
-        { package = <pkg>; loaded = true|false }.
-      '';
+      description = "List of Burp extension packages (Nix derivations).";
     };
 
     edition = mkOption {
@@ -98,7 +78,9 @@ in
   };
 
   config = mkIf cfg.enable {
-    home.packages = cfg.extensions;
+    home.packages = map (
+      ext: if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext
+    ) cfg.extensions;
 
     # Generate a config file for each variant
     home.file = lib.listToAttrs (
