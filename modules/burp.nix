@@ -58,7 +58,7 @@ in
       description = "List of Burp extension packages (Nix derivations).";
     };
 
-    configVariants = mkOption {
+    edition = mkOption {
       type = types.listOf types.str;
       default = [ "Community" ];
       description = "Burp config variants: generates UserConfig<variant>.json. Possible options: Community and Pro";
@@ -89,7 +89,7 @@ in
           );
           force = true;
         };
-      }) cfg.configVariants
+      }) cfg.edition
     );
   };
 }
