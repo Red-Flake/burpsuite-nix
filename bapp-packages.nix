@@ -32,21 +32,6 @@ lib.foldlAttrs (
         mkdir -p $out/lib/${pname}
         cp -r $src/* $out/lib/${pname}/
 
-        # Read EntryPoint from BappManifest.bmf
-        entrypoint=$(grep '^EntryPoint:' "$out/lib/${pname}/BappManifest.bmf" | sed 's/EntryPoint:[[:space:]]*//')
-
-        if [ -z "$entrypoint" ]; then
-          echo "Missing EntryPoint in ${pname}" >&2
-          exit 1
-        fi
-
-        # Extract extension
-        ext=$(basename "$entrypoint" | sed 's/.*\.//')
-
-        # Symlink the Entrypoint script into the root of the project to ensure having the same location
-        # This should work for most packages but specific python projects could fail, consider extracting the Entrypoint in the home manager module
-        ln -s "$out/lib/${pname}/$entrypoint" "$out/lib/${pname}/${pname}.$ext"
-
         runHook postInstall
       '';
 
