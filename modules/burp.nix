@@ -59,9 +59,29 @@ in
     };
 
     extensions = mkOption {
-      type = types.listOf types.package;
+      type = types.listOf (
+        types.union {
+          types = [
+            types.package
+            (types.attrsOf (
+              types.submodule {
+                options = {
+                  package = mkOption { type = types.package; };
+                  loaded = mkOption {
+                    type = types.bool;
+                    default = true;
+                  };
+                };
+              }
+            ))
+          ];
+        }
+      );
       default = [ ];
-      description = "List of Burp extension packages (Nix derivations).";
+      description = ''
+        List of Burp extension packages (Nix derivations) or records
+        { package = <pkg>; loaded = true|false }.
+      '';
     };
 
     edition = mkOption {
