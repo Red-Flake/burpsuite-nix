@@ -77,17 +77,18 @@ programs.burp = {
         }
     ];
 
+    # Define which file will be installed, defaults to community
     edition = [
     "Community"
     "Pro"
     ];
 
-    # Some common options are 
-    darkMode = true;
 
-    # Manual Settings that are deep-merged into the default config
+    # Settings that are deep-merged into the default config
     settings = {
-        user_options.display.user_interface.font_size = "20";
+        # Enable Dark Mode
+        display.user_interface.look_and_feel = "Dark";
+
     };
 };
 ```
@@ -95,7 +96,7 @@ programs.burp = {
 ## TODO
 
 - [] Add a Github Action Workflow that updates the Extensions
+- [] Improve the flake.nix, allow multiple architectures
 - [] Only prefetch changed Extensions, not all Extensions on a Change
-- [] Implement more abstract options as darkmode
 - [] Explore compiling the Extensions from Source
 - [] reimplement javas cursed directory name generation to declaratively modify burp extension settings

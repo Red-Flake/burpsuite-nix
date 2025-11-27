@@ -13,7 +13,7 @@ lib.mapAttrs (
     latest = lib.last (lib.attrNames versionSet);
     pkg = versionSet.${latest};
   in
-  pkgs.stdenvNoCC.mkDerivation (self: {
+  pkgs.stdenvNoCC.mkDerivation {
     pname = pname;
     version = latest;
 
@@ -47,8 +47,6 @@ lib.mapAttrs (
       serialversion = pkg.serialversion;
       name = pkg.name;
       extensiontype = pkg.extensiontype;
-      # This is needed to extract the Entrypoint
-      #manifest = "${self.outPath}/lib/${pname}/BappManifest.bmf";
     };
-  })
+  }
 ) extensions

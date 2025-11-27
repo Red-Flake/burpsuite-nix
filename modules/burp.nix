@@ -130,12 +130,6 @@ in
       default = [ "Community" ];
       description = "Burp config variants: generates UserConfig<variant>.json. Possible options: Community and Pro";
     };
-
-    darkMode = mkOption {
-      type = types.bool;
-      default = false;
-      description = "Enable dark mode in Burp Suite UI.";
-    };
   };
 
   config = mkIf cfg.enable {
@@ -158,7 +152,6 @@ in
                 # Automatically include user_options for all settings
                 user_options = recursiveUpdate {
                   extender.extensions = map mkExtensionEntry cfg.extensions;
-                  display.user_interface.look_and_feel = if cfg.darkMode then "Dark" else null;
                 } cfg.settings;
               } (recursiveUpdate extraInterpreterConfig cfg.settings)
             )
