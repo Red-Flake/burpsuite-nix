@@ -69,7 +69,7 @@ let
     (
       if hasPythonExt then
         {
-          user_options.extender.python.location_of_jython_standalone = "${pkgs.jython}/jython.jar";
+          user_options.extender.python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
         }
       else
         { }
