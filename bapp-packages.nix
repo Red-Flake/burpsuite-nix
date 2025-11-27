@@ -28,9 +28,27 @@ lib.foldlAttrs (
 
       installPhase = ''
         runHook preInstall
+
         mkdir -p $out/lib/${pname}
         cp -r $src/* $out/lib/${pname}/
-        ln -s $out/lib/${pname}/build/libs/* $out/lib/${pname}.jar
+
+        # Read EntryPoint from BappManifest.bmf
+        entrypoint=$(grep '^EntryPoint:' "$out/lib/${pname}/BappManifest.bmf" | sed 's/EntryPoint:[[:space:]]*//')
+
+        # Extract extension
+        ext=$(basename "$entrypoint" | sed 's/.*\.//')
+
+        # Conditional symlink based on extension
+        if [ "$ext" = "py" ]; then
+          ln -s "$out/lib/${pname}/$entrypoint" "$out/lib/${pname}/${pname}.py"
+        elif [ "$ext" = "jar" ]; then
+          ln -s "$out/lib/${pname}/$entrypoint" "$out/lib/${pname}/${pname}.jar"
+        elif [ "$ext" = "rb" ]; then
+          ln -s "$out/lib/${pname}/$entrypoint" "$out/lib/${pname}/${pname}.rb"
+        else
+          echo "Unknown EntryPoint extension: $ext" >&2
+        fi
+
         runHook postInstall
       '';
 

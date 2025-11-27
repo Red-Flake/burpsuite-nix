@@ -31,7 +31,15 @@ let
       bapp_serial_version = pkg.passthru.burp.serialversion;
       bapp_uuid = pkg.passthru.burp.uuid;
       errors = "ui";
-      extension_file = "${pkg}/lib/${pkg.pname}.jar";
+      extension_file =
+        if pkg.passthru.burp.extensiontype == "1" then
+          "${pkg}/lib/${pkg.pname}/${pkg.pname}.jar"
+        else if pkg.passthru.burp.extensiontype == "2" then
+          "${pkg}/lib/${pkg.pname}/${pkg.pname}.py"
+        else if pkg.passthru.burp.extensiontype == "3" then
+          "${pkg}/lib/${pkg.pname}/${pkg.pname}.rb"
+        else
+          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}";
       extension_type =
         if pkg.passthru.burp.extensiontype == "1" then
           "java"
@@ -66,22 +74,23 @@ let
     (lib.optionals hasPythonExt [ pkgs.jython ]) ++ (lib.optionals hasRubyExt [ pkgs.jruby ]);
 
   extraInterpreterConfig =
-    (
-      if hasPythonExt then
-        {
-          user_options.extender.python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
-        }
-      else
-        { }
-    )
-    // (
-      if hasRubyExt then
-        {
-          user_options.extender.ruby.location_of_jruby_jar_file = "${pkgs.jruby}/lib/jruby.jar";
-        }
-      else
-        { }
-    );
+    lib.recursiveUpdate
+      (
+        if hasPythonExt then
+          {
+            user_options.extender.python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
+          }
+        else
+          { }
+      )
+      (
+        if hasRubyExt then
+          {
+            user_options.extender.ruby.location_of_jruby_jar_file = "${pkgs.jruby}/lib/jruby.jar";
+          }
+        else
+          { }
+      );
 
 in
 {
