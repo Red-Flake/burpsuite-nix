@@ -86,7 +86,10 @@ let
       (
         if hasRubyExt then
           {
-            user_options.extender.ruby.location_of_jruby_jar_file = "${pkgs.jruby}/lib/jruby.jar";
+            user_options.extender.ruby.location_of_jruby_jar_file = "${pkgs.fetchurl {
+              url = "https://repo1.maven.org/maven2/org/jruby/jruby-complete/10.0.2.0/jruby-complete-10.0.2.0.jar";
+              hash = "sha256-xaVKvuLAKp/3+gskvssncourqREFuXzl2ZLoWGQm+Iw=";
+            }}";
           }
         else
           { }
