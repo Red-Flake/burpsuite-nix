@@ -38,13 +38,50 @@ let
         else if pkg.passthru.burp.extensiontype == "2" then
           "python"
         else if pkg.passthru.burp.extensiontype == "3" then
-          "python"
+          "ruby"
         else
           "unknown";
       loaded = loaded;
       name = pkg.passthru.burp.name;
       output = "ui";
     };
+
+  hasPythonExt = lib.any (
+    ext:
+    let
+      pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
+    in
+    pkg.passthru.burp.extensiontype == "2"
+  ) cfg.extensions;
+
+  hasRubyExt = lib.any (
+    ext:
+    let
+      pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
+    in
+    pkg.passthru.burp.extensiontype == "3"
+  ) cfg.extensions;
+
+  extraPkgs =
+    (lib.optionals hasPythonExt [ pkgs.jython ]) ++ (lib.optionals hasRubyExt [ pkgs.jruby ]);
+
+  extraInterpreterConfig =
+    (
+      if hasPythonExt then
+        {
+          user_options.extender.python.location_of_jython_standalone = "${pkgs.jython}/jython.jar";
+        }
+      else
+        { }
+    )
+    // (
+      if hasRubyExt then
+        {
+          user_options.extender.ruby.location_of_jruby_jar_file = "${pkgs.jruby}/lib/jruby.jar";
+        }
+      else
+        { }
+    );
 
 in
 {
@@ -83,9 +120,12 @@ in
 
   config = mkIf cfg.enable {
     # Extracts the package out of attrs
-    home.packages = map (
-      ext: if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext
-    ) cfg.extensions;
+    home.packages =
+      map (
+        ext: if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext
+      ) cfg.extensions
+      ++ lib.optional hasPythonExt pkgs.jython
+      ++ lib.optional hasRubyExt pkgs.jruby;
 
     # Generate a config file for each variant
     home.file = lib.listToAttrs (
@@ -97,7 +137,7 @@ in
               recursiveUpdate {
                 user_options.extender.extensions = map mkExtensionEntry cfg.extensions;
                 user_options.display.user_interface.look_and_feel = if cfg.darkMode then "Dark" else null;
-              } cfg.settings
+              } (recursiveUpdate extraInterpreterConfig cfg.settings)
             )
           );
           force = true;
