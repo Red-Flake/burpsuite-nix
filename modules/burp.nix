@@ -58,9 +58,10 @@ in
       description = "List of Burp extension packages (Nix derivations).";
     };
 
-    configPath = mkOption {
-      type = types.str;
-      default = "UserConfigCommunity.json";
+    configVariants = mkOption {
+      type = types.listOf types.str;
+      default = [ "Community" ];
+      description = "Burp config variants: generates UserConfig<variant>.json. Possible options: Community and Pro";
     };
 
     darkMode = mkOption {
@@ -71,20 +72,24 @@ in
   };
 
   config = mkIf cfg.enable {
-    # Install extension packages into the user profile
     home.packages = cfg.extensions;
 
-    # Write Burp config to ~/.BurpSuite/<configPath>
-    home.file.".BurpSuite/${cfg.configPath}" = {
-      text = builtins.toJSON (
-        recursiveUpdate defaultConfig (
-          recursiveUpdate {
-            user_options.extender.extensions = map mkExtensionEntry cfg.extensions;
-            user_options.display.user_interface.look_and_feel = if cfg.darkMode then "Dark" else null;
-          } cfg.settings
-        )
-      );
-      force = true;
-    };
+    # Generate a config file for each variant
+    home.file = lib.listToAttrs (
+      map (variant: {
+        name = ".BurpSuite/UserConfig${variant}.json";
+        value = {
+          text = builtins.toJSON (
+            recursiveUpdate defaultConfig (
+              recursiveUpdate {
+                user_options.extender.extensions = map mkExtensionEntry cfg.extensions;
+                user_options.display.user_interface.look_and_feel = if cfg.darkMode then "Dark" else null;
+              } cfg.settings
+            )
+          );
+          force = true;
+        };
+      }) cfg.configVariants
+    );
   };
 }
