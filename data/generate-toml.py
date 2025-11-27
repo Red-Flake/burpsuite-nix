@@ -156,7 +156,7 @@ def main():
     )
     parser.add_argument(
         "--currentlist",
-        default="data/currentlist",
+        default="./currentlist",
         help="Path to the stored currentlist file",
     )
     args = parser.parse_args()

@@ -18,7 +18,7 @@ let
   # Default config that was generated after the first start of BurpSuite
   # Changed automatically_update_bapps_on_startup to false, because it is handeled by Nix
   # All config options can be found here in the User Section: https://gist.github.com/asadasivan/9d8f5be51ce08745c2bd50f69296b1ab#file-burp_defaults_combined-json-L513
-  defaultConfig = builtins.fromJSON (builtins.readFile ../defaults/config.json);
+  defaultConfig = builtins.fromJSON (builtins.readFile ../data/config.json);
 
   mkExtensionEntry =
     ext:

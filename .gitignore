@@ -1,5 +1,3 @@
-hash.nix
-generate-toml.py
 result
 result-*
 repl-result-*

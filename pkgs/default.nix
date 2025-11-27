@@ -5,7 +5,7 @@
 }:
 
 let
-  extensions = lib.importTOML ./burp-extensions.toml;
+  extensions = lib.importTOML ../data/burp-extensions.toml;
 in
 lib.mapAttrs (
   pname: versionSet:
@@ -47,6 +47,7 @@ lib.mapAttrs (
       serialversion = pkg.serialversion;
       name = pkg.name;
       extensiontype = pkg.extensiontype;
+      # This is needed to extract the Entrypoint
       manifest = "${drv}/lib/${pname}/BappManifest.bmf";
     };
   })

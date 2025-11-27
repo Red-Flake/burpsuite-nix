@@ -22,7 +22,7 @@
       };
       inherit (nixpkgs) lib;
 
-      bappPackages = import ./bapp-packages.nix {
+      bappPackages = import ./pkgs {
         inherit lib pkgs;
         inherit (pkgs) fetchzip;
       };
