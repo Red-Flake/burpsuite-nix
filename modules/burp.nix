@@ -21,7 +21,6 @@ let
   defaultConfig = builtins.fromJSON (builtins.readFile ../defaults/config.json);
 
   # Convert extension package → Burp JSON entry
-  # Convert extension package → Burp JSON entry
   mkExtensionEntry =
     ext:
     let
@@ -59,7 +58,12 @@ in
     };
 
     extensions = mkOption {
-      type = types.listOf types.attrs;
+      type = types.listOf (
+        types.oneOf [
+          types.package # accepts derivations
+          types.attrs # accepts { package = …; loaded = … }
+        ]
+      );
       default = [ ];
       description = "List of Burp extension packages (Nix derivations).";
     };
@@ -78,6 +82,7 @@ in
   };
 
   config = mkIf cfg.enable {
+    # Extracts the package out of attrs
     home.packages = map (
       ext: if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext
     ) cfg.extensions;

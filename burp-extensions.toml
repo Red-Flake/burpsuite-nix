@@ -1,0 +1,2869 @@
+[dotnet-beautifier."0.3"]
+name = ".NET Beautifier"
+uuid = "e2a137ad44984ccb908375fa5b2c618d"
+hash = "sha256-Pn9sLa1RAVqmN8RhZn/PssuN1SA/CL1KKR/swAUt2YQ="
+serialversion = "3"
+extensiontype = "1"
+
+[403-bypasser."1.2"]
+name = "403 Bypasser"
+uuid = "444407b96d9c4de0adb7aed89e826122"
+hash = "sha256-ZAdUEl6L0XhbuNRWjX/MXTu7Oumy3IrQyENnxb8KFV4="
+serialversion = "5"
+extensiontype = "2"
+
+[429-bypasser."1.0"]
+name = "429 Bypasser"
+uuid = "19c6fa5cca1f4589b70cf19a9f71e7b8"
+hash = "sha256-4gQvF/wIH4O/FeXnfNQYxf3z5HQUzi7cRRSWs7luVEY="
+serialversion = "1"
+extensiontype = "2"
+
+[5gc-api-parse."1.2"]
+name = "5GC API Parser"
+uuid = "bdedb48d25594922adb1a5bcc99f89c9"
+hash = "sha256-B2VoAdqmiXsr86Siw4CU1HsF4aDsJpjuwgvP5Mkb3AE="
+serialversion = "1"
+extensiontype = "2"
+
+[active-scan-plus-plus."2.0.7"]
+name = "Active Scan++"
+uuid = "3123d5b5f25c4128894d97ea1acc4976"
+hash = "sha256-03XoFhP0iTdurr79zG8Zl0hwJAy0zI00I52nhjVdMo8="
+serialversion = "47"
+extensiontype = "1"
+
+[add-track-custom-issues."1.0a"]
+name = "Add & Track Custom Issues"
+uuid = "404965964a5b402d975b19da5f0abeec"
+hash = "sha256-lRB02bQEZ5JWi/dnrI5ry9I9ToRFPOWVhhiPTfBeOF8="
+serialversion = "7"
+extensiontype = "2"
+
+[add-custom-header."1.1"]
+name = "Add Custom Header"
+uuid = "807907f5380c4cb38748ef4fc1d8cdbc"
+hash = "sha256-a3y0i7ic65hb13aBqy+mFcGGx8jwqEBsrgQPgvZNs+k="
+serialversion = "2"
+extensiontype = "1"
+
+[add-to-sitemap-plus."1.0"]
+name = "Add to SiteMap+"
+uuid = "da121070f8644317abd44e956680218f"
+hash = "sha256-0wjxrZzhS0UljWkoujF7head3gGkTPvQK6CzNONk7tA="
+serialversion = "2"
+extensiontype = "2"
+
+[add-to-tls-pass-through."1.0.1"]
+name = "Add to TLS Pass Through"
+uuid = "db62b6a29eb24765a9225890b3ad769b"
+hash = "sha256-zfNcM6PLAkFBwrOFUz/QenKCO1H6BuWg4WWYW2EOXJo="
+serialversion = "2"
+extensiontype = "1"
+
+[additional-csrf-checks."2.1"]
+name = "Additional CSRF Checks"
+uuid = "2d12070c90cb4a0f91cde0b8927fd606"
+hash = "sha256-hPgfvx7NehZvUl6gM9b1P4Olg0M4M08+sSq8BZdi5io="
+serialversion = "1"
+extensiontype = "2"
+
+[additional-scanner-checks."1.4"]
+name = "Additional Scanner Checks"
+uuid = "a158fd3fc9394253be3aa0bc4c181d1f"
+hash = "sha256-mkS40OUJXi8gcTQvaBEEx4096cUWE9zgDBOgeo5sScY="
+serialversion = "6"
+extensiontype = "2"
+
+[adhoc-payload-processors."1.1"]
+name = "Adhoc Payload Processors"
+uuid = "ab878129f0de4649b7952b0cfadc9f66"
+hash = "sha256-EyfsZSA9ctaW8I97jPHRgc3BoGmLRLRaCU7MSxXCDvM="
+serialversion = "6"
+extensiontype = "3"
+
+[aes-killer."4.0"]
+name = "AES Killer, decrypt AES traffic on the fly"
+uuid = "e5f0d9ecba1d4d2c96180ea2717e3cc1"
+hash = "sha256-t++WKRy9GC3PO1tnr8mT5itMhxiTr1oi7t5fKze5Pis="
+serialversion = "2"
+extensiontype = "1"
+
+[aes-payloads."1.0a"]
+name = "AES Payloads"
+uuid = "7718318c8ae94d329e8037454585faba"
+hash = "sha256-BGcLEe3dNNZMUBl7rZjZgKeUBYsOc1moK0SaT7LHobc="
+serialversion = "3"
+extensiontype = "1"
+
+[agartha."3.0.0"]
+name = "Agartha"
+uuid = "b4915681326648b1a12e4059d71bc909"
+hash = "sha256-4VMdZ/O6aaTVmUVwqXLYfMb/5KvqSkhHMkPx1RpS+ac="
+serialversion = "8"
+extensiontype = "2"
+
+[ai-http-analyzer."2025.1.1"]
+name = "AI HTTP Analyzer"
+uuid = "36cb140ac1a6449bbab1bafc18df8cfa"
+hash = "sha256-NaeIYKz3kz0pTSACe7n5CI+lUo5j0aw7sPLYkWTpop0="
+serialversion = "2"
+extensiontype = "1"
+
+[ai-prompt-fuzzer."3.0.0"]
+name = "AI Prompt Fuzzer"
+uuid = "d3d1f3c9427e453193eb5deb3b6c115a"
+hash = "sha256-RuzCjeUfmFOCwy0BWss0wLpuKLJ0wipe6EVY8e4ebfw="
+serialversion = "11"
+extensiontype = "1"
+
+[ai-recon-assistant."1.0"]
+name = "AI Recon Assistant"
+uuid = "f5ddfbd9bcf24d15bda8b13aa1c19d47"
+hash = "sha256-53cepb79v3fP8UATx/B+jkwUfMDR0IB/iS5ynJPGSwo="
+serialversion = "2"
+extensiontype = "1"
+
+[ai-substitutor."1.0.0"]
+name = "AI Substitutor"
+uuid = "bd1775972c944060a7051b364b98bd6f"
+hash = "sha256-EdDX4KCrpLOCTF5/+Our5NxKfg5Ris0D33yjPRZ/Vpk="
+serialversion = "2"
+extensiontype = "1"
+
+[anonymous-cloud."0.1.14"]
+name = "Anonymous Cloud, Configuration and Subdomain Takeover Scanner"
+uuid = "ea60f107b25d44ddb59c1aee3786c6a1"
+hash = "sha256-vPdIDutcDxiAH2LU94YKi7qCksNP7thv6TCt4lheSSs="
+serialversion = "4"
+extensiontype = "1"
+
+[anti-csrf-token-from-referer."0.1"]
+name = "Anti-CSRF Token From Referer"
+uuid = "8eead913e28549f3aad177303c36e6e5"
+hash = "sha256-vfpEOLuw7CqTfnGE3aiBIOBzUQ65BNet47G5M2wJpb0="
+serialversion = "5"
+extensiontype = "2"
+
+[api-exporter."1.0"]
+name = "API Exporter"
+uuid = "71548f4df67945fdb81177db1f5e8984"
+hash = "sha256-C9nAKAyZuJ64vrmrGRNcx8BM4WBbkZVyS9ERpQIxIcc="
+serialversion = "2"
+extensiontype = "1"
+
+[asset-discovery."1.0"]
+name = "Asset Discovery"
+uuid = "d927f0065171485981d6eb49a860fc3e"
+hash = "sha256-KSrsQBd3VmHMU6h/g2VkgCDlR1ra6BDrazUUeYUu+xo="
+serialversion = "3"
+extensiontype = "2"
+
+[asset-saver."1.0"]
+name = "Asset Saver"
+uuid = "02418b1040fb44d0b99c52f0a04d87f7"
+hash = "sha256-fSFWJdAKVhxtAk0XcPUldTCMQOy+4x86YNGpoYBxk4k="
+serialversion = "2"
+extensiontype = "1"
+
+[attack-selector."0.1"]
+name = "Attack Selector"
+uuid = "a019ad8b3cea46ac9032d279440f5372"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "1"
+extensiontype = "1"
+
+[attack-surface-detector."1.2.4"]
+name = "Attack Surface Detector"
+uuid = "47027b96525d4353aea5844781894fb1"
+hash = "sha256-FPUK4LFB3n5q04OSJvi+yQqmDqhTx2pQqjo7Z0pdR/c="
+serialversion = "3"
+extensiontype = "1"
+
+[auth-analyzer."1.1.14"]
+name = "Auth Analyzer"
+uuid = "7db49799266c4f85866f54d9eab82c89"
+hash = "sha256-oUAnWU3spTIZP5wCRbgHAKgCOtxAiP9AHi8Zyc5W/QM="
+serialversion = "27"
+extensiontype = "1"
+
+[ator."2.3.0"]
+name = "Authentication Token Obtain and Replace"
+uuid = "51327b097b354243b307b4ed87ba39eb"
+hash = "sha256-rEofiWHhm9bk5zQ7LEFizThhtPDiXKTWBanqQMAMzTo="
+serialversion = "7"
+extensiontype = "1"
+
+[auth-matrix."0.8.2"]
+name = "AuthMatrix"
+uuid = "30d8ee9f40c041b0bfec67441aad158e"
+hash = "sha256-mnVc7dmgs55wBH6VFB18pgnAPdTVf10B3/gIT4fC2YE="
+serialversion = "12"
+extensiontype = "2"
+
+[authz."0.0.9"]
+name = "Authz"
+uuid = "4316cc18ac5f434884b2089831c7d19e"
+hash = "sha256-lXOzz3MOrE1FH9hyGNakTT7kJRvNm5RPHbwTKY8FY0A="
+serialversion = "1"
+extensiontype = "1"
+
+[burp-auto-drop."1.0.0a"]
+name = "Auto-Drop Requests"
+uuid = "623ef289f7df4700a3fbfd42e2d6e47e"
+hash = "sha256-fdDnEJuwXHwxkJ3ap5R+Y0QfYr6nL5MCwSQRQOfoZfM="
+serialversion = "2"
+extensiontype = "1"
+
+[auto-repeater."1.0b"]
+name = "AutoRepeater"
+uuid = "f89f2837c22c4ab4b772f31522647ed8"
+hash = "sha256-v1aWP5IjJALHld2SarKIFh+H8BGPotmhZXNoZqpeMgU="
+serialversion = "5"
+extensiontype = "1"
+
+[autorize."1.8.2"]
+name = "Autorize"
+uuid = "f9bbac8c4acf4aefa4d7dc92a991af2f"
+hash = "sha256-2gNjQAWbnSBRhH2vbya2E9PAtGMYKSj6LS5HyAJdqGg="
+serialversion = "27"
+extensiontype = "2"
+
+[autowasp."1.0.1a"]
+name = "Autowasp"
+uuid = "b89968942a3e4cab916b6c761beb2003"
+hash = "sha256-qCu5bwI6usdwxDnftRyh3HdoxvrN+3cfpb0/mWTbVrk="
+serialversion = "5"
+extensiontype = "1"
+
+[aws-cognito."0.1.7"]
+name = "AWS Cognito"
+uuid = "48ac18e2eddb4c36a28cece73a6fe39d"
+hash = "sha256-e9BkV2WfPGMSfaMk0Za3DPiVt1x0bdfySWC66CmXXmk="
+serialversion = "1"
+extensiontype = "1"
+
+[aws-curl-command."1.0.0"]
+name = "AWS cURL Command"
+uuid = "3cdcf2a486a44690a6c96087603b5406"
+hash = "sha256-Ib6egFXPLff84CYSoFmoVjxVAHd7mWTFlbZtUYjRd2w="
+serialversion = "1"
+extensiontype = "2"
+
+[aws-security-checks."0.2"]
+name = "AWS Security Checks"
+uuid = "f078b9254eab40dc8c562177de3d3b2d"
+hash = "sha256-cdmjWMO7CUV7Wf8ysBeMo8jLvJmx1daFR1sIn82AReI="
+serialversion = "1"
+extensiontype = "2"
+
+[aws-signer."2.1.0"]
+name = "AWS Signer"
+uuid = "d484744e0c3148f78da8808256e7f471"
+hash = "sha256-hIUk0r13M6eL4bnFYIqglkxHyNJWu7rbcMgWVNsmYj0="
+serialversion = "7"
+extensiontype = "1"
+
+[aws-sigv4."0.2.9"]
+name = "AWS Sigv4"
+uuid = "bbb81b07b7cd45448e8c728a38914c92"
+hash = "sha256-s/g1zUrjufiGSfrOZCFzWbx55mFDB3rsF1AOE1YdrFg="
+serialversion = "6"
+extensiontype = "1"
+
+[backslash-powered-scanner."1.30"]
+name = "Backslash Powered Scanner"
+uuid = "9cff8c55432a45808432e26dbb2b41d8"
+hash = "sha256-M4+uu7EC2pAZ3Szz/eSmMztDRrYgoanayiCNS6HrVMk="
+serialversion = "29"
+extensiontype = "1"
+
+[backup-finder."0.2"]
+name = "Backup Finder"
+uuid = "466bc6cbf5bb4449b56af7bd9c0000ea"
+hash = "sha256-uUpSlWtjzu17ELTge6pcEzH4vrUx9zRRqGalKZOXlnE="
+serialversion = "1"
+extensiontype = "1"
+
+[bad-character-wordlist-generator."1.0.0"]
+name = "Bad Character Wordlist Generator"
+uuid = "c843210f211c45f68f1ea4898e849544"
+hash = "sha256-ULgPZNg4JXdNeiwK0Un0nUcUrza4UMTO62T1eijjsiU="
+serialversion = "2"
+extensiontype = "2"
+
+[batch-scan-report-generator."0.4"]
+name = "Batch Scan Report Generator"
+uuid = "bc4ad87282e64fc4b35e9b9b05bac1dd"
+hash = "sha256-J3NY+J7eeuvhw+7mrYMx3LVoHXtd9/gFWy9F+IEWEoI="
+serialversion = "6"
+extensiontype = "1"
+
+[beanstack-stacktrace-fingerprinter."0.6.1a"]
+name = "BeanStack - Stack-trace Fingerprinter"
+uuid = "2da0e069b2944fcab691f6d00b165078"
+hash = "sha256-P7g7RqRNQUPqNoom4ffauzkFFjR3NK1e31VGx4C4AW0="
+serialversion = "5"
+extensiontype = "1"
+
+[blazer."0.3"]
+name = "Blazer"
+uuid = "7c385950b7e84257ad5d3338bb5882b4"
+hash = "sha256-ARcvlyii/Akkmul8YlEePYKgNxf77EIQHXeY0aKG7p0="
+serialversion = "4"
+extensiontype = "1"
+
+[blazor-traffic-processor."1.0"]
+name = "Blazor Traffic Processor"
+uuid = "8a87b0d9654944ccbdf6ae8bdd18e1d4"
+hash = "sha256-tQ0vpZjtHVc9atNBB/9bMP4qJqw2yJLwP8xuxw2K/5w="
+serialversion = "3"
+extensiontype = "1"
+
+[bookmarks."0.4.9"]
+name = "Bookmarks"
+uuid = "ef6d970f0d11452ea024691dffb4b39c"
+hash = "sha256-Jm1Kz1UEtbiwc27rfZNbGuyd9n4PywfhAxQLn5mGiEs="
+serialversion = "8"
+extensiontype = "1"
+
+[bradamsa."0.2"]
+name = "Bradamsa"
+uuid = "cfba9ea9b11f4436a4303bca58b8ff06"
+hash = "sha256-a2NT0pHCGo/HAzv9SPkrXJkUaWNFnW8IYx0y1MbCryI="
+serialversion = "1"
+extensiontype = "1"
+
+[brida."0.6.0"]
+name = "Brida, Burp to Frida Bridge"
+uuid = "2c0def96c5d44e159151b236de766892"
+hash = "sha256-LqQnivg0sVfPXlPa8cD5MuYg+EDmvM5hO12Ofq2yUkw="
+serialversion = "22"
+extensiontype = "1"
+
+[broken-link-hijacking."1.0"]
+name = "Broken Link Hijacking"
+uuid = "fa31e4d97b4c410aa72a8cf4d9a65d6e"
+hash = "sha256-W1egTMlpd1AhtWhCfoMTwcaVfK2P7GwVNXG4LytrhJU="
+serialversion = "1"
+extensiontype = "2"
+
+[browser-repeater."0.1"]
+name = "Browser Repeater"
+uuid = "215390e63f314c20958a23930eb1555a"
+hash = "sha256-oDGIW/KfAQe1jh/kNRchO7MRW9RhihX85OKfs+iqiks="
+serialversion = "1"
+extensiontype = "2"
+
+[buby."1.6.2"]
+name = "Buby"
+uuid = "bd453f3f4b364b9fba4e40e1eb6e8fb0"
+hash = "sha256-ChCO71XAS7FfgXYxbhGzwz+pPTAsSzhuT9MzgDi7xRw="
+serialversion = "3"
+extensiontype = "3"
+
+[bugpoc."1.0"]
+name = "BugPoC"
+uuid = "f6c905c76dd44814b658e4826b5c6efa"
+hash = "sha256-cZzjLlQJlHaKxIifWazoNRclOwqI/81NPB/oLWg1hcY="
+serialversion = "1"
+extensiontype = "1"
+
+[bulk-send-to-repeater."1.0.1"]
+name = "Bulk Send to Repeater"
+uuid = "06dc2fcad562435b99eef45ed9de6648"
+hash = "sha256-jnS2dbkxiDfa+EbxYbIOEfpNXczj28YzFxUVsukUGvY="
+serialversion = "2"
+extensiontype = "1"
+
+[burp-beautifier."1.1"]
+name = "Burp Beautifier"
+uuid = "a005a6a8fba34a8893ec649f76a8d5a7"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "4"
+extensiontype = "2"
+
+[scan-check-builder."4.0a"]
+name = "Burp Bounty, Scan Check Builder"
+uuid = "618f0b2489564607825e93eeed8b9e0a"
+hash = "sha256-HD4w5oF5KaOc+q1omx4e9HK771Kt5bhcrlzgHiQCnbc="
+serialversion = "37"
+extensiontype = "1"
+
+[burp-chat."1.1"]
+name = "Burp Chat"
+uuid = "1d0986521ace4b2dbf0b70836efa999d"
+hash = "sha256-H4lOLCjOmrvuoU8T0Zsa1mbVe3W05AKEsrj7iqiQIys="
+serialversion = "3"
+extensiontype = "1"
+
+[burp-csj."1.2"]
+name = "Burp CSJ"
+uuid = "371cebe47d8d4049a92dc03b66e1105f"
+hash = "sha256-Hy4Z0KKbeIJ7roP9Nr4ySnayOOdhhtgKXBR7RFLHcro="
+serialversion = "4"
+extensiontype = "1"
+
+[burp-share-requests."1.0a"]
+name = "Burp Share Requests"
+uuid = "30ec677a0f134150985b273d8c1dea22"
+hash = "sha256-RajBdF7YcgrG2O7jXkwi+jqEFi37OrGV+TW/fti+xuk="
+serialversion = "2"
+extensiontype = "1"
+
+[burp-variables."1.1.7"]
+name = "Burp Variables"
+uuid = "27f89b068a3045649d4df77a863209c1"
+hash = "sha256-1j+tWfR51EZ0F1IYdm70JvhBXPMjl/28msh3kJabe9g="
+serialversion = "5"
+extensiontype = "1"
+
+[burp2slack."1.0"]
+name = "Burp2Slack"
+uuid = "8934dd6be70a4242b39f4ac206cc12d5"
+hash = "sha256-/rbaIk9FWO0ePJd3kdBeKV/i31UrrOcT3w2Dz6uii7I="
+serialversion = "2"
+extensiontype = "1"
+
+[burp-2-telegram."1.0"]
+name = "Burp2Telegram"
+uuid = "06414d4e08ae4d32ac40d17e2fd8acc3"
+hash = "sha256-KxiIL8gX+J6oDLFeYPfYLxwSFLKV9eNlm0LALkY5RfE="
+serialversion = "6"
+extensiontype = "1"
+
+[burpcrypto."0.1.9.1"]
+name = "BurpCrypto, Encryption Payload Processor"
+uuid = "54f3dde6650a46d19789d19c4e2edd5f"
+hash = "sha256-Ss2HWvA76N+HGJOrVAG7IcSWYBOIsWj+pGq3vmOHZxA="
+serialversion = "2"
+extensiontype = "1"
+
+[burpelfish."0.04a"]
+name = "BurpelFish"
+uuid = "0902e34e38be4dfc82475d7b47774a48"
+hash = "sha256-BRIGTHt1tOI7uT8hOkPmUbNfRmvRtoNduwFLBTkI7SQ="
+serialversion = "1"
+extensiontype = "2"
+
+[burp-hash."1.0"]
+name = "Burp-hash"
+uuid = "34db77290bca46f1b2321bbe5e116ff2"
+hash = "sha256-zmQu5gb00mdowic3iI8T7pH7yVRl26pnc1pgjcrcnvg="
+serialversion = "1"
+extensiontype = "1"
+
+[burp-smart-buster."0.4"]
+name = "BurpSmartBuster"
+uuid = "7044ef35fa5a49b39285e101a79bf4ae"
+hash = "sha256-CoE6vlARAtpFEef/S5F4/RkQ87MJ+KGNkMdUSNzLDk0="
+serialversion = "7"
+extensiontype = "2"
+
+[burptrast."1.5.0"]
+name = "Burptrast, Contrast Security Integration"
+uuid = "94a3d90a77114b9da97f880dafdd0bb7"
+hash = "sha256-uu7GK44aPQEHjB3Mybow4DfweTSvQw8SuY0ghoKUZYY="
+serialversion = "5"
+extensiontype = "1"
+
+[bypass-bot-detection."0.0.6"]
+name = "Bypass Bot Detection"
+uuid = "50fd63182afe43b7a3cf99b523f313f9"
+hash = "sha256-QFxo/40gZH4x6pVgs28XOCMvmvnCoDezXMeFZry8EWI="
+serialversion = "2"
+extensiontype = "1"
+
+[bypass-waf."0.2.3"]
+name = "Bypass WAF"
+uuid = "ae2611da3bbc4687953a1f4ba6a4e04c"
+hash = "sha256-gNGJCGoHci0eLJUxCz+fsKUV641a2x5yoAkuCjmU4nQ="
+serialversion = "5"
+extensiontype = "1"
+
+[captcha-converter."1.0"]
+name = "Captcha Converter"
+uuid = "7d9b27e50c6c496eacb6d0151f5bace4"
+hash = "sha256-AxbC3BuHaHZmeKO+TXHc/0+2M/dTsUelZm863y5e7NY="
+serialversion = "2"
+extensiontype = "1"
+
+[carbonator."1.3"]
+name = "Carbonator"
+uuid = "e3a26fff8e1d401dade52f3a8d42d06b"
+hash = "sha256-jKyvhy6UrmCEBGDJVpWFE4tF8mpD4Ir/a6oWT7Sl09c="
+serialversion = "4"
+extensiontype = "2"
+
+[change-menu-level."1.0"]
+name = "Change Menu Level"
+uuid = "e1156b3d48c4469f9f1e234a3119fab1"
+hash = "sha256-PrOvchDiL8BLXP0btqgRQeoX8CnNU8Wsc7t9HmH8RRU="
+serialversion = "3"
+extensiontype = "1"
+
+[client-side-path-traversal-exploitation."1.0"]
+name = "Client-Site Path Traversal Exploitation"
+uuid = "eefe20568a894635b500ad13fdc8a683"
+hash = "sha256-PhJTqd7g/uw+K1Ggf/+M/4D/ahthJydFg4h5/T93Smo="
+serialversion = "1"
+extensiontype = "1"
+
+[clipboard-repeater."1.0"]
+name = "Clipboard Repeater"
+uuid = "3acc902eddde49aa83be2c71121ece88"
+hash = "sha256-QCIxh6qhz/PXTBxz6+ExFMo0uggmIunEqpUzhqrENOI="
+serialversion = "4"
+extensiontype = "1"
+
+[cloud-storage-tester."1.0a"]
+name = "Cloud Storage Tester"
+uuid = "04adbe101f544c88b2497a9a25ffaab4"
+hash = "sha256-PH+pGYKUoSwLKf+VfU8lyBS+S+4FyOiuCFHM60DkzAA="
+serialversion = "3"
+extensiontype = "2"
+
+[cms-scan."1.0"]
+name = "CMS Scanner"
+uuid = "1bf95d0be40c447b94981f5696b1a18e"
+hash = "sha256-RmPmCwqFg2fbflF717EsfywebXo3oeckYHCLcsBicuY="
+serialversion = "1"
+extensiontype = "1"
+
+[co2."1.2.0"]
+name = "CO2"
+uuid = "c5071c7a7e004f72ae485e8a72911afc"
+hash = "sha256-VlXZOIf2jAVEw4sDLZ7coalK+ZM/RYCYbX9laJe/Tu0="
+serialversion = "12"
+extensiontype = "1"
+
+[code-dx."1.1.0"]
+name = "Code Dx"
+uuid = "03b096411fed48e49ccf585659650348"
+hash = "sha256-G5kyfGuDXe6uMfH0BeRjxzgaYltOmdHweoVCrGTsBi4="
+serialversion = "3"
+extensiontype = "1"
+
+[collabfiltrator."4.0.1"]
+name = "Collabfiltrator"
+uuid = "fff2b36e392f49afbeb363403c07c6b8"
+hash = "sha256-T4CBPG0pNpWNt4RFTKcirIm9Uzkv++nvBQ7hQ4et/CM="
+serialversion = "10"
+extensiontype = "1"
+
+[collaborator-everywhere-v2."2.0.3"]
+name = "Collaborator Everywhere"
+uuid = "2495f6fb364d48c3b6c984e226c02968"
+hash = "sha256-/Nod+Y8nQn16RvaMjAZcTpQtlobTYyxQ9DZLD35KCpY="
+serialversion = "11"
+extensiontype = "1"
+
+[collaborator-everywhere."1.2"]
+name = "Collaborator Everywhere"
+uuid = "126139eafd024b23920ba541040f03b5"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "3"
+extensiontype = "1"
+
+[command-injection-attacker."2.0"]
+name = "Command Injection Attacker"
+uuid = "33e4402eee514724b768c0342abadb8a"
+hash = "sha256-p6H/rM8vxC7BniD2cxGLAqNW3DwnfkmBcJt45uiYWTg="
+serialversion = "2"
+extensiontype = "1"
+
+[commentator."1.2a"]
+name = "Commentator"
+uuid = "fc5658afca9144d7b49f611aac557539"
+hash = "sha256-dDOI+KBml1xsDVCXE5Re9QXC/X586E4cUEQZezAX6Hg="
+serialversion = "5"
+extensiontype = "1"
+
+[conditional-match-and-replace."1.0.3"]
+name = "Conditional Match and Replace"
+uuid = "5037418cbd064e439839760567dc12d0"
+hash = "sha256-cMjJklvzJ6NJBGtTTo6zyDX5UIc2xZXKya0VzlPKvhM="
+serialversion = "2"
+extensiontype = "1"
+
+[content-type-converter."1.5"]
+name = "Content Type Converter"
+uuid = "db57ecbe2cb7446292a94aa6181c9278"
+hash = "sha256-wppqXuqx3t/+nDFDzRW1vjoziY0o03VnJIEBHBYDa1k="
+serialversion = "4"
+extensiontype = "1"
+
+[cookie-decrypter."1.0"]
+name = "Cookie Decrypter"
+uuid = "76c500c3fdba4a37a6fca46fe18d8ada"
+hash = "sha256-3OKMFQmq57OAgjwpLPIBAZHegkWcdG+jiAXg4uP8hdk="
+serialversion = "1"
+extensiontype = "2"
+
+[cookie-monster."1.0.0"]
+name = "Cookie Monster"
+uuid = "c30314cdd4c847e4b8dc8984b88bf179"
+hash = "sha256-Px/+0yhk5uiVEG1BcdAFjtZKgSU4hth1VwHCWxkSrcM="
+serialversion = "1"
+extensiontype = "1"
+
+[copy-as-ffuf-command."1.0"]
+name = "Copy as FFUF Command"
+uuid = "b578b99348ba458ea65dddacc6d404d6"
+hash = "sha256-eVK6KYN5ALLzn4baMw6+VV0+spDH+n9x/ZEeQw6R4CE="
+serialversion = "1"
+extensiontype = "2"
+
+[copy-as-go-request."1.0.1"]
+name = "Copy As Go Request"
+uuid = "6d8cc9bde0b948959aa557d9bd0f0e66"
+hash = "sha256-RN8U3YQlgvfVQSUat0Fh7E7bkNAI6OFXYCO2lh1NPMI="
+serialversion = "4"
+extensiontype = "1"
+
+[copy-as-node-request."1.1"]
+name = "Copy as Node Request"
+uuid = "e170472f83ef4da1bca5897203b6b33d"
+hash = "sha256-ZIuZHUbnCwmrYfCXLyPc0I+TyvVAPxNzJ/xxOyZueHY="
+serialversion = "3"
+extensiontype = "1"
+
+[copy-as-powershell-requests."1.1"]
+name = "Copy as PowerShell Requests"
+uuid = "4da25d602db04f5ca7c4b668e4611cfe"
+hash = "sha256-Wz0KAZvIjjk5c8dPl/tIQcJVDvANAR6z21+hGbCmiWU="
+serialversion = "3"
+extensiontype = "1"
+
+[copy-as-python-aiohttp."v1.1.1"]
+name = "Copy as Python aiohttp"
+uuid = "2945c0fa6ed9448196f24dceabcc84da"
+hash = "sha256-5i2GX1C0B8M5O7S39tvyRcXFdFKOAwIuh7wXslUwDaU="
+serialversion = "1"
+extensiontype = "1"
+
+[copy-as-python-httpx."1.1"]
+name = "Copy as Python httpx"
+uuid = "f219aeea68a142eb887a988f68860a0b"
+hash = "sha256-G7XiXYzpuQThrG5nq/2vzW2HAwNtt3LlEkr82ve9L48="
+serialversion = "1"
+extensiontype = "1"
+
+[copy-as-python-requests."0.2.6"]
+name = "Copy As Python-Requests"
+uuid = "b324647b6efa4b6a8f346389730df160"
+hash = "sha256-SRRzq2uL2eSO+zXZdxPyIaI+ofqwaYZxNUYkoAkgGSM="
+serialversion = "10"
+extensiontype = "1"
+
+[copy-headers-as-arguments."1.0"]
+name = "Copy Headers as Arguments"
+uuid = "2adbc3eb684748f1b15c325df0fb3655"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "1"
+extensiontype = "2"
+
+[copy-request-response."2.3.0"]
+name = "Copy Request Response"
+uuid = "0d05f52c00a64cb2b2bea68744f6316c"
+hash = "sha256-kN8KGcyb9hRipFKJM8crd+ChwFbmYdFlwVlBhj2bI9c="
+serialversion = "28"
+extensiontype = "1"
+
+[copy-to-bcheck."1.1"]
+name = "Copy to BCheck"
+uuid = "e90fb3784290461cbfdda82f16c2224e"
+hash = "sha256-X2NZP6d1uUNHmFMH+xd3r6vCmT0IldYuXO2D9DvZ8uc="
+serialversion = "1"
+extensiontype = "1"
+
+[additional-cors-checks."0.9.1"]
+name = "CORS*, Additional CORS Checks"
+uuid = "420a28400bad4c9d85052f8d66d3bbd8"
+hash = "sha256-29BLs6sEj/LwBaPeQPxXnMBAPskNHZWlU8Er+N5qlOk="
+serialversion = "3"
+extensiontype = "1"
+
+[crypto-attacker."0.01"]
+name = "Crypto Attacker"
+uuid = "eaf6bdff2fbe4fd59e15661cdc9e1957"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "2"
+extensiontype = "2"
+
+[crypto-messages-handler."1.0.4"]
+name = "Crypto Messages Handler"
+uuid = "7ca8a41fa64e44f4b0be2810159c527e"
+hash = "sha256-eGw1aCQFyqtXYeMUs0io2oy9jXcmcUUofMDKsv6erxk="
+serialversion = "7"
+extensiontype = "1"
+
+[mine-sweeper."1.01"]
+name = "Cryptojacking Mine Sweeper"
+uuid = "f317b96ea38b46fab74b13decc7116cc"
+hash = "sha256-Zskcd/DcHdTNmOAgDIyYkvpIUIyYP0RAumeuoKyV5Hc="
+serialversion = "4"
+extensiontype = "2"
+
+[csp-auditor."2.0a"]
+name = "CSP Auditor"
+uuid = "35237408a06043e9945a11016fcbac18"
+hash = "sha256-u1fN9I5ZR5lGaxd8TXjRUIRyYj/j++8JyGTzL8TRg0M="
+serialversion = "8"
+extensiontype = "1"
+
+[csp-bypass."1.0"]
+name = "CSP-Bypass"
+uuid = "b113bdc1390647b092cb527c0b95116d"
+hash = "sha256-YRxg1eMyA/qUPgUutvXvtaaLYr+tOFSoAti296OaTSQ="
+serialversion = "2"
+extensiontype = "2"
+
+[csrf-scanner."1.4a"]
+name = "CSRF Scanner"
+uuid = "60f172f27a9b49a1b538ed414f9f27c3"
+hash = "sha256-vwjAqGeqsjQ43E55RHuWU3/zpyc5N9zFBAlSb2DqD64="
+serialversion = "6"
+extensiontype = "1"
+
+[csrf-token-tracker."1.1"]
+name = "CSRF Token Tracker"
+uuid = "61ddd8a0464544218dfd94114c910548"
+hash = "sha256-xQbXTdotjNlzwxkxVPt1DZ0/0zL8pc1Ub5ay7qXTI7Y="
+serialversion = "4"
+extensiontype = "1"
+
+[cstc."1.3.6"]
+name = "CSTC, Modular HTTP Manipulator"
+uuid = "866df66d339d4bcd9b599772aff32efd"
+hash = "sha256-tOcWIrxhYlJO8mjw/kRXFKmjh+0n/Wko5CeiBrmndjg="
+serialversion = "13"
+extensiontype = "1"
+
+[c-surfer."1.1a"]
+name = "CSurfer"
+uuid = "086c6af8b24c40a79a5e99b71df10f11"
+hash = "sha256-giaKvl4vi5TFs5KfL94Z45ai+mLo1qFN3DiYg76BZ/o="
+serialversion = "3"
+extensiontype = "1"
+
+[custom-logger."1.0"]
+name = "Custom Logger"
+uuid = "f5ca4f46dc37424c9666845a6ad0ecef"
+hash = "sha256-wy7mxD79k8QcOXUyiiwM1L000fX08Tj6klJzQvVg8lk="
+serialversion = "1"
+extensiontype = "1"
+
+[custom-parameter-handler."3.0a"]
+name = "Custom Parameter Handler"
+uuid = "a0c0cd68ab7c4928b3bf0a9ad48ec8c7"
+hash = "sha256-klCqbsdNycQq8ERLQY65ojekyrY6p7YU4n01CtNZ+IY="
+serialversion = "5"
+extensiontype = "2"
+
+[custom-send-to."1.0a"]
+name = "Custom Send To"
+uuid = "f089f1ad056545489139cb9f32900f8e"
+hash = "sha256-JKCaOzaqPiJNr59ejutQnv1vYnIpUoH3grwx+WUCdCw="
+serialversion = "8"
+extensiontype = "1"
+
+[custom-deserializer."1.1a"]
+name = "CustomDeserializer"
+uuid = "84ff4dceaae14e84990c6f3f7fe999bd"
+hash = "sha256-ICsAPGD3vceVoO3sPt1jTUi0oBhgQFW9UpMiz+BZ2NY="
+serialversion = "5"
+extensiontype = "2"
+
+[customizer."1.1.0"]
+name = "Customizer"
+uuid = "4265b6220a524d0da966e64e94fa9b26"
+hash = "sha256-IxCbKiTUCTApopkUnnHvN6Ll3mxc7VvhUtQZ8QGuhwE="
+serialversion = "2"
+extensiontype = "1"
+
+[cvss-calculator."1.0"]
+name = "CVSS Calculator"
+uuid = "e2209cdad8474342a695b2e279c294f0"
+hash = "sha256-WfaZV82vuG38WgooeClb9MH2GllZRTxSGYRM/sXHpNI="
+serialversion = "1"
+extensiontype = "1"
+
+[cvss-v3-1-calculator."1.0"]
+name = "CVSS v3.1 Calculator"
+uuid = "647dbf0dac704f24864ae4bfc09fb692"
+hash = "sha256-tooWKLB1osiM+bSXdI0Bld1YA+LwoeDrpgjZAhGgdQ0="
+serialversion = "1"
+extensiontype = "2"
+
+[cvss-v3-1-visual-calculator."1.0.0"]
+name = "CVSSv3.1 Visual Calculator"
+uuid = "8232ca9381db40489acd9bc14733f2b1"
+hash = "sha256-ooEUTjqxe5UmoHoqzvS3ijqnkgGmcsip47fuDTE0HOQ="
+serialversion = "4"
+extensiontype = "1"
+
+[cypher-injection-scanner."1.0"]
+name = "Cypher Injection Scanner"
+uuid = "72f7b61e22f64ef5882dff6054df5ac7"
+hash = "sha256-Y2SkERCL70ckGIvyjoYb0YDNXoaC2s48z5g2ScDARc4="
+serialversion = "4"
+extensiontype = "1"
+
+[decoder-improved."1.2.5.1"]
+name = "Decoder Improved"
+uuid = "0a05afd37da44adca514acef1cdde3b9"
+hash = "sha256-3f0ckg+ecUvFIsDxcubhx3M1J55lgZyFuZIouzL4Tgw="
+serialversion = "9"
+extensiontype = "1"
+
+[decompressor."1.2"]
+name = "Decompressor"
+uuid = "ef36a66ebeb04412a52ffc17c2f5e15e"
+hash = "sha256-1eA8VW0pRdVSrcLFqEszm7tUiFcmvfMlJFeOzowuX8k="
+serialversion = "4"
+extensiontype = "1"
+
+[deep-data-injector."1.0.6"]
+name = "Deep Data Injector"
+uuid = "19341d76802446c2959b25d0d83f7858"
+hash = "sha256-CNq74DrnNyINMpWojiq8nZGCLhtfVfqnnFZ2/Nj2E14="
+serialversion = "8"
+extensiontype = "1"
+
+[detect-dynamic-js."0.10"]
+name = "Detect Dynamic JS"
+uuid = "4a657674ebe3410b92280613aa512304"
+hash = "sha256-NCDiskDrQPn+xlzbpj4+V05adgud0PXtntLaDoW5DWM="
+serialversion = "8"
+extensiontype = "2"
+
+[diff-last-response."1.0.10"]
+name = "Diff Last Response"
+uuid = "902ef17f5aaa4f8eabe00491de3b241d"
+hash = "sha256-FijvPQdQ6jr22lOec5fsWG/coMSu/hdswiV55uGF+LE="
+serialversion = "4"
+extensiontype = "1"
+
+[directory-importer."1.0"]
+name = "Directory Importer"
+uuid = "59a829852f914d5a9edb6dcc919dc4e5"
+hash = "sha256-YkfyfIaLFiZ7kr/wGtyy45Tyv1iKz9zYE4Fl9DAj6sk="
+serialversion = "1"
+extensiontype = "1"
+
+[discovering-reversetabnabbing."1.0"]
+name = "Discover Reverse Tabnabbing"
+uuid = "80eb8fd46bf847b4b17861482c2f2a30"
+hash = "sha256-ejlbK4nPIaYij3I44Dqq6CF/vbejbucvugzDN2HgumM="
+serialversion = "2"
+extensiontype = "2"
+
+[display-switcher."1.0.1"]
+name = "Display Switcher"
+uuid = "c537b591acd04578840d48b56e069214"
+hash = "sha256-GrwbxzSyNcqQbJCFNzuLityZX1xnOgtYqTDTNS9RGRs="
+serialversion = "3"
+extensiontype = "1"
+
+[distribute-damage."1.01"]
+name = "Distribute Damage"
+uuid = "543ab7a08d954390bd1a5f4253d3763b"
+hash = "sha256-LAjmpIcFC3GaQjDglVDx7a1n3NYnCvEUsNk7UEQ9h0I="
+serialversion = "13"
+extensiontype = "1"
+
+[dns-analyzer."1.0"]
+name = "DNS Analyzer"
+uuid = "9285f245f3fa49d18f77650cfcba9b3e"
+hash = "sha256-z1zyDILB7eb5I4pKhA/gokd6kh1nWAh6mHQdYTbKEe4="
+serialversion = "3"
+extensiontype = "1"
+
+[dns-exfilnspector."1.2"]
+name = "DNS Exfilnspector"
+uuid = "0e9c1b7acd25422ab1fd1df5d1f09bbd"
+hash = "sha256-uEfFkar7EfEiZtKyjpYqUPzexhxgmM4M8cKOIRKJBKI="
+serialversion = "1"
+extensiontype = "2"
+
+[document-my-pentest."1.1.0"]
+name = "Document My Pentest"
+uuid = "bc746627d8494445bf91988e2e20ede1"
+hash = "sha256-BW0QNcCqM651B6vnQpang0jSdSclYgIDKsYrVRjmZqw="
+serialversion = "2"
+extensiontype = "1"
+
+[dpop-authenticator."1.0"]
+name = "DPoP Authenticator"
+uuid = "5de3ecc589594010bb6cda98c13c990c"
+hash = "sha256-HHl/U7J4N2gE3T3zK2rhiRdLv8d2USwk100REiuZVTk="
+serialversion = "3"
+extensiontype = "1"
+
+[dradis-framework."0.0.4"]
+name = "Dradis Framework"
+uuid = "c1be8787ebdd45f58c091f6ae30f1af2"
+hash = "sha256-19FBCoDjBKOaN46fZwV9aQuYBjqIWyu7VrfbAq9uH10="
+serialversion = "5"
+extensiontype = "3"
+
+[elastic-burp."1.4"]
+name = "ElasticBurp"
+uuid = "67f5c31f93d04ad3a3b0a1808b3648fa"
+hash = "sha256-kKixvGq2LaE1VLQNjwyimIZC1wvytYv0qQtUVSEsjQs="
+serialversion = "8"
+extensiontype = "2"
+
+[encode-ip."1.0"]
+name = "Encode IP"
+uuid = "c5138c16ec984118af95c41a89773953"
+hash = "sha256-w+4dRT/tow7WmD2l3RM1x74ru3g3cH+U35oY0fSo0ns="
+serialversion = "2"
+extensiontype = "2"
+
+[error-message-checks."2.0.5"]
+name = "Error Message Checks"
+uuid = "4f01db4b668c4126a68e4673df796f0f"
+hash = "sha256-vCReN85ELKSdUrE6OtatSjNplrn9DEVOe54hM84SCfY="
+serialversion = "13"
+extensiontype = "1"
+
+[espresso."3.3.1"]
+name = "EsPReSSO"
+uuid = "e1d08d4ab1ea4c17be3431d7d2b20b30"
+hash = "sha256-ySHPf+XB9A3BJN/itVfVJZNe5D7GyJZy2URf/FZGcMs="
+serialversion = "5"
+extensiontype = "1"
+
+[exiftool-scanner."1.0.9"]
+name = "ExifTool Scanner"
+uuid = "858352a27e6e4a6caa802e61fdeb7dd4"
+hash = "sha256-9ByU610pssV+sG4ucNVf0OTSgP9DZdBYhSe4O85gr6M="
+serialversion = "5"
+extensiontype = "1"
+
+[extended-macro."0.0.5"]
+name = "ExtendedMacro"
+uuid = "33839d04fdaa4e3b80292fbed115db13"
+hash = "sha256-Q5wtGGqqFQq6wqRpXY+79ahEEMdFl6O1B9dUDheDyhc="
+serialversion = "2"
+extensiontype = "1"
+
+[extensibility-helper."3.1.0"]
+name = "Extensibility Helper"
+uuid = "41274be469184a56b06d6a791ce8a9ce"
+hash = "sha256-A9D9glM2exFIWFjjT6KNYV1paiY3I/yGV8rGF4jVnlY="
+serialversion = "9"
+extensiontype = "1"
+
+[faction-integration."1.1"]
+name = "Faction Integration"
+uuid = "f4048e6291214e99a92ca555abee0f74"
+hash = "sha256-uKorzErYRFg6uY4LW96/siY2YJkHQ42tkxl0M9BDWhw="
+serialversion = "4"
+extensiontype = "1"
+
+[faraday."2.9.1"]
+name = "Faraday"
+uuid = "82f3cbaea46c4f158fd85bbccc90c31c"
+hash = "sha256-3bK52fuxWUWAXkZS1EPzY7L8jHgyusnTN/0mS4Yxyv8="
+serialversion = "14"
+extensiontype = "1"
+
+[fast-infoset-tester."1.1"]
+name = "Fast Infoset Tester"
+uuid = "2f640c88e0394bb09e788378f1bcc80f"
+hash = "sha256-uxJ2wbSs8FM/6Z6l7zDeVKJnGsg4+IW/yeqYhODoBPk="
+serialversion = "2"
+extensiontype = "1"
+
+[file-upload-traverser."1.0"]
+name = "File Upload Traverser"
+uuid = "5f46fe766e9c435992c610160bb53cba"
+hash = "sha256-26mjFUC/7Az3vaWnwzm/GrVliv/cxWzo74ySPIlfQ60="
+serialversion = "1"
+extensiontype = "3"
+
+[filter-options-method."1.3"]
+name = "Filter Options Method"
+uuid = "fa14ac579cff4682b32f39af8d3651e7"
+hash = "sha256-Bi7LUxvjFHeqAtvZSRsggjvdUfXhUnmZGeD78b9QlY4="
+serialversion = "5"
+extensiontype = "2"
+
+[firewall-ferret."1.2.1"]
+name = "Firewall Ferret"
+uuid = "ca894f9bab6446f0aa7eac712a7b80ca"
+hash = "sha256-UmzY64SQ0lU6IoOWab8h/ftQIbjI6gXwjGCJsdbpY1U="
+serialversion = "1"
+extensiontype = "1"
+
+[flow."1.25a"]
+name = "Flow"
+uuid = "ee1c45f4cc084304b2af4b7e92c0a49d"
+hash = "sha256-q+udFv404eLdzn/U6HYRQT4fVT/gt1emvi18iBJ20PE="
+serialversion = "10"
+extensiontype = "1"
+
+[formatify."1.4.0"]
+name = "Formatify"
+uuid = "61672f07da6b4091a2915490803b1ec2"
+hash = "sha256-+6Nk52O5KOj/lszYPB1uCu5EovK/xye95HJoEX4w/9I="
+serialversion = "3"
+extensiontype = "2"
+
+[freddy-deserialization-bug-finder."2.2.4"]
+name = "Freddy, Deserialization Bug Finder"
+uuid = "ae1cce0c6d6c47528b4af35faebc3ab3"
+hash = "sha256-3n+pYflncKzJ41z5yoW2DB/oAGSDmbM898QeIgqoqYo="
+serialversion = "7"
+extensiontype = "1"
+
+[gadgetprobe."1.0"]
+name = "GadgetProbe"
+uuid = "e20cad259d73403bba5ac4e393a8583f"
+hash = "sha256-4WFad9Py2z/DAMF+0HA2+MFSuM+wHBzaXxli2c3eIbY="
+serialversion = "9"
+extensiontype = "1"
+
+[get-all-parameters."6.0.0"]
+name = "GAP (Get All Parameters, Links, and Words)"
+uuid = "815bb4ab64e240618dc673d65016e919"
+hash = "sha256-NcF/aCedCGhsNOBGsosg7ik251O73+X5UF8dAEDdc/U="
+serialversion = "23"
+extensiontype = "2"
+
+[gat-digital-integration."1.0.1"]
+name = "GAT Security Platform Integration"
+uuid = "b134714a950241819bb37fa049ca21e0"
+hash = "sha256-AE0r0pHaJkC2P1oFTdQi6NGO9hi4LYxCOyN7pt8DioM="
+serialversion = "5"
+extensiontype = "2"
+
+[git-bridge."1.0"]
+name = "Git Bridge"
+uuid = "ae94d3ff6007497d863313fdded20daa"
+hash = "sha256-mJ0DzmZTmDz/Zl6JgNRIOIsHv1Kal6ccxHVqsDfQgEs="
+serialversion = "1"
+extensiontype = "2"
+
+[google-authenticator."1.2.0"]
+name = "Google Authenticator"
+uuid = "fb3685f958f8424493945c6c60c0920c"
+hash = "sha256-8OkQCjm/oKOQWoFm2VRW+QKV8d6H1tka1fjReC6im/4="
+serialversion = "12"
+extensiontype = "1"
+
+[google-hack."1.0"]
+name = "Google Hack"
+uuid = "a00a906943de49159092e329cc4f95f4"
+hash = "sha256-AO7EFT506SzvHWAiCdMYWgaOB2SyC9RIOP8c/hl6F8s="
+serialversion = "1"
+extensiontype = "2"
+
+[graphql-raider."1.0.0-17"]
+name = "GraphQL Raider"
+uuid = "4841f0d78a554ca381c65b26d48207e6"
+hash = "sha256-H3r0rT+0ba5vaaDt53VDMtNgKXaEiWw4DeEFLKydFc4="
+serialversion = "1"
+extensiontype = "1"
+
+[grpc-web-coder."1.0.0"]
+name = "gRPC-Web Coder"
+uuid = "63b92be302fa4521bf18d74b3adbbc00"
+hash = "sha256-9O1e4v9WDp6GoCimJgzXktc8EEG5nyIQwUyWrVQAvwQ="
+serialversion = "2"
+extensiontype = "2"
+
+[gwt-insertion-points."1.2"]
+name = "GWT Insertion Points"
+uuid = "a0740678763a4c748bbe7c79151cbe00"
+hash = "sha256-2s8T6A5aoAn/eRBk7W7FsKQ7JdPJUIwnDc/ONJYCQFI="
+serialversion = "4"
+extensiontype = "1"
+
+[hackbar."1.0"]
+name = "HackBar, Payload Bucket"
+uuid = "c1c32424fb8a4843a5404aa5ed5d711a"
+hash = "sha256-L9PEMZ8nmEswPwKKnd8S/fHleocemQlYIyRkcwQxpOI="
+serialversion = "2"
+extensiontype = "1"
+
+[hackvertor."2.2.16"]
+name = "Hackvertor"
+uuid = "65033cbd2c344fbabe57ac060b5dd100"
+hash = "sha256-UukEjo7cDNZov+qCHKF2r3b5JKp6RPUCaBnERClP0As="
+serialversion = "57"
+extensiontype = "1"
+
+[handy-collaborator."0.2a"]
+name = "Handy Collaborator"
+uuid = "dcf7c44cdc7b4698bba86d94c692fb7f"
+hash = "sha256-NkmI9+f9HQQtkYtMvbS5JlsIvSdyeouLtUl4MYD6pJ8="
+serialversion = "3"
+extensiontype = "1"
+
+[har-importer."1.0"]
+name = "HAR Importer"
+uuid = "67c8a830b8de492b91f41b4eac5ab021"
+hash = "sha256-wzRnYdQPQ+1HmzCwGR1fqFXkpTlvaYrT6wqVho+Q6Rg="
+serialversion = "1"
+extensiontype = "1"
+
+[harbringer."1.0.0"]
+name = "HARBringer, HAR Importer"
+uuid = "1140a99d8cd443b6be936623b4e8d62f"
+hash = "sha256-JpyGff2VPdTCZJeV7wrYIddQ4e48XLUhsSKCijepnMg="
+serialversion = "2"
+extensiontype = "2"
+
+[hashcat-maskprocessor."1.0"]
+name = "Hashcat Maskprocessor Intruder Payloads"
+uuid = "4a2fa04f480b4edb8a6326598ecd5646"
+hash = "sha256-+6dD/Jeoq6RqlSZL/SLvLB2eHNxMaVB04HqEWVeNXbA="
+serialversion = "1"
+extensiontype = "2"
+
+[header-guardian."1.0"]
+name = "Header Guardian"
+uuid = "096df707a309468488bc9f7d3340bdba"
+hash = "sha256-YHJ3WaaGA7wlxU41GamU9MPxRcB+dF4lEQQR1npvGVc="
+serialversion = "1"
+extensiontype = "2"
+
+[header-issue-reporter."1.0"]
+name = "Header Issue Reporter"
+uuid = "f12b0f468c0942ceadeb56cfe642885b"
+hash = "sha256-O2d5rgE+ykUihqrR+auUDTGYKAAo8aoIoeCy2P0q8Zo="
+serialversion = "1"
+extensiontype = "2"
+
+[header-snipper."1.0"]
+name = "Header Snipper"
+uuid = "9c8ce7d4acf945d9bbf5abab3f77968b"
+hash = "sha256-pChiSFLY86PZcqxEy2jDYmQVEnxKdAHXgFCNVoiQB7o="
+serialversion = "1"
+extensiontype = "2"
+
+[headers-analyzer."0.1"]
+name = "Headers Analyzer"
+uuid = "8b4fe2571ec54983b6d6c21fbfe17cb2"
+hash = "sha256-pI/BAXOVzVEJmk6slz4aeFF8MdwVtIMFeHFMBMCS60U="
+serialversion = "2"
+extensiontype = "2"
+
+[headless-burp."1.0"]
+name = "Headless Burp"
+uuid = "d54b11f7af3c4dfeb6b81fb5db72e381"
+hash = "sha256-JuiIO7581SkiyvFUH5Acs/7aikVai6zZUIJnij2Uji4="
+serialversion = "1"
+extensiontype = "1"
+
+[heartbleed."1.0a"]
+name = "HeartBleed"
+uuid = "d405150b57e54887b1dcfa563b7c0b6f"
+hash = "sha256-oCrKaAJZWsxZi3YECpMXFNJpw3WSymJV6BgfptneGAU="
+serialversion = "2"
+extensiontype = "1"
+
+[highlighter-and-extractor."4.2.1"]
+name = "Highlighter And Extractor"
+uuid = "a7609ae2055342e9b6ffcf7cbcacf019"
+hash = "sha256-rbp8Lbye+WMSUf1+qXCiOPA4S2RL4z38VE3bkxLFtGY="
+serialversion = "23"
+extensiontype = "1"
+
+[history-explorer."1.2"]
+name = "History Explorer"
+uuid = "18d22d6559364e30ad44b506604822f9"
+hash = "sha256-q7pHhyWBWvfNTssTrMHpANlYwJLVbBVRWbgm/ygtm30="
+serialversion = "2"
+extensiontype = "1"
+
+[host-header-inchecktion."1.2.3"]
+name = "Host Header Inchecktion"
+uuid = "3908768b9ae945d8adf583052ad2e3b3"
+hash = "sha256-L8e/rzMhyrNQiIjrCMa8wyHhPolJp/j/sFv0RBBJysw="
+serialversion = "5"
+extensiontype = "1"
+
+[hotpatch."1.0.18"]
+name = "Hotpatch"
+uuid = "1c145cc47f5f4540bdc782856b52af65"
+hash = "sha256-9/WYnYB2gE1KnhQObhfY8wH+frPP9oAuIprxa/PHVR8="
+serialversion = "3"
+extensiontype = "1"
+
+[html-content-extractor."1.1"]
+name = "HTML Content Extractor"
+uuid = "01c19fde30164b0aa112cf74befced53"
+hash = "sha256-GbIzYpBhqp463zfXyoGAY8ive+qGMlpnorajLcIh4p8="
+serialversion = "1"
+extensiontype = "1"
+
+[html5-auditor."1.0"]
+name = "HTML5 Auditor"
+uuid = "64060217b1d84abfa14b01edf3a29817"
+hash = "sha256-2Y5QPNtaJjddDCzziQ1pcnKZkI8+RPhRdU23jCLBIj0="
+serialversion = "2"
+extensiontype = "1"
+
+[http-batch-tool."1.0.0"]
+name = "HTTP Batch Tool"
+uuid = "e117f405368f48fa9d87bce7b96e9908"
+hash = "sha256-rfPbgoL4DI+++12kiLTw12JxHtESL+tMCn+MNByaE+s="
+serialversion = "7"
+extensiontype = "2"
+
+[http-digest-auth."1.0"]
+name = "HTTP Digest Auth"
+uuid = "726ddd5e66e843c5b528814bd1adc6c7"
+hash = "sha256-J+KpiLoanX6ZFMuiCwrNMWuZLI2tbw5mgdJpfoWW418="
+serialversion = "2"
+extensiontype = "2"
+
+[http-hacker."1.0.0"]
+name = "HTTP Hacker"
+uuid = "657363a6ea0a42d0be7f0b781249089f"
+hash = "sha256-F/cLQrKsvRFSmXnvfRDPNrpAFMtRQQDMZKHb8tDmF5Q="
+serialversion = "2"
+extensiontype = "1"
+
+[http-history-to-pcap."1.0.0"]
+name = "HTTP History to PCAP"
+uuid = "1de644f1b90e4f54bc385bd1ffc1b147"
+hash = "sha256-wP65pY75eWyPESn8mjE3Br2xQDfadYx/50v+aSos9LA="
+serialversion = "3"
+extensiontype = "1"
+
+[methods-discloser."1.0"]
+name = "HTTP Methods Discloser"
+uuid = "2d84c07f3a8d4e2b97828cd0aa814b07"
+hash = "sha256-IFHjOCYVaYp32dJ8ez+83UNiOTBGz3jO4bGknHfk0pI="
+serialversion = "1"
+extensiontype = "1"
+
+[http-mock."1.1.7"]
+name = "HTTP Mock"
+uuid = "42680f96fc214513bc5211b3f25fd98b"
+hash = "sha256-ZipxEkHHmC6jzyzqZFXLKCqBbymhHKRqpxH/tMk5OPY="
+serialversion = "12"
+extensiontype = "1"
+
+[http-request-smuggler."3.0.2"]
+name = "HTTP Request Smuggler"
+uuid = "aaaa60ef945341e8a450217a54a11646"
+hash = "sha256-fY8VbZSGS3ZtGFwieIGEi0UC+yDxkcP1ANAe8R31OCQ="
+serialversion = "51"
+extensiontype = "1"
+
+[httpoxy-scanner."1.0"]
+name = "HTTPoxy Scanner"
+uuid = "9c9877825cbd428bab27a25d0ea17178"
+hash = "sha256-ak/RH2QMWV2qAi3HSqYVXVo1hkVTQIM1PqDTyIuzu9o="
+serialversion = "2"
+extensiontype = "1"
+
+[hunt-scanner."2.3"]
+name = "Hunt Scanner"
+uuid = "059343223d094d16a0a8440485bc5c5e"
+hash = "sha256-g96kpzs/HgfZaOrOuHb03ft/4rwv4XsetKzA9KoNWtM="
+serialversion = "8"
+extensiontype = "1"
+
+[identity-crisis."0.2"]
+name = "Identity Crisis"
+uuid = "eee7869f75e14cfebd857ddbc9d5fd3f"
+hash = "sha256-NeCGlzSgBQ6W0hvu7dn8hr6iOEpKML8m5aJ0c61b16I="
+serialversion = "1"
+extensiontype = "2"
+
+[iis-tilde-enumeration-scanner."2.0"]
+name = "IIS Tilde Enumeration Scanner"
+uuid = "523ae48da61745aaa520ef689e75033b"
+hash = "sha256-yfqOL+9/KnfQ094JPZJHK/NC15ZV068MDvZYlpDz+g4="
+serialversion = "3"
+extensiontype = "1"
+
+[image-location-scanner."1.2"]
+name = "Image Location and Privacy Scanner"
+uuid = "f3aec37088aa494c81962d965219be46"
+hash = "sha256-SGIwXFv9ap8hOauYPbRddcgagXMFEr/w8bLZI6KJY7o="
+serialversion = "9"
+extensiontype = "1"
+
+[image-metadata."2.1.2"]
+name = "Image Metadata"
+uuid = "3996aa01e0474b1a990db586a7f14ab7"
+hash = "sha256-cMIRw7vPanEzwi8xldEuhlelHNGgbDfeXIB5PwlHtCo="
+serialversion = "8"
+extensiontype = "1"
+
+[image-size-issues."0.4"]
+name = "Image Size Issues"
+uuid = "1b602a9ae78a4ba4bc9f7b2c405a2b4e"
+hash = "sha256-778HMIQmzem7BXDJ7j/Mzmy0QoOYFhFMZ4uAB5ZnjfQ="
+serialversion = "5"
+extensiontype = "1"
+
+[import-to-sitemap."2023.01.11"]
+name = "Import To Sitemap"
+uuid = "aa17a344e1ac4c8c976dc0fe0d9994ca"
+hash = "sha256-pLf3vSuoC8zRavHvAsloUJ7sDBm1YcfmhPltFyl9OZ4="
+serialversion = "2"
+extensiontype = "1"
+
+[inql."6.0.0"]
+name = "InQL - GraphQL Scanner"
+uuid = "296e9a0730384be4b2fffef7b4e19b1f"
+hash = "sha256-vPIxkxnGbL0mo8cYfduCO2KRX2yBef++HwA38I+B2yA="
+serialversion = "22"
+extensiontype = "1"
+
+[intruder-file-payload-generator."1.0"]
+name = "Intruder File Payload Generator"
+uuid = "880cf2cf689b4067afd9db8e2aefb8ba"
+hash = "sha256-6pC7LbA+TxXAx7PYOKpViKIUWI372hFjZ10DuYpUAFA="
+serialversion = "1"
+extensiontype = "1"
+
+[intruder-time-payloads."1.0"]
+name = "Intruder Time Payloads"
+uuid = "ad5f51b515d14490ae8842ce61f60df5"
+hash = "sha256-xptwehUdqyemegIpPAZe+6K6pSEfHppVmdqgSgJX+yc="
+serialversion = "1"
+extensiontype = "2"
+
+[ip-rotate."2.0a"]
+name = "IP Rotate"
+uuid = "2eb2b1cb1cf34cc79cda36f0f9019874"
+hash = "sha256-NglA6L7nbzXdaGu3jF3W7MN2kIdHAjEH/TDb3pFcoTY="
+serialversion = "6"
+extensiontype = "2"
+
+[irule-detector."0.4"]
+name = "iRule Detector"
+uuid = "4984cf80ea3046a28121d35baba4396b"
+hash = "sha256-0VSV2aWh8gs3re4du0trkCnJUp/VWf3BnTdImDabLw8="
+serialversion = "1"
+extensiontype = "2"
+
+[issue-poster."1.0"]
+name = "Issue Poster"
+uuid = "5e1ec745965b4e768d1f4908cc5cf22d"
+hash = "sha256-UhlAgUcey2lk+JDOhKIm9GDwbKB1seAVlPPOu0qiUIY="
+serialversion = "1"
+extensiontype = "1"
+
+[j2ee-scan."2.0"]
+name = "J2EEScan"
+uuid = "7ec6d429fed04cdcb6243d8ba7358880"
+hash = "sha256-qSQCE820HRkgg8BKi0A8zuOWzly0LnJUyxDWn3EvUws="
+serialversion = "6"
+extensiontype = "1"
+
+[java-deserialization-scanner."0.7a"]
+name = "Java Deserialization Scanner"
+uuid = "228336544ebe4e68824b5146dbbd93ae"
+hash = "sha256-HNrZArxt2VoQ7BoO/AY8bKxrVpr6nEzkmpobWTDOoUk="
+serialversion = "16"
+extensiontype = "1"
+
+[java-object-deserializer."0.9.1"]
+name = "Java Object Deserializer"
+uuid = "07d944f6324d4ae5bc4e71f87864ec8b"
+hash = "sha256-W0qCuGYIDiOxAjOPVB+ljUKQDdt32SJ2li3pHxQGihk="
+serialversion = "4"
+extensiontype = "1"
+
+[java-serial-killer."1.1.0"]
+name = "Java Serial Killer"
+uuid = "afd8c03376f3461b804f39efae38f222"
+hash = "sha256-W7AwTyw7ZigUivgDnWi1uUF3qe4ZdA84lSmnzujzJQk="
+serialversion = "3"
+extensiontype = "1"
+
+[java-serialized-payloads."0.0.2a"]
+name = "Java Serialized Payloads"
+uuid = "bc737909a5d742eab91544705c14d34f"
+hash = "sha256-2HSL3e9OL63UC/k1rDqbxPT2zU8kbrEaKGgmXEw/MWw="
+serialversion = "2"
+extensiontype = "1"
+
+[javascript-encode-as."1.0"]
+name = "JavaScript Encode As"
+uuid = "1da8a127327d42eabff3725efe93db86"
+hash = "sha256-GEWdzleXm31Nbfi8bBemwwrNK1pLViwlCczzLB6i2wU="
+serialversion = "1"
+extensiontype = "2"
+
+[javascript-security."1.1"]
+name = "JavaScript Security"
+uuid = "22d5448831184ac3a94d0a112d744069"
+hash = "sha256-E6EnSVSitxsQ6FRDNrl+BnbUrmhThDtKQCImeXehO9g="
+serialversion = "1"
+extensiontype = "1"
+
+[jcryption-handler."1.3"]
+name = "JCryption Handler"
+uuid = "fe2a5a42985b4ac8b1801a09b670758f"
+hash = "sha256-KGmEQCcSbJNfHZX5xxsHZxi9GslaemKhFCoaG+2F8vY="
+serialversion = "4"
+extensiontype = "1"
+
+[jq."1.2"]
+name = "JQ"
+uuid = "c0d90a42c99848588d3df017cca717b5"
+hash = "sha256-K56vCDEbmI27hQVs2QuLQ5D+EGfd98MBSaXb0de3aYc="
+serialversion = "4"
+extensiontype = "1"
+
+[js-beautifier."1.3"]
+name = "JS Beautifier"
+uuid = "4681568c3e1858a8c701b8a8c7dc1db6"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "2"
+extensiontype = "1"
+
+[js-link-finder."1.0.0"]
+name = "JS Link Finder"
+uuid = "0e61c786db0c4ac787a08c4516d52ccf"
+hash = "sha256-+SGQgeyIx4aoTHxPFO3YQyVUyiS8UhEKcDnbOoBBrJA="
+serialversion = "1"
+extensiontype = "2"
+
+[js-miner."1.16"]
+name = "JS Miner"
+uuid = "0ab7a94d8e11449daaf0fb387431225b"
+hash = "sha256-h+oBIxdqaqjw52lTQ2uuns10kJJKWzb4qbziYavNgjY="
+serialversion = "8"
+extensiontype = "1"
+
+[jscriptor."2.01"]
+name = "JScriptor"
+uuid = "59dce89e125a411c9bc38c54df0c599a"
+hash = "sha256-Twqm8NDFJkC8s3/Y2rxYSc/gf5FU7G5m6hFR+J2Xy9A="
+serialversion = "3"
+extensiontype = "1"
+
+[json-beautifier."1.1"]
+name = "JSON Beautifier"
+uuid = "309ef28d45ff4f19bedfed3896cb3ca9"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "2"
+extensiontype = "1"
+
+[json-decoder."1.2"]
+name = "JSON Decoder"
+uuid = "ceed5b1568ba4b92abecce0dff1e1f2c"
+hash = "sha256-MDL5gWl98grUh9Nf207gM8Bs1tHyxbf6j+Y7bKnMN9Q="
+serialversion = "2"
+extensiontype = "2"
+
+[json-escaper."1.3"]
+name = "JSON Escaper"
+uuid = "5ebb21c4a50a40db9236067e3812fa3f"
+hash = "sha256-nKA7GtA9c+o0yZ+IzoNSlLKgLIUyWr+oDjYr6dobiMc="
+serialversion = "4"
+extensiontype = "2"
+
+[json-query."1.0"]
+name = "JSON Query"
+uuid = "787fbb3cd3fe40729820a88dd4fa877c"
+hash = "sha256-gu+9AtncNk+YboqR3MrG2ENsZvvqx5af2ww0W6WExQY="
+serialversion = "1"
+extensiontype = "1"
+
+[json-unicode-escaper."0.2"]
+name = "JSON Unicode-Escaper"
+uuid = "aebed6627d6348679d6c43f985958eca"
+hash = "sha256-etvTmqs5HBjmMkPrM2w2M9u+SRFnr0E64ocbgA4L4kQ="
+serialversion = "1"
+extensiontype = "1"
+
+[json-web-token-attacker."1.0.2a"]
+name = "JSON Web Token Attacker"
+uuid = "82d6c60490b540369d6d5d01822bdf61"
+hash = "sha256-97DtQ9a7lhxt1zGLLT8e2SXU4ir8r24WkHAh011QlQo="
+serialversion = "5"
+extensiontype = "1"
+
+[json-web-tokens."2.8.2"]
+name = "JSON Web Tokens"
+uuid = "f923cbf91698420890354c1d8958fee6"
+hash = "sha256-hCiMPZYrcnzIipjulG8Brslotgdep7vA5u8rvXGR+9c="
+serialversion = "33"
+extensiontype = "1"
+
+[json-js-beautifier."1.0.0"]
+name = "JSON/JS Beautifier"
+uuid = "43877b772b6f4a789e53e3dd13709427"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "2"
+extensiontype = "2"
+
+[jsws-parser."1.0"]
+name = "JSWS Parser"
+uuid = "1d1b8fd9be354c64a5887f25fc271e56"
+hash = "sha256-YxnRT0/rH878+YdFXRhRHjeBzkKvtisf3Wu+ED4Y874="
+serialversion = "1"
+extensiontype = "1"
+
+[jvm-property-editor."0.3a"]
+name = "JVM Property Editor"
+uuid = "150c653f60b54b4eb556ca289a6aa800"
+hash = "sha256-UqvkUVRFPZuNpEc3TbIsnDIjMqE8k0s+geHtxpUUszA="
+serialversion = "3"
+extensiontype = "1"
+
+[jwt-editor."2.6"]
+name = "JWT Editor"
+uuid = "26aaa5ded2f74beea19e2ed8345a93dd"
+hash = "sha256-JgmKPKf/jnOiDq1G+mn+jEvdeWWG6IBFOV1gE9BoRaE="
+serialversion = "20"
+extensiontype = "1"
+
+[jwt-monitor."1.1.1"]
+name = "JWT Monitor"
+uuid = "0f647199e97247b68a0e2248a8346c7d"
+hash = "sha256-dU3mP40uX2xoqyHOTLD7/rYVZm8/PkKEw/wAu1qWELw="
+serialversion = "10"
+extensiontype = "1"
+
+[jwt-scanner."2.1.0"]
+name = "JWT Scanner"
+uuid = "be6af6a556df4423846b25080dbde88c"
+hash = "sha256-VKyBJbTXcmEOqvlRUGQnEeCuCtDkswi+JFUDFWvRJZw="
+serialversion = "2"
+extensiontype = "1"
+
+[kerberos-authentication."1.0"]
+name = "Kerberos Authentication"
+uuid = "94135ed444c84cc095c72e6520bcc583"
+hash = "sha256-JxEQ5dlrHy1q8Q/TkIou8dAnQL2rUqkOXKDCWkdAdPY="
+serialversion = "3"
+extensiontype = "1"
+
+[kerberos-upstream-proxy."1.3"]
+name = "Kerberos Upstream Proxy"
+uuid = "87261acdb3e74128a3b4e1241ac2b7d3"
+hash = "sha256-5tL5ZDVJ+91JV5cIIxX06ZatSYE/qh8npghwbB9cbQQ="
+serialversion = "1"
+extensiontype = "1"
+
+[kollaborator-module-builder."0.0.1"]
+name = "Kollaborator Module Builder"
+uuid = "59af158b21cb46c9a36612ab98602cbd"
+hash = "sha256-gkoI1j67uu/t9ygB4GQcVA2PKi4mmnIn36Tuv5CO1J0="
+serialversion = "1"
+extensiontype = "1"
+
+[lair."1.1"]
+name = "Lair"
+uuid = "16ac195454f8429baac1c5357b0d3952"
+hash = "sha256-qQcmZCkojUP/hoXZvGOYNG3/zfc0Qu9pH7lToSKDnJA="
+serialversion = "3"
+extensiontype = "1"
+
+[length-extension-attacks."0.0.1"]
+name = "Length Extension Attacks"
+uuid = "f156669cae8d4c10a3cd9d0b5270bcf6"
+hash = "sha256-QkrT3iP717o6Extw8p7P3l9qWwolv5Z855fz2g60QV4="
+serialversion = "2"
+extensiontype = "2"
+
+[levo-burp-integration."0.2.0"]
+name = "Levo.ai Burp Integration"
+uuid = "e1772ac14930453b98d5bff8c4f8b0cd"
+hash = "sha256-E9697n/rtCnDFLSYV65TwbcKcXWUlidzAdi5i90oiIk="
+serialversion = "7"
+extensiontype = "1"
+
+[license-title-cleaner."1.0"]
+name = "License Title Cleaner"
+uuid = "ec3af606a17e4da29701dfc4dd0def8a"
+hash = "sha256-VaAoIDDdF8/cFYG4vVCFS4tJjJe12/43aId2dEpgDEE="
+serialversion = "1"
+extensiontype = "1"
+
+[lightbulb-framework."1.0.19a"]
+name = "LightBulb WAF Auditing Framework"
+uuid = "3144e67e904a4fdf91ea96cf4c694c39"
+hash = "sha256-BH6uCxiaSLmE9+Ij4anH/bWcf9gqA8kHYZjJ9nD+TdU="
+serialversion = "4"
+extensiontype = "2"
+
+[linebreaker."1.0.0"]
+name = "Linebreaker"
+uuid = "cd13bde2eb2248838432aa36f53c8301"
+hash = "sha256-Scz26EMczHuuQGXHM1eW3j1btm2eXbFyJLgDB4YwhUc="
+serialversion = "1"
+extensiontype = "2"
+
+[log-requests-to-sqlite."2.0.1"]
+name = "Log Requests to SQLite"
+uuid = "d916d94506734f3490e49391595d8747"
+hash = "sha256-ODMcjzNkGCytORDlFh+m3Sqoxl2AAUHgdhvYaWSyuvM="
+serialversion = "10"
+extensiontype = "1"
+
+[log-viewer."2.0"]
+name = "Log Viewer"
+uuid = "1edf849a4df447158c04141e9a4e67db"
+hash = "sha256-SFjF/NQACPlU7kKbJ7ZC6n43gHA5ZXjxMLHRyH65dsU="
+serialversion = "3"
+extensiontype = "1"
+
+[log4shell-everywhere."1.0"]
+name = "Log4Shell Everywhere"
+uuid = "186be35f6e0d418eb1f6ecf1cc66a74d"
+hash = "sha256-7NnDtFw5YWtHoiWSDTuHJqAhVw3RvQQLADOdPu5GGCQ="
+serialversion = "2"
+extensiontype = "1"
+
+[log4shell-scanner."0.2.4"]
+name = "Log4Shell Scanner"
+uuid = "b011be53649346dd87276bca41ce8e8f"
+hash = "sha256-2wX/TCzU5VkYInUVP/H0sE1Kdn5NQTo4HjMIDZu6S98="
+serialversion = "7"
+extensiontype = "1"
+
+[logger-plus-plus."3.20.0"]
+name = "Logger++"
+uuid = "470b7057b86f41c396a97903377f3d81"
+hash = "sha256-9OVhJJM0smjMCX37OKQhvc+XBeqXl5tjiN9KZnNN1CI="
+serialversion = "22"
+extensiontype = "1"
+
+[look-over-there."1.1"]
+name = "Look Over There"
+uuid = "156315ca57c4416b94a212b20399f274"
+hash = "sha256-JWzAeSU73uJgQNVGOB0zuhSzr55gLNDi2Omb0RZnQUI="
+serialversion = "4"
+extensiontype = "2"
+
+[magic-byte-selector."1.0"]
+name = "Magic Byte Selector"
+uuid = "517909d862cd4d3dbc48c4cc1dc61f87"
+hash = "sha256-WLfv7iG8bTx4qNpYQadhj88mRyK0mntdG8XgwLL9xj0="
+serialversion = "2"
+extensiontype = "2"
+
+[manual-scan-issues."1.0.3"]
+name = "Manual Scan Issues"
+uuid = "3ebca77f69434faea1e3e97e0269fe17"
+hash = "sha256-JfSD6b4EwiUah5QEX/6+Klie5mWtH2HDkYrN+yR9izw="
+serialversion = "3"
+extensiontype = "1"
+
+[match-replace-session-action."1.0.1"]
+name = "Match/Replace Session Action"
+uuid = "9b5c532966ca4d5eb13c09c72ba7aac2"
+hash = "sha256-+KZzl6M0QDkZMPUXSXDbWML644D/N5JA69dROOt6lJU="
+serialversion = "1"
+extensiontype = "1"
+
+[mcp-server."1.1.1"]
+name = "MCP Server"
+uuid = "9952290f04ed4f628e624d0aa9dccebc"
+hash = "sha256-Hzio92I7bYqGc1k05k0dZnu97yq4YQspxTjsJhcWaYw="
+serialversion = "5"
+extensiontype = "1"
+
+[message-pack."1.0"]
+name = "MessagePack"
+uuid = "c199ec3330864d548ff7d6bf761960ba"
+hash = "sha256-iRMxiRB/GWClQrq4wRzfHICIn9TlJqx6hJujYLlr3fk="
+serialversion = "2"
+extensiontype = "2"
+
+[meth0d-man."1.1.03"]
+name = "Meth0dMan"
+uuid = "8ba6e98e367e40c79824f562f22d2221"
+hash = "sha256-PI8hZxHztMYGQF8tLia15gpwv0Jn8HOyzRLKlwwCLRs="
+serialversion = "1"
+extensiontype = "1"
+
+[mind-map-exporter."1.1"]
+name = "MindMap Exporter"
+uuid = "676b2e91c5a347289fca66fa67cca545"
+hash = "sha256-iS5m/sSMS0eh0HYdkXYKxVfoQWUy6IfUL80PzjD0sq8="
+serialversion = "3"
+extensiontype = "1"
+
+[multi-session-replay."0.6.2"]
+name = "Multi Session Replay"
+uuid = "47319d00cae2447e8319db423913e19c"
+hash = "sha256-Po8wucP1R1sUIqGuzpOafZ9wXTsri3BxW1+NcsDcUng="
+serialversion = "1"
+extensiontype = "1"
+
+[multi-browser-highlighting."1.4"]
+name = "Multi-Browser Highlighting"
+uuid = "29fb77b2611d4c27a9a0b8bc504d8ca2"
+hash = "sha256-isJ4pO6okg+s3vWCcHHFiH0kP4PiPSjNxFGOGVKnEMA="
+serialversion = "5"
+extensiontype = "2"
+
+[multi-totp-authenticator."1.0.0"]
+name = "Multi-TOTP Authenticator"
+uuid = "8f6e0539e1284794b81afbf747d4bfb1"
+hash = "sha256-otxU6H574mzHWUPsndMa2VKZplnDOgG++v5unq8ulX4="
+serialversion = "2"
+extensiontype = "1"
+
+[nessus-loader."1.0.1"]
+name = "Nessus Loader"
+uuid = "13771216fa0048ce956261b820caa435"
+hash = "sha256-5rdpflbkdpD3cSkMl+MG8qKzdbV1AD6qRpk6N65SxZ0="
+serialversion = "2"
+extensiontype = "1"
+
+[nginx-alias-traversal."1.1"]
+name = "NGINX Alias Traversal"
+uuid = "a5fdd2cdffa6410eb530de5a4c294d3a"
+hash = "sha256-MIxSVwxFMPu2T9PxJBxQf/bFkfnezOIa6HuAcrzu6Qc="
+serialversion = "5"
+extensiontype = "2"
+
+[nmap-parser."1.1"]
+name = "NMAP Parser"
+uuid = "0780c0a9f12e47848a94ac3e43dccbd9"
+hash = "sha256-RhNdHZsEbORmvClgvkni/JrUXXkorg4UbpZWN2iciLc="
+serialversion = "2"
+extensiontype = "2"
+
+[nmap-scanner."1.0"]
+name = "Nmap Scanner"
+uuid = "9710f65c31044b3794df0767f8f4bd5d"
+hash = "sha256-Kv97scF7bYUmZZWxdymKlYkUKKQwsixbEHldrMiyOeo="
+serialversion = "2"
+extensiontype = "2"
+
+[nope-proxy."1.6a"]
+name = "Non HTTP Proxy (NoPE)"
+uuid = "12e84399d46a408dbe970f181391f781"
+hash = "sha256-8rptrPXLyVJNf4m2opmGlO4E9/wWOYzFE8bMHkpXZi0="
+serialversion = "2"
+extensiontype = "1"
+
+[nosqli-scanner."1.0"]
+name = "NoSQLi Scanner"
+uuid = "605a859f0a814f0cbbdce92bc64233b4"
+hash = "sha256-+sNHi/wZ5pmb1NAYXfXQshn0w9Hh8q75ZdWhWRlDLVE="
+serialversion = "2"
+extensiontype = "1"
+
+[notes."1.0"]
+name = "Notes"
+uuid = "b150353ea3d54f61bdc482a4a8470356"
+hash = "sha256-Uri8m6DYHE+SIvZrad6kRmcGkrWJTC/nH6tzqf7l2CY="
+serialversion = "1"
+extensiontype = "1"
+
+[ntlm-challenge-decoder."1.1.0"]
+name = "NTLM Challenge Decoder"
+uuid = "30d095e075e64a109b8d12fc8281b5e3"
+hash = "sha256-UeYs28dTMimmS1j0bveV5zXScny9LXFrt29it+eefxU="
+serialversion = "4"
+extensiontype = "1"
+
+[nuclei-burp-integration."0.4.1"]
+name = "Nuclei Burp Integration"
+uuid = "9c7f7ae2844c4828b28be2398c02b7f7"
+hash = "sha256-JDiEn7XjmZWjM4WS4iYWRWInMNxjVViDDwbQE8zE1jQ="
+serialversion = "5"
+extensiontype = "2"
+
+[nuclei-template-generator."1.1.3"]
+name = "Nuclei Template Generator Plugin"
+uuid = "526f5564b7414bfe978e650d8ea6567b"
+hash = "sha256-jeXkORXZLerM63GDKFBHY9QIM9J4enUBnf7puf73+1k="
+serialversion = "4"
+extensiontype = "1"
+
+[nucleus-burp-extension."1.2"]
+name = "Nucleus Burp Extension"
+uuid = "885a8f3d6d6c44889c79e6fd395a971e"
+hash = "sha256-Fv5j8Y48Kdqg1oYNGye9ZH0pliYHln7PL/3AVEWXQoM="
+serialversion = "8"
+extensiontype = "1"
+
+[oauth-scan."1.2"]
+name = "OAUTH Scan"
+uuid = "8ef2db1173e8432c8797831c2e730727"
+hash = "sha256-14ya5RrSUG8HF3fqzTpA5Vlhqtipha56S5ydSbVJAo4="
+serialversion = "10"
+extensiontype = "1"
+
+[oauth2-token-grabber."1.1"]
+name = "OAuth2 Token Grabber"
+uuid = "657539deacea4d15abd6cecd9c5721c6"
+hash = "sha256-qbF3Clv0TRHiBn0OziSoQkAVTHvupTOz1j8tbJMvJHc="
+serialversion = "2"
+extensiontype = "2"
+
+[oauthv1."1.1"]
+name = "OAuthv1 Authentication"
+uuid = "4d50027dc8294ec58c659325b383378b"
+hash = "sha256-aFCddPF/XnP4cn3nKnwQohi2joSXyaYzEmUersRt1qs="
+serialversion = "3"
+extensiontype = "2"
+
+[office-open-xml-editor."1.0"]
+name = "Office Open XML Editor"
+uuid = "7d7782b6cc1c4d7e9b4d22cb3dbdc20d"
+hash = "sha256-pqlwcsu3+z0WqUo9XuCl/yUkXkYq2ZaW7VB2mZOkXYI="
+serialversion = "0"
+extensiontype = "2"
+
+[okta-totp-authenticator."1.0.2"]
+name = "Okta TOTP Authenticator"
+uuid = "92f23c8578944b339094940a567ab94e"
+hash = "sha256-nCTgZdTqlWpx2+SjjcoC7odUx2DebmZB2MCd1S4fl9M="
+serialversion = "8"
+extensiontype = "1"
+
+[openapi-parser."4.1"]
+name = "OpenAPI Parser"
+uuid = "6bf7574b632847faaaa4eb5e42f1757c"
+hash = "sha256-wTuQG/1F0YoxEN5pz18nG1UlBIb3JElbjBzkuhlGDG0="
+serialversion = "25"
+extensiontype = "1"
+
+[organizer-notes."0.0.4"]
+name = "Organizer Notes"
+uuid = "bb614d01ab55447d88647bbc8ec09b51"
+hash = "sha256-otlM/2sISvwicIMJsMZsBigHym5269ttpTpMnnZjMrw="
+serialversion = "5"
+extensiontype = "1"
+
+[padding-oracle-hunter."1.2"]
+name = "Padding Oracle Hunter"
+uuid = "0efabfee59404068a8c4071fa18a2e00"
+hash = "sha256-EHiFBekg13tYRbNkLCDNAWgT5IAdyb6AdNGtOYd/eqI="
+serialversion = "6"
+extensiontype = "2"
+
+[paraforge."0.1"]
+name = "ParaForge"
+uuid = "758fc1dce0ae47cfb55b76995b29d58e"
+hash = "sha256-hHbUS418d5D7LThhmVhwoWTRf6CcLCUAtmomB98v4Ts="
+serialversion = "2"
+extensiontype = "2"
+
+[param-miner."1.55"]
+name = "Param Miner"
+uuid = "17d2949a985c4b7ca092728dba871943"
+hash = "sha256-fvIqQDUupFl2yruTpTzIloUTvLp1S9iaZ9QkxFWi8T0="
+serialversion = "34"
+extensiontype = "1"
+
+[paramalyzer."2.2.2"]
+name = "Paramalyzer"
+uuid = "0ac13c45adff4e31a3ca8dc76dd6286c"
+hash = "sha256-P7db9jN+rxogQNXZwgq8Hhzfpx0hf72s1/HDVWs9xKE="
+serialversion = "8"
+extensiontype = "1"
+
+[parrot-ng."0.2"]
+name = "ParrotNG"
+uuid = "f99325340a404c67a8de2ce593824e0e"
+hash = "sha256-xy5lI+gLRTf2UxMN6FW4gqMsEtmHX84uALH0wZVlmsI="
+serialversion = "3"
+extensiontype = "1"
+
+[passkey-raider."1.0.2"]
+name = "Passkey Raider"
+uuid = "1f55724594064b29bc18e0fbcda8de1b"
+hash = "sha256-E7anzhpx92HBh2P5J7Sdgb5nPGTbzeB+5/Jk57bvW+k="
+serialversion = "3"
+extensiontype = "1"
+
+[passkey-scanner."1.0"]
+name = "Passkey Scanner"
+uuid = "84da5e8f47f94740a214954e3054935c"
+hash = "sha256-CG/hb9jK3nu2g6Nin2iuYWfC2J3zWxRzYhlGRt3k7mE="
+serialversion = "1"
+extensiontype = "1"
+
+[paste-curl-to-repeater."1.1"]
+name = "Paste cURL to Repeater"
+uuid = "d5648b2788324b40a586a96ba8fca2bf"
+hash = "sha256-4ba6bgUD5RlurxiK1alDuSCNjK0Qq+C0tL7KXxiZHr4="
+serialversion = "2"
+extensiontype = "1"
+
+[payload-parser."1.0"]
+name = "Payload Parser"
+uuid = "8e429ecc01f446e29896b494f0487c25"
+hash = "sha256-Y05CfVjFUKl4TWk9Sh9S2E+qpbXyFrZbMoeuAKsp59s="
+serialversion = "1"
+extensiontype = "2"
+
+[pcap-importer."1.4"]
+name = "Pcap Importer"
+uuid = "01da4fdd9f6e4e12b0622fbdaa2dd26d"
+hash = "sha256-TTpIj0DKcTDrJNDXKzaKYhGOkIdpRECfRGC560eZMFg="
+serialversion = "6"
+extensiontype = "1"
+
+[pdf-metadata."0.5"]
+name = "PDF Metadata"
+uuid = "b5d1bc00258744c18b0efd114d196901"
+hash = "sha256-iGwjWLxam4geWIRjtG0dV0W1TFdtY4gOuzVXWJD5aCs="
+serialversion = "4"
+extensiontype = "2"
+
+[pdf-render."1.0.0"]
+name = "PDF Render"
+uuid = "4454db489be244f2a4404ab7842ee4d7"
+hash = "sha256-XEu292piouYsP6xr0YFDq2lK3MylZ8ED4tNafGWrXus="
+serialversion = "4"
+extensiontype = "1"
+
+[pdf-viewer."1.0"]
+name = "PDF Viewer"
+uuid = "4b0cbd1e44da4212881cc1480ba1bc68"
+hash = "sha256-Zu+g/RNQGZq6CiNkEk3XX1J4uDElwNI9z5GxCbkr7GQ="
+serialversion = "1"
+extensiontype = "1"
+
+[peach-api-integration."1.0.0"]
+name = "Peach API Integration"
+uuid = "e02d4baa8ae345f49edd82c559bda513"
+hash = "sha256-i4cvETEXflDl1eZCzaUhKySFls9Du/8RBY5wiG/V4SU="
+serialversion = "1"
+extensiontype = "1"
+
+[pentagrid-scan-controller."0.2"]
+name = "Pentagrid Scan Controller"
+uuid = "e3dde890bdce4ae4bcef0d97019f5d46"
+hash = "sha256-M95+a9o8gViBL/h2TKp4EZD4Rjd4H6Yqtilur5tcxDY="
+serialversion = "1"
+extensiontype = "1"
+
+[pentest-mapper."1.7.3"]
+name = "Pentest Mapper"
+uuid = "af490ae7e79546fa81a28d8d0b90874e"
+hash = "sha256-Y7K3p4ABJ8EwuyxNrZyT/Z4Gcrv1gRzwb+9SEpV9BI4="
+serialversion = "13"
+extensiontype = "2"
+
+[peoplesoft-token-extractor."1.0"]
+name = "PeopleSoft Token Extractor"
+uuid = "df04d7d1af004ed6b50c555c4920232d"
+hash = "sha256-hsrEisdBJa6L3qPjB9r+87MUA2LKl4B8PvCgvamil0o="
+serialversion = "0"
+extensiontype = "2"
+
+[php-object-injection-check."1.1"]
+name = "PHP Object Injection Check"
+uuid = "24dab228311049d89a27a4d721e17ef7"
+hash = "sha256-M8/9k9l1SKYIneXMB++KgYW3EU1vUJMI+dSgBiLNRjg="
+serialversion = "4"
+extensiontype = "1"
+
+[poi-slinger."1.0"]
+name = "PHP Object Injection Slinger"
+uuid = "631785c4cb4147feb5fdbf272f80f30c"
+hash = "sha256-N4rXBgonqVqLXfznw0thPVNkBe+kPyDniQqQugCvzmQ="
+serialversion = "4"
+extensiontype = "1"
+
+[pip3line."3.6.0"]
+name = "pip3line"
+uuid = "0c1f67ce0292437ab0f84b838f14d192"
+hash = "sha256-mDPpFaYbv9rcm369Vi8I001L2RKjuDFxBr4Tpz2OhMI="
+serialversion = "1"
+extensiontype = "1"
+
+[piper."0.7.1"]
+name = "Piper"
+uuid = "e4e0f6c4f0274754917dcb5f4937bb9e"
+hash = "sha256-3p4Bj7bV3JIWwHwXYo6U2rqftDqR8G9I2wUKfusYnk4="
+serialversion = "10"
+extensiontype = "1"
+
+[postman-burp-importer."1.0.4"]
+name = "Postman Burp Importer"
+uuid = "8370c8ea741e4dbabe892a561e10544a"
+hash = "sha256-rEDPr8ThdoEbWzp+GNfC4Uh0VFo0MJyvC9fq+ypxOok="
+serialversion = "2"
+extensiontype = "1"
+
+[postman-integration."2.0"]
+name = "Postman Integration"
+uuid = "6ae9ede3630949748842a43518e840a7"
+hash = "sha256-RoQAcoqUztS7GWBM+zHk6M8JJwOXxZ/3wRzqMMVJbYY="
+serialversion = "5"
+extensiontype = "1"
+
+[potential-vulnerability-indicator."0.3.10"]
+name = "Potential Vulnerability Indicator"
+uuid = "9f38b17450d0486ebd01f59c7d0a1acd"
+hash = "sha256-Kevo27Tre9UtUIi64BxQM1gIQCmDG5WOBn6nemxLdVQ="
+serialversion = "7"
+extensiontype = "1"
+
+[progress-tracker."1.1"]
+name = "Progress Tracker"
+uuid = "17544cadcec64dcf8ed68df8518592e4"
+hash = "sha256-vVRi1AyXTIQk+i2/JlRreBT07vjmN7euQnokDuUKFNk="
+serialversion = "4"
+extensiontype = "2"
+
+[protobuf-decoder."1.5"]
+name = "Protobuf Decoder"
+uuid = "bd8c70d3f1b74679b2a9fed03d36e81a"
+hash = "sha256-sfz2oQ2q/Z8+AB/KhNXoZNGdoi2K4oQaEBUecRAz2yI="
+serialversion = "8"
+extensiontype = "2"
+
+[prototype-pollution-gadgets-finder."1.0"]
+name = "Prototype Pollution Gadgets Finder"
+uuid = "fcbc58b33fc1486d9a795dedba2ccbbb"
+hash = "sha256-Xw8gfezqxE54m7raKFFgbZSlmSzWBWVJKJVwQ53oOWk="
+serialversion = "1"
+extensiontype = "2"
+
+[proxy-action-rules."1.0a"]
+name = "Proxy Action Rules"
+uuid = "01376d8325c846b988730e9417016039"
+hash = "sha256-+UqJ1gudNrONazZuFgyC14FUpP9AuHYnSNICGAV3POQ="
+serialversion = "7"
+extensiontype = "2"
+
+[proxy-auto-config."0.1.0"]
+name = "Proxy Auto Config"
+uuid = "7b3eae07aa724196ab85a8b64cd095d1"
+hash = "sha256-0Wj0OyLkd/oFCPwyG54uw7VWvnNaPSb0Fb0VRKIh7cs="
+serialversion = "2"
+extensiontype = "1"
+
+[pesd-exporter."2.0"]
+name = "Proxy Enriched Sequence Diagrams Exporter"
+uuid = "3c1ba693b1604256973c8b2414acb5a2"
+hash = "sha256-wmxMGbBfyvUDMsb3mjcAKBUWU9Zedt4lHF8xBCnoodk="
+serialversion = "3"
+extensiontype = "1"
+
+[psycho-path."1.1.1"]
+name = "PsychoPATH"
+uuid = "554059e593ce446585574b92344b9675"
+hash = "sha256-jTCtafFvux62akg50FTuwyWLCVGKzrZJGtJJ6t+yFzc="
+serialversion = "8"
+extensiontype = "1"
+
+[pwnfox-for-chromium."1.2.1"]
+name = "PwnFox For Chromium"
+uuid = "239c6b45a4ae4834acc90202566a1aac"
+hash = "sha256-Ix03OYoljVdV01x65bvBl9NDRnVg/NzZ8gosMp935GQ="
+serialversion = "2"
+extensiontype = "1"
+
+[pyburp."1.0.1"]
+name = "PyBurp"
+uuid = "d8969aceb89d4dc38e996f3c3579880d"
+hash = "sha256-uyfHe5BncjYwRCMTdt4osgshm8oUsz8lw0WNfBHrUKc="
+serialversion = "4"
+extensiontype = "1"
+
+[pycript."1.0"]
+name = "PyCript"
+uuid = "4826bfa0c67d41a8b518139186693131"
+hash = "sha256-8nHRlgnw+vHi/zau7WN4Y5vaPOki0fZ+DfGrVqmk2pM="
+serialversion = "6"
+extensiontype = "2"
+
+[python-scripter."2.1"]
+name = "Python Scripter"
+uuid = "eb563ada801346e6bdb7a7d7c5c52583"
+hash = "sha256-pvGVaKwWSiXSRgbWaZr+IoMWdid00DnRghxlR8pguc8="
+serialversion = "6"
+extensiontype = "2"
+
+[qualys-was."2.0.2"]
+name = "Qualys WAS"
+uuid = "3b0105b95e4645a7929faa0cbda1df28"
+hash = "sha256-SkmDAf1FgzJ+QiMWli36NTtEOn1WxStF/slzQgg97CM="
+serialversion = "9"
+extensiontype = "1"
+
+[quicker-context."1.0"]
+name = "Quicker Context"
+uuid = "1ba830620dce4ec4a1057567323687b9"
+hash = "sha256-P08e+Da9GXuUqiU9kXJ9wzKhtI/Mi3KqGZkqjcrfLQs="
+serialversion = "6"
+extensiontype = "1"
+
+[quoted-printable-parser."1.0"]
+name = "Quoted-Printable Parser"
+uuid = "80e1f644901f4f2c8905b77c5fa22fb1"
+hash = "sha256-CHcoZyZIcBA5Hbs+H6l54BdbByuw5Yf5fLVCiGurzwY="
+serialversion = "3"
+extensiontype = "2"
+
+[random-ip-address-header."1.0"]
+name = "Random IP Address Header"
+uuid = "3a656c1be14148c6bf95642af42eb854"
+hash = "sha256-KLBnVoo9ul1xmQZ+aZaUjah8XBQXwXGkS8gBqaKIMr0="
+serialversion = "1"
+extensiontype = "1"
+
+[raw-hexler."0.1.2"]
+name = "Raw Hex'ler"
+uuid = "4cf719dccf334a63809419859860b0c1"
+hash = "sha256-425SLgvt8AOOcVvlpeJ3Qa3ldoVuFcrUQlUXdQQPrSE="
+serialversion = "2"
+extensiontype = "1"
+
+[reflected-file-download-checker."1.0"]
+name = "Reflected File Download Checker"
+uuid = "34cd4392e7e04999b9ca0cc91f58886c"
+hash = "sha256-stTRU5lWqZKkJ9m/JYNns4kpPGGCZY0kSKdXho1MoS4="
+serialversion = "1"
+extensiontype = "1"
+
+[reflected-parameters."0.26"]
+name = "Reflected Parameters"
+uuid = "8e8f6bb313db46ba9e0a7539d3726651"
+hash = "sha256-pGnuO1CTpqOzghBmQmxQuwtbrfU8Q4iiMy76xhsEq7c="
+serialversion = "1"
+extensiontype = "1"
+
+[reissue-request-scripter."6.1.1"]
+name = "Reissue Request Scripter"
+uuid = "6e0b53d8c801471c9dc614a016d8a20d"
+hash = "sha256-Z3UFJiPmbkDPhaOSni2osPoqV6j2LM8CMu8yXEch650="
+serialversion = "10"
+extensiontype = "1"
+
+[repeater-strike."1.0.0"]
+name = "Repeater Strike"
+uuid = "c3f3fbf07b724c22908035ce4439ba39"
+hash = "sha256-Ue5lwjzE6VlDYpAZnFrcxO0e9DcbnkOYwumoVAcXOtA="
+serialversion = "5"
+extensiontype = "1"
+
+[replicator."1.0.3"]
+name = "Replicator"
+uuid = "56cf924977874104ac35e52962a9a553"
+hash = "sha256-C0fAmfRKOUX4ZG9y/s36pwqoAHgLnPAKksi7kn7DRuk="
+serialversion = "7"
+extensiontype = "1"
+
+[report-generator."1.0.0"]
+name = "Report Generator"
+uuid = "a1e1c3e2d80a4db5b5f0fff8b09441e6"
+hash = "sha256-4a57Li0P7hwvZMaZu7sit6lSEN2PBtu/gRn8NIpTfFA="
+serialversion = "2"
+extensiontype = "1"
+
+[report-to-elastic-search."0.0.4"]
+name = "Report To Elastic Search"
+uuid = "8493f7ae00aa4e01b6ffbbd1b8381ccc"
+hash = "sha256-SdDstiWnKYVrzmtNHrdq64HXidMlGKa8+HDrEF/hgXY="
+serialversion = "2"
+extensiontype = "1"
+
+[report-lm."0.1.0"]
+name = "ReportLM"
+uuid = "c29264074acc4aacb5b424e6a033ba5d"
+hash = "sha256-kkxMfsq7T9Azqz0Shh15oliiZE4IlHA1sXwiEELRFU8="
+serialversion = "2"
+extensiontype = "1"
+
+[request-highlighter."0.3"]
+name = "Request Highlighter"
+uuid = "11729a617d8d4d3b87c82e34b71885c3"
+hash = "sha256-AxaSBEej5FsTHq0Jf8CIBhfgVxApK5xiZa8lhyQ9bKQ="
+serialversion = "5"
+extensiontype = "1"
+
+[request-minimizer."1.3.2"]
+name = "Request Minimizer"
+uuid = "cc16f37549ff416b990d4312490f5fd1"
+hash = "sha256-XusQNWMjPrZCz2IsDmXffXYXsQFpLVWQe1v9tK4UrFk="
+serialversion = "9"
+extensiontype = "2"
+
+[request-randomizer."1.3"]
+name = "Request Randomizer"
+uuid = "36d6d7e35dac489b976c2f120ce34ae2"
+hash = "sha256-FzBmrYD/zX7TmXfoQ6ve6bvD6bkhnW7qrDi3VMBJ8Q8="
+serialversion = "4"
+extensiontype = "2"
+
+[request-timer."1.0.2"]
+name = "Request Timer"
+uuid = "56675bcf2a804d3096465b2868ec1d65"
+hash = "sha256-G04x21aVgfhlsBT7MLuEhNu0DufSw3e1n3P+Ufo9E2c="
+serialversion = "2"
+extensiontype = "1"
+
+[reshaper."2.5.3"]
+name = "Reshaper"
+uuid = "7bcec7656b5746e9a85c427f243e6d5a"
+hash = "sha256-LTXsMbu4QO6vQwwnIcHqLRA4zCCyEETlhzJcl2hjINY="
+serialversion = "28"
+extensiontype = "1"
+
+[response-grepper."1.4.1a"]
+name = "Response Grepper"
+uuid = "665178d3bf494019b3e8fe53a133528b"
+hash = "sha256-g2QGNr7MOBNsumCaMCGBfj5qmFR7uZB7uypSzJNA8sA="
+serialversion = "7"
+extensiontype = "2"
+
+[response-overview."1.4"]
+name = "Response Overview"
+uuid = "e63f09f290ad4d9ea20031e84767b303"
+hash = "sha256-ppnmFOpR7hNIBGhwrws3mXlT33l20Sa+hIPTz/r7HEI="
+serialversion = "11"
+extensiontype = "1"
+
+[response-pattern-matcher."2.0.1"]
+name = "Response Pattern Matcher"
+uuid = "a79caf7c5d3d4b54b66f84f27398afb6"
+hash = "sha256-71qKKszuuhrfZkTxdJ75Xej4H0cGq4TPTKAFEZOrz30="
+serialversion = "7"
+extensiontype = "1"
+
+[retire-js."3.0.4"]
+name = "Retire.js"
+uuid = "36238b534a78494db9bf2d03f112265c"
+hash = "sha256-CRI+EHi9Yx5Bdxd0Gs3SHAw5IVczLthpnt0InV9GFUw="
+serialversion = "13"
+extensiontype = "1"
+
+[reverse-proxy-detector."0.4"]
+name = "Reverse Proxy Detector"
+uuid = "a112997070354d249b64b4cf68eabc04"
+hash = "sha256-iFOCjJuxaPDwxpr5E2gb9Wcuk7l2GmzMqZIMdGPjHck="
+serialversion = "1"
+extensiontype = "2"
+
+[route-vul-scan."1.4"]
+name = "RouteVulScan"
+uuid = "a7d0105d20b8445689908ff8cedfd246"
+hash = "sha256-nUuHBqq5Ts6AEx8WaU2oZ3fIFK9/7DBhAie6xvDDqD4="
+serialversion = "4"
+extensiontype = "1"
+
+[same-origin-method-execution."0.0.1"]
+name = "Same Origin Method Execution"
+uuid = "9fea3ce4e79d450a9a15d05a79f9d349"
+hash = "sha256-NAS2UwWjH5sDYLndluK6rZNZ6sFpApHWqzqdVV/WeHY="
+serialversion = "1"
+extensiontype = "1"
+
+[samesite-reporter."1.0"]
+name = "SameSite Reporter"
+uuid = "ea1aa264b86d424ba35760d7e24c9e60"
+hash = "sha256-whczVSmYd+6P8o4FnqFZJA84KIOYgD7mLqQCuUBknnA="
+serialversion = "2"
+extensiontype = "1"
+
+[saml-editor."1.1"]
+name = "SAML Editor"
+uuid = "32c38cd10ef44c1cbca9d54483f78e88"
+hash = "sha256-RSdHrxk5jcGKa1Dk+TWFh3s3obemAX1M30cLSTqCyPk="
+serialversion = "2"
+extensiontype = "2"
+
+[saml-encoder-decoder."1.1"]
+name = "SAML Encoder / Decoder"
+uuid = "9ff11c976383491b976389ce23091ee3"
+hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
+serialversion = "2"
+extensiontype = "2"
+
+[saml-raider."2.4.0"]
+name = "SAML Raider"
+uuid = "c61cfa893bb14db4b01775554f7b802e"
+hash = "sha256-9uS88O3kpiE9qSE+ENg4m1MDdzxsec1TNgwcIpBw5PU="
+serialversion = "23"
+extensiontype = "1"
+
+[saml-re-quest."2.1"]
+name = "SAMLReQuest"
+uuid = "ec94f32a5b1f467bbb1459398818156f"
+hash = "sha256-pmZ59m4jHnAtW0xGAAYk2mIhMv6cTMrku1LE5OaHR2c="
+serialversion = "1"
+extensiontype = "1"
+
+[san-scanner."1.0"]
+name = "San Scanner"
+uuid = "25cf44e09aaf4acc9b5f49373c90199a"
+hash = "sha256-Wz8vqhm8+0fKFwO97PZtXZcBVhV4lS3+KGna4jirGSo="
+serialversion = "3"
+extensiontype = "1"
+
+[scan-manual-insertion-point."0.1"]
+name = "Scan manual insertion point"
+uuid = "ca7ee4e746b54514a0ca5059329e926f"
+hash = "sha256-PDXE20d5MFbuJmYTamhm1eAmyuVkZiI7lFoxI6C+ess="
+serialversion = "1"
+extensiontype = "1"
+
+[scope-monitor."1.0.0"]
+name = "Scope Monitor"
+uuid = "15124a42560944878ee4bc5e53104733"
+hash = "sha256-0UCiqXxDYqjfjvUIQFTiTI5prJ9RzJ0GyCJ7iKOHLNc="
+serialversion = "2"
+extensiontype = "2"
+
+[semgrepper."1.4"]
+name = "Semgrepper"
+uuid = "63cd174fe7e74931a86cad344407f6ab"
+hash = "sha256-fUklos/IBtJF/pHjdnP42VZ2+ajNv2mzudDt9wVxFTw="
+serialversion = "6"
+extensiontype = "1"
+
+[sensitive-discoverer."4.2.0"]
+name = "Sensitive Discoverer"
+uuid = "81e073a640964b2ea3af0da93d048dbd"
+hash = "sha256-bBMenDnq8Cvj5bEsEy4wq4BmXaYPezonBv6nCr1YWy4="
+serialversion = "10"
+extensiontype = "1"
+
+[sentinel."0.9.1"]
+name = "Sentinel"
+uuid = "a74a1af8d70d4de9bdef1e421a628013"
+hash = "sha256-DrAqI4qdoAFjWOKAC5SAiGJPqi3+soo4KmbxFl48ZoA="
+serialversion = "4"
+extensiontype = "1"
+
+[sequence-comparer."1.0.0"]
+name = "Sequence Comparer"
+uuid = "fd75bc61c9364dab833a61312fdaa07d"
+hash = "sha256-QFhJQQA/LXaXB7RVlIG4BRq9Ih7hmKAt05vhJHkQJ8c="
+serialversion = "2"
+extensiontype = "2"
+
+[server-side-prototype-pollution."1.0.8"]
+name = "Server-Side Prototype Pollution Scanner"
+uuid = "c1d4bd60626d4178a54d36ee802cf7e8"
+hash = "sha256-vuuJ8ne0X9IvxlkUvtGI+h2lyCVasBLdKbGEW4U/iu0="
+serialversion = "4"
+extensiontype = "1"
+
+[session-auth."1.2"]
+name = "Session Auth"
+uuid = "9cbdeea2d3744e5ab0f2d08632438985"
+hash = "sha256-D7btHqQy7wQYM2rPjI7CjW11YwZhoHZDrenN5BrpZqA="
+serialversion = "3"
+extensiontype = "2"
+
+[session-handler-plus."1.0"]
+name = "Session Handler+"
+uuid = "e4aa4cee811f43af96b2cd5e7e81598e"
+hash = "sha256-Wb2iKmmAHoya0EEmc7hfZYNcvMFKqMTYHa1N+lR/nSA="
+serialversion = "1"
+extensiontype = "2"
+
+[session-timeout-test."1.0"]
+name = "Session Timeout Test"
+uuid = "c4bfd29882974712a1d69c6d8f05874e"
+hash = "sha256-73kQZs1ha+48Ki9DmE6iefu5EyZQ9hm+NI6D0KYm4QE="
+serialversion = "1"
+extensiontype = "1"
+
+[session-tracking-checks."1.0"]
+name = "Session Tracking Checks"
+uuid = "1ab99dc6b61b45469759fdc38f371278"
+hash = "sha256-HUCjuxFpO9jqWT60YpJ0WkuOil52WdbRrpf2xu3na4k="
+serialversion = "0"
+extensiontype = "2"
+
+[shadow-repeater."1.2.3"]
+name = "Shadow Repeater"
+uuid = "7be1798d600647688bb2f051da37f504"
+hash = "sha256-2TOtEmWjUyGgQW8VDt44k8PezekdUwltuR5Ge6lgYVE="
+serialversion = "9"
+extensiontype = "1"
+
+[sharpener."4.5"]
+name = "Sharpener"
+uuid = "3c5025b0e19d419a8f339ee0c30391dd"
+hash = "sha256-Mu/f/xT7k5WX8jUc2EOWOjur6iWADETVDEvcKMuRjPc="
+serialversion = "44"
+extensiontype = "1"
+
+[sheet-intruder."1.1.0"]
+name = "Sheet Intruder"
+uuid = "dcf91bdb71c04bf491b372da1ab18e42"
+hash = "sha256-i6W7O1QgNA6GRiB41aYF/JUmrtnec9NQ9jNmyAUPTAA="
+serialversion = "2"
+extensiontype = "1"
+
+[sign-saboteur."1.0.6"]
+name = "SignSaboteur, Web Token Signer"
+uuid = "e62afa49e12543edbfa9df498363153c"
+hash = "sha256-VZ20S66T77fJIZptdxD53vXXjmuM8D+zRJW8zMRp+HM="
+serialversion = "2"
+extensiontype = "1"
+
+[similar-request-excluder."1.1.0"]
+name = "Similar Request Excluder"
+uuid = "9ecd51851baf4ae6b69c6a951257387a"
+hash = "sha256-NoNGZEPBaWiQpsYzK7ksL+JjBIcdJyvxh4Qm5s3Nchc="
+serialversion = "3"
+extensiontype = "1"
+
+[site-map-extractor."1.2"]
+name = "Site Map Extractor"
+uuid = "f991b67d4ef94f3c8692c3edca06583e"
+hash = "sha256-6BKjc02hZKyF3+Fow8WN1vP827YqyTGtgW4br3MsPbY="
+serialversion = "6"
+extensiontype = "2"
+
+[site-map-fetcher."1.0"]
+name = "Site Map Fetcher"
+uuid = "93bbecc3da434ef7ba5a5b2b98265169"
+hash = "sha256-UBy8Kt0aujSwjJXPvDHKhepK2thueDf16MW2W+5LT7w="
+serialversion = "1"
+extensiontype = "2"
+
+[socket-sleuth."0.1"]
+name = "Socket Sleuth"
+uuid = "42bda36c7fab496a87313943df698668"
+hash = "sha256-VWJ0XupMmzh41dDSf8tACAVSH0j2Hz9xN9E4wLwBO/M="
+serialversion = "4"
+extensiontype = "1"
+
+[software-version-reporter."2.0.4"]
+name = "Software Version Reporter"
+uuid = "ae62baff8fa24150991bad5eaf6d4d38"
+hash = "sha256-NTBIjl/Bpx0KnjrPn7Gdfa8fPwwn1cV1hotMd8rUBw0="
+serialversion = "15"
+extensiontype = "1"
+
+[software-vulnerability-scanner."1.4.2"]
+name = "Software Vulnerability Scanner"
+uuid = "c9fb79369b56407792a7104e3c4352fb"
+hash = "sha256-+LuJ7SmiNHEh1CXXr+QbInSR8bt+wISUX1w9BRnwguI="
+serialversion = "15"
+extensiontype = "1"
+
+[source-mapper."1.3"]
+name = "Source Mapper"
+uuid = "d8148953358b44f4861688410e642a6f"
+hash = "sha256-ny964XOXsL+nTK1WVrJf0mHrANJi984HBXszX0lYe60="
+serialversion = "4"
+extensiontype = "2"
+
+[spoofproof."1.0.3"]
+name = "SpoofProof - Domain Spoofing Validation"
+uuid = "a321360c6e114b3dab6f2c67d68c241a"
+hash = "sha256-4JrUr2l7IfY+Wja7Yt5V7AcGEyK3BmjKPuMRNHKog30="
+serialversion = "2"
+extensiontype = "1"
+
+[spring-boot-dump-scanner."1.0.0"]
+name = "Spring Boot Dump Scanner"
+uuid = "a348d765704c42d39dc4a4bdfb439ff0"
+hash = "sha256-FiAS1BG9eX2RZWVWLiAfl43r6DAG3zB5DLav9kF80Ag="
+serialversion = "2"
+extensiontype = "2"
+
+[spy-dir."0.8.5"]
+name = "SpyDir"
+uuid = "b0afcc21f8dc4d0aad236101f7259aa1"
+hash = "sha256-mpNQx6Db/sZK0+2b99F2KdAWOc8jB9c4H8OThGXVDVI="
+serialversion = "2"
+extensiontype = "2"
+
+[sqli-query-tampering."1.3"]
+name = "SQLi Query Tampering"
+uuid = "86549d1076bd485aa84c2c2685bd9ffd"
+hash = "sha256-LPkyGYgryxDz6i2YrosmmvPjUyH80yTRy5YPui9pZEY="
+serialversion = "3"
+extensiontype = "2"
+
+[sqli-py."0.8.6"]
+name = "SQLiPy Sqlmap Integration"
+uuid = "f154175126a04bfe8edc6056f340f52e"
+hash = "sha256-LshQpqQlW6L6Io1vPtknOZwHen2rhqseCw04axV+7yU="
+serialversion = "24"
+extensiontype = "2"
+
+[sqlmap-dns-collaborator."1.0"]
+name = "SQLMap DNS Collaborator"
+uuid = "e616dc27bf7a4c6598cfeeb70d5ca81c"
+hash = "sha256-oQdxvTTWTTY/L+9m39rOLRLiyP7LMuZHgZEl0kDyAhE="
+serialversion = "2"
+extensiontype = "1"
+
+[sri-check."1.4.0"]
+name = "SRI Check"
+uuid = "2e3a9895bb9b41f8b8a1193ec0399d3d"
+hash = "sha256-8nFm3X3WjYUvkooAlODdC+xB0Q/spqLR87S0T8L9EX4="
+serialversion = "1"
+extensiontype = "2"
+
+[ssl-scanner."1.2a"]
+name = "SSL Scanner"
+uuid = "474b3c575a1a4584aa44dfefc70f269d"
+hash = "sha256-48qNHKMFhUcU+LYUriSr+46On0fFz1la5FQDTbL4fj8="
+serialversion = "4"
+extensiontype = "2"
+
+[stepper."1.4.2"]
+name = "Stepper"
+uuid = "065d156ecefd480fa3efa36e05d55f77"
+hash = "sha256-bhYvwcJmfrjSeOMqL0hiWy9mPoTgVPo4LT3mSQpRFzk="
+serialversion = "6"
+extensiontype = "1"
+
+[sticky-burp."1.0.3"]
+name = "Sticky Burp, Reusable and Replaceable Environment Variables"
+uuid = "a1d3ab3c46834b60b8c95ecdb481d8c7"
+hash = "sha256-Zofks9/yJ14Xgsb4Jjaa34A48z+M/BycJEzsdoE/rmE="
+serialversion = "1"
+extensiontype = "1"
+
+[burp-subdomain."1.0"]
+name = "Subdomain Extractor"
+uuid = "eedcf9d22392458fa62f956f35bbcf49"
+hash = "sha256-N42ZCOst4Qu/t9dWHgWCNxgvtUj/FiNTRau8tOzmxl8="
+serialversion = "2"
+extensiontype = "2"
+
+[swagger-parser."1.0"]
+name = "Swagger Parser"
+uuid = "858b991209be484d87e0e63c63a24c14"
+hash = "sha256-kLkl8civRrYEmac2FsC2eLu1cYbWweKRU7EuQv6NgNk="
+serialversion = "2"
+extensiontype = "2"
+
+[taborator."2.1.6"]
+name = "Taborator"
+uuid = "c9c37e424a744aa08866652f63ee9e0f"
+hash = "sha256-94cHTWQSAfWxSu+/2uwZeMj7B3jlEqVP40rMQe5+vVM="
+serialversion = "16"
+extensiontype = "1"
+
+[target-redirector."1.1"]
+name = "Target Redirector"
+uuid = "d938ed20acbe4cd9889aa06bd23ba7e1"
+hash = "sha256-i5l9/vPLQiQXPbN4Rb2XYjuobaNzeVao6MaYH+9ZZAY="
+serialversion = "1"
+extensiontype = "1"
+
+[thread-fix."2.3"]
+name = "ThreadFix"
+uuid = "0b0100a98b1c4a0e927f34eac9d01afe"
+hash = "sha256-oQBHow2eFqcjLGcpuicITulCiMiwqXfw1Vh0S5pA5qU="
+serialversion = "3"
+extensiontype = "1"
+
+[tick-tock-enumerator."1.0.0"]
+name = "Tick Tock Enumerator"
+uuid = "bc0a8cc810aa46afacbf91cce986f015"
+hash = "sha256-zTQ++tTaZ3SmdHCP+HlodS0QWpWSSGgYat9gAd2M/Wk="
+serialversion = "4"
+extensiontype = "1"
+
+[timeinator."1.0a"]
+name = "Timeinator, Time Based Attacker"
+uuid = "3c7fc852346548adb781b7f4f30938c0"
+hash = "sha256-XqpbKx0/EJKwrYcaQOgXilLoHVDLHOjHk5QoArWT7ys="
+serialversion = "3"
+extensiontype = "2"
+
+[timestamp-editor."1.0"]
+name = "Timestamp Editor"
+uuid = "3eb7806c0aef4d4b8b12225bf76949d8"
+hash = "sha256-yRa+KwAuG/eFKw86Dgo+sx/Vu3xoKXKWh5zg4KvPcrY="
+serialversion = "2"
+extensiontype = "1"
+
+[timestamp-injector."1.5.0"]
+name = "Timestamp Injector"
+uuid = "c8421bc7b5884bd6b8c2ad89157f3860"
+hash = "sha256-C/PQxwLPusnnZ5DDGkwjYMkt4klZIqYK/4az98BUNoQ="
+serialversion = "1"
+extensiontype = "1"
+
+[token-extractor."1.3.2a"]
+name = "Token Extractor"
+uuid = "f24211fa6fcd4bbea6b21f99c5cad27a"
+hash = "sha256-wH+K99d+I9G87vPFYoE7b4pVCzTUyMANm1Bkco5eHxw="
+serialversion = "5"
+extensiontype = "1"
+
+[token-incrementor."1.1"]
+name = "Token Incrementor"
+uuid = "ae166662024149f981bb6920cf3c8960"
+hash = "sha256-YDxkrjXzHbw5RRsLXvVceORc1DwzVnX+7nWvNuqRLCs="
+serialversion = "2"
+extensiontype = "1"
+
+[token-tailor."1.0.2"]
+name = "Token Tailor"
+uuid = "b85023bffa3a4a3fb51d5e0c6f870c11"
+hash = "sha256-URzV7bpiaxC9zdex4kzzCNAbMwu/8dhbI7hpZENrHzU="
+serialversion = "2"
+extensiontype = "1"
+
+[token-jar."2.2"]
+name = "TokenJar"
+uuid = "d9e05bf81c8f4bae8a5b0b01955c5578"
+hash = "sha256-blQ5PU6i76QCNZByWiMrBkaPeF4yFbFCX9ivUzUpQc8="
+serialversion = "9"
+extensiontype = "1"
+
+[trufflehog-integration."1.0.0"]
+name = "TruffleHog Integration"
+uuid = "514b964549874209b3a4f70ec54e915d"
+hash = "sha256-3/qmfWOwX3yTiaxMm0V5gHA1zJEbSCDlNtzuPs0F2Oc="
+serialversion = "1"
+extensiontype = "2"
+
+[trusted-domain-cors-scanner."1.0.0"]
+name = "Trusted Domain CORS Scanner"
+uuid = "c257bcb0b6254a578535edb2dcee87d0"
+hash = "sha256-gvJNXLrhn0zAnH+VKfHGkxQRRytESC/LXJt9M5jDqCk="
+serialversion = "1"
+extensiontype = "1"
+
+[trusted-types-checker."1.0"]
+name = "Trusted Types Checker"
+uuid = "1894edb751244e52856efa092d58979d"
+hash = "sha256-m9Vf/06vajpuXkEuGjyCHhQ73N6KtRzxcarpjx83n28="
+serialversion = "1"
+extensiontype = "2"
+
+[turbo-data-miner."2.0"]
+name = "Turbo Data Miner"
+uuid = "84350b8f090a4388a9d12cca141f201b"
+hash = "sha256-A+x4hIYaUFfn6z5JZti3aorotzFB0D047xcCfBykSIE="
+serialversion = "5"
+extensiontype = "2"
+
+[turbo-intruder."1.62"]
+name = "Turbo Intruder"
+uuid = "9abaa233088242e8be252cd4ff534988"
+hash = "sha256-spGh5019OlCMjaeQHBmt2Y5c98zo02JqYCIPMdrwmKc="
+serialversion = "65"
+extensiontype = "1"
+
+[twilio-otp-authenticator."1.0.1"]
+name = "Twilio OTP Authenticator"
+uuid = "164f1ad7f29b47748feeb2f8c0d23b14"
+hash = "sha256-CbKbBpllDoTbV+uoddb9U9Fs/FzGF3AmRhO89NcN3QY="
+serialversion = "3"
+extensiontype = "1"
+
+[type-confusion-scanner."1.0"]
+name = "Type Confusion Scanner"
+uuid = "68869d4e6aff47ff99741954e9f087e7"
+hash = "sha256-JqoLCUurn2ybIJQMj1zy/oJ1pR2hMiYL3/+3cXmwMM4="
+serialversion = "2"
+extensiontype = "2"
+
+[type-xplorer."1.0.0"]
+name = "Type Xplorer"
+uuid = "b12907f6b1a848c98accc35a5bdfda76"
+hash = "sha256-EzuCQQ3mV7LcwTJuMSYToEI7xbX/An0nWMGzpg4mZFM="
+serialversion = "3"
+extensiontype = "2"
+
+[ununicode."1.3.0"]
+name = "UnUnicode"
+uuid = "4b19f5f577254c2ebf0ab63df71d934d"
+hash = "sha256-d+rSXsR26KscXfZqC0i42G9W85k/BMmzTV7zI5xMV20="
+serialversion = "1"
+extensiontype = "1"
+
+[upload-scanner."1.0.8a"]
+name = "Upload Scanner"
+uuid = "b2244cbb6953442cb3c82fa0a0d908fa"
+hash = "sha256-O9i/wh6Pqt6/crbwO2rSNTCY6RNXMgpWABM7xGkCKVs="
+serialversion = "12"
+extensiontype = "2"
+
+[upnp-hunter."2.2"]
+name = "UPnP Hunter"
+uuid = "055bd2a0f5104c2a907c1af624770eeb"
+hash = "sha256-Lx1o2N/lxiJQYzyShp91hF9PTbvIxlmz7NH2z8IxWqc="
+serialversion = "4"
+extensiontype = "2"
+
+[url-fuzzer-401-403-bypass."1.0"]
+name = "URL Fuzzer - 401/403 Bypass"
+uuid = "89f689c69d3840e99d73eacaff3e4a8d"
+hash = "sha256-eAFajLue7zkziWM11F8uAGbFs+/9PnjzuoaUgoxQEl0="
+serialversion = "1"
+extensiontype = "1"
+
+[uuid-detector."1.0"]
+name = "UUID Detector"
+uuid = "65f32f209a72480ea5f1a0dac4f38248"
+hash = "sha256-V4UPmF8EWQo1Vov4IvFIC9WyUlhcxnbySRX9rEAwqUY="
+serialversion = "1"
+extensiontype = "1"
+
+[viewstate-editor."1.0"]
+name = "ViewState Editor"
+uuid = "ba17d9fb487448b48368c22cb70048dc"
+hash = "sha256-N4nPvVBOqSATBqI8KxZFfqu0TdZJAwwTQ2Ief5aOXZo="
+serialversion = "3"
+extensiontype = "1"
+
+[waf-bypadd."0.9"]
+name = "WAF Bypadd"
+uuid = "14c6fc737ce4468b807b80023d9740a8"
+hash = "sha256-tTBgw9jf2LFiMPj1l9AaPcgZEletuGN4KkHGghpKAKU="
+serialversion = "2"
+extensiontype = "2"
+
+[waf-cookie-fetcher."1.1"]
+name = "WAF Cookie Fetcher"
+uuid = "0f6ce51c1cb349689ecb4025e8db060a"
+hash = "sha256-2wwOo+yq4HPXdPZ6bAGBey3QZBo5hGJQdYbRf7g6aaI="
+serialversion = "3"
+extensiontype = "2"
+
+[waf-detect."1.0.1"]
+name = "WAFDetect"
+uuid = "12bef6b7607e46cf965c16f76e905a4c"
+hash = "sha256-DjZhZoAals6x1yk8nYG22uOstzCsOL2FVihqSFzMOus="
+serialversion = "3"
+extensiontype = "1"
+
+[wayback-machine."0.2"]
+name = "Wayback Machine"
+uuid = "5c7c516c690345c19fbf55b2b2ebeb76"
+hash = "sha256-gjcZxmyi42yOuu5OIqG3T9oJL4GuQ6zHPKnY+IMazS4="
+serialversion = "3"
+extensiontype = "1"
+
+[wcf-deserializer."1.1"]
+name = "WCF Deserializer"
+uuid = "1ddd8919e946459f9c1bb47eedb19376"
+hash = "sha256-G+UYrZHhRnYwNAjqzaNeTQ6TqlRgqjaGkSufuG4+OEs="
+serialversion = "2"
+extensiontype = "1"
+
+[web-cache-deception-scanner."1.1"]
+name = "Web Cache Deception Scanner"
+uuid = "7c1ca94a61474d9e897d307c858d52f0"
+hash = "sha256-y9k+7MlOsv365TliWqBBpTSAZdJ/oJuWyNdiaIvCsRc="
+serialversion = "3"
+extensiontype = "1"
+
+[webauthn-cbor."1.0"]
+name = "WebAuthn CBOR Decoder"
+uuid = "36b86e134e93444596cc2675a4f0e48d"
+hash = "sha256-2WcALVCWmCerRnA1yhs77pYscSCg0TA+ba/4CCiknww="
+serialversion = "1"
+extensiontype = "1"
+
+[webinspect-connector."1.1"]
+name = "WebInspect Connector"
+uuid = "baaae14d08f7475781989ebf7ca70924"
+hash = "sha256-FVDwd47qQVFLxQdetxnwXcne/5s/dbafuxPsWbsGmBY="
+serialversion = "2"
+extensiontype = "1"
+
+[websocket-history-exporter."1.0.0"]
+name = "WebSocket History Exporter"
+uuid = "4fc3e36e05144c3d83536b33ad1d873a"
+hash = "sha256-lKSzB3cbuc+ISFtSmZEbYcoLIFvEDCDpfnlugS/+AxA="
+serialversion = "2"
+extensiontype = "1"
+
+[websocket-traffic-monitor-and-exporter."1.0.0"]
+name = "WebSocket Traffic Monitor & Exporter"
+uuid = "b7c16f79b8174371aeb42b6ba41a424c"
+hash = "sha256-x7jgMV4cO203gcUpmxnEfzl6EMYVnSanQuD+c28ZLT4="
+serialversion = "2"
+extensiontype = "1"
+
+[websocket-turbo-intruder."2.0.0"]
+name = "WebSocket Turbo Intruder"
+uuid = "ba292c5982ea426c95c9d7325d9a1066"
+hash = "sha256-eQJ4IkXV24iwZUCl24tlFxEzVgt+d86e5DDhU9yH0hE="
+serialversion = "5"
+extensiontype = "1"
+
+[websphere-portlet-state-decoder."1.0"]
+name = "WebSphere Portlet State Decoder"
+uuid = "49e9917c721e4abfa4c2540b07f35eb7"
+hash = "sha256-d+7lkmm3e1vK/CehtL6iDPzVHhxO3pdUfrwYvxbyJ+8="
+serialversion = "1"
+extensiontype = "2"
+
+[wordlist-extractor."1.0"]
+name = "Wordlist Extractor"
+uuid = "21df56baa03d499c8439018fe075d3d7"
+hash = "sha256-v9auwX9YMACRtRDEnnodfh3vzPofNvdQUjiQnb508U0="
+serialversion = "1"
+extensiontype = "2"
+
+[wordpress-scanner."1.2a"]
+name = "WordPress Scanner"
+uuid = "77a12b2966844f04bba032de5744cd35"
+hash = "sha256-1xiR/CiOjo+TyCrwCAhhNTJBytjUOhSUptg9udIz/tg="
+serialversion = "4"
+extensiontype = "2"
+
+[ws-security."1.0a"]
+name = "WS Security"
+uuid = "i5431k07za13636g0o9a1733ke7h10g3"
+hash = "sha256-89HFT6YtxuONHF7XL5hmc4eolpISAnwr8tkZ0LcFFVw="
+serialversion = "6"
+extensiontype = "1"
+
+[wsdl-wizard."1.02"]
+name = "WSDL Wizard"
+uuid = "ef2f3f1a593d417987bb2ddded760aee"
+hash = "sha256-ixY27CRCIHSMsgHI5rtuP4hbRBN6W5RHgd7aiOTOogE="
+serialversion = "2"
+extensiontype = "2"
+
+[wsdler."2.0.12"]
+name = "Wsdler"
+uuid = "594a49bb233748f2bc80a9eb18a2e08f"
+hash = "sha256-L/PInJJSqQdDk0nBbrPiyoOFFa046U2WUrNXzgt1h1I="
+serialversion = "6"
+extensiontype = "1"
+
+[xchromelogger-decoder."0.2"]
+name = "XChromeLogger Decoder"
+uuid = "a68f0a880362410baaf884ddb383fe4c"
+hash = "sha256-+b83KZrohPZvr+FVlL0jglJKf/0eHa+Zvw8HWW2mx2Y="
+serialversion = "5"
+extensiontype = "1"
+
+[xss-cheatsheet."1.0.1"]
+name = "XSS Cheatsheet"
+uuid = "eb75d39684b845adb457bcb050d1aa1d"
+hash = "sha256-il6BnPiygetHtyB0yotjzCzTcPlXEQJSUpQDMnKuc28="
+serialversion = "3"
+extensiontype = "1"
+
+[xss-validator."1.3.2a"]
+name = "XSS Validator"
+uuid = "98275a25394a417c9480f58740c1d981"
+hash = "sha256-z+B22Q6baKXPFMwPVNq0a7wJXhe1e/Ft8kYiJPX0E6I="
+serialversion = "7"
+extensiontype = "1"
+
+[yara."1.0"]
+name = "Yara"
+uuid = "11e2ec6923f2497db9c18ec92492c63a"
+hash = "sha256-hLwLe56zEhLarofCG7yUP7Bel+Y1dfemPD2KRXGiTr8="
+serialversion = "2"
+extensiontype = "2"
+
+[yes-we-burp."1.0.2a"]
+name = "YesWeBurp"
+uuid = "87e0eb0c385747b2ab1abe8089664807"
+hash = "sha256-5eLhUni65HckRqkLi+Rta0ZOdfa+UxsVggs1EH8BeX8="
+serialversion = "3"
+extensiontype = "2"

@@ -5,7 +5,7 @@
 }:
 
 let
-  universe = lib.importTOML ./bapp-extensions.toml;
+  universe = lib.importTOML ./burp-extensions.toml;
 in
 lib.foldlAttrs (
   acc: pname: versionSet:
