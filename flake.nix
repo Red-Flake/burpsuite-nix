@@ -19,7 +19,7 @@
         inherit system;
         config.allowUnfree = true;
       };
-      lib = pkgs.lib;
+      inherit (nixpkgs) lib;
 
       bappPackages = import ./bapp-packages.nix {
         inherit lib pkgs;
@@ -37,6 +37,5 @@
   nixConfig = {
     abort-on-warn = true;
     commit-lock-file-summary = "chore: update flake.lock";
-    allowUnfree = true;
   };
 }
