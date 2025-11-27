@@ -48,7 +48,7 @@ let
         else if pkg.passthru.burp.extensiontype == "3" then
           "ruby"
         else
-          "unknown";
+          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype} in ${pkg.pname}";
       loaded = loaded;
       name = pkg.passthru.burp.name;
       output = "ui";
