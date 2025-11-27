@@ -28,9 +28,9 @@ lib.foldlAttrs (
 
       installPhase = ''
         runHook preInstall
-        mkdir -p $out/lib/
-        cp -r $src/* $out/lib/
-        ln -s $out/lib/build/libs/* $out/lib/${pname}.jar
+        mkdir -p $out/lib/${pname}
+        cp -r $src/* $out/lib/${pname}/
+        ln -s $out/lib/${pname}/build/libs/* $out/lib/${pname}.jar
         runHook postInstall
       '';
 
