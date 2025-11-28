@@ -41,6 +41,10 @@ extensions, interpreters, UI settings, and Burp’s `UserConfig.json` are all ge
 
 - No GUI config needed — all Burp settings are declarative
 
+## Module Documentation
+
+The Documentation for each Module Setting can be found here: [nixos-options.md](./nixos-options.md)
+
 ## Usage
 
 Note that this Module does not install Burpsuite, this needs to be done separately!
