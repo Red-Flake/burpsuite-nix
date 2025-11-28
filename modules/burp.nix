@@ -153,7 +153,7 @@ in
                 user_options = recursiveUpdate {
                   extender.extensions = map mkExtensionEntry cfg.extensions;
                 } cfg.settings;
-              } (recursiveUpdate extraInterpreterConfig cfg.settings)
+              } (recursiveUpdate extraInterpreterConfig)
             )
           );
           force = true;

@@ -97,6 +97,7 @@ programs.burp = {
 
 - [] Add a Github Action Workflow that updates the Extensions
 - [] Improve the flake.nix, allow multiple architectures
+- [] Add integration tests
 - [] Only prefetch changed Extensions, not all Extensions on a Change
 - [] Explore compiling the Extensions from Source
 - [] reimplement javas cursed directory name generation to declaratively modify burp extension settings
