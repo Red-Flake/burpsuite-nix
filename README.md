@@ -68,15 +68,14 @@ programs.burp = {
 
     extensions = [
         # Loaded by default
-        inputs.burpsuite-nix.packages.${pkgs.system}."403-bypasser"
-        inputs.burpsuite-nix.packages.${pkgs.system}.adhoc-payload-processors
-        inputs.burpsuite-nix.packages.${pkgs.system}.buby
-        inputs.burpsuite-nix.packages.${pkgs.system}.dradis-framework
-        inputs.burpsuite-nix.packages.${pkgs.system}.file-upload-traverser
+        "403-bypasser"
+        "json-web-tokens"
+        "js-miner"
+        "param-miner"
 
         # Installed but not loaded
         {
-            package = inputs.burpsuite-nix.packages.${pkgs.system}.js-miner;
+            package = "http-request-smuggler";
             loaded = false;
         }
     ];
@@ -101,7 +100,6 @@ programs.burp = {
 
 ## TODO
 
-- [] Change the extension module to only needing the Extension names
 - [] Add a Github Action Workflow that updates the Extensions
 - [] Add integration tests
 - [] Only prefetch changed Extensions, not all Extensions on a Change

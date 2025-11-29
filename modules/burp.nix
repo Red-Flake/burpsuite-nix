@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  burpPackages,
   ...
 }:
 
@@ -15,9 +16,29 @@ let
     recursiveUpdate
     ;
 
-  # Default config that was generated after the first start of BurpSuite
-  # Changed automatically_update_bapps_on_startup to false, because it is handeled by Nix
-  # All config options can be found here in the User Section: https://gist.github.com/asadasivan/9d8f5be51ce08745c2bd50f69296b1ab#file-burp_defaults_combined-json-L513
+  # Resolve strings like "403-bypasser" into:
+  # burpPackages.${pkgs.stdenv.hostPlatform.system}."403-bypasser"
+  normalizeExtension =
+    ext:
+    if builtins.isString ext then
+      # If it's a string, look it up in burpPackages
+      burpPackages.${pkgs.stdenv.hostPlatform.system}.${ext}
+    else if builtins.isAttrs ext && builtins.hasAttr "package" ext then
+      let
+        pkg = ext.package;
+      in
+      if builtins.isString pkg then
+        # Replace the string with the proper package from burpPackages
+        ext // { package = burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkg}; }
+      else
+        # Already a derivation
+        ext
+    else
+      # Already a derivation
+      ext;
+
+  normalizedExtensions = map normalizeExtension cfg.extensions;
+
   defaultConfig = builtins.fromJSON (builtins.readFile ../data/config.json);
 
   mkExtensionEntry =
@@ -27,10 +48,8 @@ let
 
       loaded = if builtins.isAttrs ext && builtins.hasAttr "loaded" ext then ext.loaded else true;
 
-      # Read the manifest shipped in the derivation
       manifestContent = builtins.readFile "${pkg}/lib/${pkg.pname}/BappManifest.bmf";
 
-      # Parse EntryPoint from the manifest
       entrypoint = lib.trim (
         lib.removePrefix "EntryPoint:" (
           lib.findFirst (l: lib.hasPrefix "EntryPoint:" l) (throw "Missing EntryPoint in ${pkg.pname}") (
@@ -43,10 +62,7 @@ let
       bapp_serial_version = pkg.passthru.burp.serialversion;
       bapp_uuid = pkg.passthru.burp.uuid;
       errors = "ui";
-
-      # Use the real Entrypoint path
       extension_file = "${pkg}/lib/${pkg.pname}/${entrypoint}";
-
       extension_type =
         if pkg.passthru.burp.extensiontype == "1" then
           "java"
@@ -55,8 +71,7 @@ let
         else if pkg.passthru.burp.extensiontype == "3" then
           "ruby"
         else
-          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype} in ${pkg.pname}";
-
+          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}";
       loaded = loaded;
       name = pkg.passthru.burp.name;
       output = "ui";
@@ -68,7 +83,7 @@ let
       pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
     in
     pkg.passthru.burp.extensiontype == "2"
-  ) cfg.extensions;
+  ) normalizedExtensions;
 
   hasRubyExt = lib.any (
     ext:
@@ -76,10 +91,7 @@ let
       pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
     in
     pkg.passthru.burp.extensiontype == "3"
-  ) cfg.extensions;
-
-  extraPkgs =
-    (lib.optionals hasPythonExt [ pkgs.jython ]) ++ (lib.optionals hasRubyExt [ pkgs.jruby ]);
+  ) normalizedExtensions;
 
   extraInterpreterConfig =
     lib.recursiveUpdate
@@ -111,37 +123,40 @@ in
     settings = mkOption {
       type = types.attrs;
       default = { };
-      description = "Overrides for Burp's config.json (deep merged).";
+      description = "Overrides for Burp config.json (deep merged). Options added here are always wrapped in `user_options`.";
     };
 
     extensions = mkOption {
       type = types.listOf (
         types.oneOf [
-          types.package # accepts derivations
-          types.attrs # accepts { package = …; loaded = … }
+          types.package
+          types.attrs
+          types.str # strings are resolved to packages
         ]
       );
       default = [ ];
-      description = "List of Burp extension packages (Nix derivations).";
+      description = ''
+        List of Burp extensions.
+        Strings like "403-bypasser" are resolved automatically from
+        `burpPackages.$\{pkgs.stdenv.hostPlatform.system}` without needing to reference the Input.
+      '';
     };
 
     edition = mkOption {
       type = types.listOf types.str;
       default = [ "Community" ];
-      description = "Burp config variants: generates UserConfig<variant>.json. Possible options: Community and Pro";
+      description = "Burp config variants: Community / Pro. It defaults to Community but you can set both. This will create the corresponding default files UserConfig\<variant>\.json.";
     };
   };
 
   config = mkIf cfg.enable {
-    # Extracts the package out of attrs
     home.packages =
       map (
         ext: if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext
-      ) cfg.extensions
+      ) normalizedExtensions
       ++ lib.optional hasPythonExt pkgs.jython
       ++ lib.optional hasRubyExt pkgs.jruby;
 
-    # Generate a config file for each variant
     home.file = lib.listToAttrs (
       map (variant: {
         name = ".BurpSuite/UserConfig${variant}.json";
@@ -150,7 +165,7 @@ in
             recursiveUpdate defaultConfig (
               recursiveUpdate extraInterpreterConfig {
                 user_options = recursiveUpdate cfg.settings {
-                  extender.extensions = map mkExtensionEntry cfg.extensions;
+                  extender.extensions = map mkExtensionEntry normalizedExtensions;
                 };
               }
             )

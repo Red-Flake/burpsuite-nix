@@ -40,10 +40,14 @@
     {
       packages = eachSystem (
         pkgs:
-        (import ./pkgs {
-          inherit lib pkgs;
-          inherit (pkgs) fetchzip;
-        })
+        let
+          bappPackages = import ./pkgs {
+            inherit lib pkgs;
+            inherit (pkgs) fetchzip;
+          };
+          docs = pkgs.callPackage ./docs.nix { inherit pkgs self; };
+        in
+        bappPackages // { docs = docs; }
       );
 
       overlays.default =
@@ -60,7 +64,12 @@
           burp = extensionsForOverlay;
         };
 
-      homeManagerModules.default = ./modules/burp.nix;
+      homeManagerModules.default = {
+        _module.args = {
+          burpPackages = self.packages;
+        };
+        imports = [ ./modules/burp.nix ];
+      };
 
       formatter = eachSystem (
         pkgs:

@@ -5,6 +5,7 @@
   nixosOptionsDoc,
   runCommand,
   self,
+  pkgs,
 }:
 
 let
@@ -16,6 +17,7 @@ let
         config._module.check = false;
         options._module.args = lib.mkOption { internal = true; };
       }
+      { _module.args.pkgs = pkgs; }
       self.homeManagerModules.default
     ];
   };
