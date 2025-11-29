@@ -40,15 +40,25 @@
     {
       packages = eachSystem (
         pkgs:
-        let
-          bappPackages = import ./pkgs {
-            inherit lib pkgs;
-            inherit (pkgs) fetchzip;
-          };
-          docs = pkgs.callPackage ./docs.nix { inherit self; };
-        in
-        bappPackages // { docs = docs; }
+        (import ./pkgs {
+          inherit lib pkgs;
+          inherit (pkgs) fetchzip;
+        })
       );
+
+      overlays.default =
+        final: prev:
+        let
+          # Import your Burp packages using the current pkgs
+          extensionsForOverlay = import ./pkgs {
+            inherit lib;
+            pkgs = prev;
+            inherit (prev) fetchzip;
+          };
+        in
+        {
+          burp = extensionsForOverlay;
+        };
 
       homeManagerModules.default = ./modules/burp.nix;
 
