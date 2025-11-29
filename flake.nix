@@ -76,4 +76,8 @@
         '';
       });
     };
+  nixConfig = {
+    abort-on-warn = true;
+    commit-lock-file-summary = "chore: update flake.lock";
+  };
 }

@@ -87,20 +87,22 @@ programs.burp = {
     "Pro"
     ];
 
-
     # Settings that are deep-merged into the default config
     settings = {
-        # Enable Dark Mode
-        display.user_interface.look_and_feel = "Dark";
-
+        display.user_interface = {
+        # Enable Darkmode
+        look_and_feel = "Dark";
+        # Change Scaling
+        font_size = "17";
+      };
     };
 };
 ```
 
 ## TODO
 
+- [] Change the extension module to only needing the Extension names
 - [] Add a Github Action Workflow that updates the Extensions
-- [] Improve the flake.nix, allow multiple architectures
 - [] Add integration tests
 - [] Only prefetch changed Extensions, not all Extensions on a Change
 - [] Explore compiling the Extensions from Source
