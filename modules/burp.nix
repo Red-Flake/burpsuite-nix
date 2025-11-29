@@ -148,12 +148,11 @@ in
         value = {
           text = builtins.toJSON (
             recursiveUpdate defaultConfig (
-              recursiveUpdate {
-                # Automatically include user_options for all settings
-                user_options = recursiveUpdate {
+              recursiveUpdate extraInterpreterConfig {
+                user_options = recursiveUpdate cfg.settings {
                   extender.extensions = map mkExtensionEntry cfg.extensions;
-                } cfg.settings;
-              } (recursiveUpdate extraInterpreterConfig)
+                };
+              }
             )
           );
           force = true;
