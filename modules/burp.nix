@@ -5,174 +5,238 @@
   burpPackages,
   ...
 }:
-
 let
-  cfg = config.programs.burp;
   inherit (lib)
+    all
+    any
+    attrValues
+    attrsToList
+    concatLists
+    filter
+    findFirst
+    flip
+    hasPrefix
+    head
+    importJSON
+    isAttrs
+    isList
+    last
+    listToAttrs
+    literalExpression
     mkEnableOption
-    mkOption
-    types
     mkIf
-    recursiveUpdate
+    mkOption
+    optional
+    optionalAttrs
+    pipe
+    readFile
+    removePrefix
+    splitString
+    tail
+    trim
+    types
+    unique
+    zipAttrsWith
     ;
 
-  # Resolve strings like "403-bypasser" into:
-  # burpPackages.${pkgs.stdenv.hostPlatform.system}."403-bypasser"
-  normalizeExtension =
-    ext:
-    if builtins.isString ext then
-      # If it's a string, look it up in burpPackages
-      burpPackages.${pkgs.stdenv.hostPlatform.system}.${ext}
-    else if builtins.isAttrs ext && builtins.hasAttr "package" ext then
-      let
-        pkg = ext.package;
-      in
-      if builtins.isString pkg then
-        # Replace the string with the proper package from burpPackages
-        ext // { package = burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkg}; }
-      else
-        # Already a derivation
-        ext
-    else
-      # Already a derivation
-      ext;
+  inherit (lib.strings) toJSON;
 
-  normalizedExtensions = map normalizeExtension cfg.extensions;
+  # https://stackoverflow.com/a/54505212
+  recursiveMerge =
+    let
+      f =
+        attrPath:
+        zipAttrsWith (
+          n: values:
+          if tail values == [ ] then
+            head values
+          else if all isList values then
+            unique (concatLists values)
+          else if all isAttrs values then
+            f (attrPath ++ [ n ]) values
+          else
+            last values
+        );
+    in
+    f [ ];
 
-  defaultConfig = builtins.fromJSON (builtins.readFile ../data/config.json);
+  cfg = config.programs.burp;
+
+  loadedExtensions = pipe cfg.extensions [
+    attrValues
+    (filter (ext: ext.loaded))
+  ];
+
+  extTypes = {
+    java = "1";
+    python = "2";
+    ruby = "3";
+  };
 
   mkExtensionEntry =
     ext:
     let
-      pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
-
-      loaded = if builtins.isAttrs ext && builtins.hasAttr "loaded" ext then ext.loaded else true;
-
-      manifestContent = builtins.readFile "${pkg}/lib/${pkg.pname}/BappManifest.bmf";
-
-      entrypoint = lib.trim (
-        lib.removePrefix "EntryPoint:" (
-          lib.findFirst (l: lib.hasPrefix "EntryPoint:" l) (throw "Missing EntryPoint in ${pkg.pname}") (
-            lib.splitString "\n" manifestContent
-          )
-        )
-      );
+      pkg = ext.package;
+      dir = "${pkg}/lib/${pkg.pname}";
+      entrypoint = "EntryPoint:";
     in
     {
       bapp_serial_version = pkg.passthru.burp.serialversion;
       bapp_uuid = pkg.passthru.burp.uuid;
-      errors = "ui";
-      extension_file = "${pkg}/lib/${pkg.pname}/${entrypoint}";
-      extension_type =
-        if pkg.passthru.burp.extensiontype == "1" then
-          "java"
-        else if pkg.passthru.burp.extensiontype == "2" then
-          "python"
-        else if pkg.passthru.burp.extensiontype == "3" then
-          "ruby"
-        else
-          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}";
-      loaded = loaded;
-      name = pkg.passthru.burp.name;
+
+      extension_file = pipe "${dir}/BappManifest.bmf" [
+        readFile
+        (splitString "\n")
+        (findFirst (hasPrefix entrypoint) (throw "Missing EntryPoint in ${pkg.name}"))
+        (removePrefix entrypoint)
+        trim
+        (file: "${dir}/${file}")
+      ];
+
+      extension_type = pipe extTypes [
+        attrsToList
+        (findFirst (x: x.value == pkg.passthru.burp.extensiontype) (
+          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}"
+        ))
+        (x: x.name)
+      ];
+
+      inherit (ext) loaded;
+      inherit (pkg.passthru.burp) name;
+
       output = "ui";
+      errors = "ui";
     };
-
-  hasPythonExt = lib.any (
-    ext:
-    let
-      pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
-    in
-    pkg.passthru.burp.extensiontype == "2"
-  ) normalizedExtensions;
-
-  hasRubyExt = lib.any (
-    ext:
-    let
-      pkg = if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext;
-    in
-    pkg.passthru.burp.extensiontype == "3"
-  ) normalizedExtensions;
-
-  extraInterpreterConfig =
-    lib.recursiveUpdate
-      (
-        if hasPythonExt then
-          {
-            user_options.extender.python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
-          }
-        else
-          { }
-      )
-      (
-        if hasRubyExt then
-          {
-            user_options.extender.ruby.location_of_jruby_jar_file = "${pkgs.fetchurl {
-              url = "https://repo1.maven.org/maven2/org/jruby/jruby-complete/10.0.2.0/jruby-complete-10.0.2.0.jar";
-              hash = "sha256-xaVKvuLAKp/3+gskvssncourqREFuXzl2ZLoWGQm+Iw=";
-            }}";
-          }
-        else
-          { }
-      );
-
 in
 {
   options.programs.burp = {
     enable = mkEnableOption "Burp Suite";
 
+    enableJython = mkEnableOption "Jython suppport" // {
+      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) loadedExtensions;
+    };
+
+    enableJruby = mkEnableOption "Jruby support" // {
+      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.ruby) loadedExtensions;
+    };
+
     settings = mkOption {
-      type = types.attrs;
+      inherit (pkgs.formats.json { }) type;
       default = { };
-      description = "Overrides for Burp config.json (deep merged). Options added here are always wrapped in `user_options`.";
+      description = ''
+        Overrides for Burp config.json (deep merged).
+        Options added here are always wrapped in `user_options`.
+      '';
+    };
+
+    finalSettings = mkOption {
+      inherit (pkgs.formats.json { }) type;
+      internal = true;
+      readOnly = true;
     };
 
     extensions = mkOption {
-      type = types.listOf (
-        types.oneOf [
-          types.package
-          types.attrs
-          types.str # strings are resolved to packages
-        ]
-      );
-      default = [ ];
+      type =
+        types.coercedTo (types.listOf types.str)
+          (flip pipe [
+            (map (name: {
+              inherit name;
+              value = { };
+            }))
+            listToAttrs
+          ])
+          (
+            types.attrsOf (
+              types.submodule (
+                { name, ... }:
+                {
+                  options = {
+                    package = mkOption {
+                      type = types.package;
+                      default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${name};
+                      defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${name}";
+                      description = "Nix package for this extension";
+                    };
+
+                    loaded = mkOption {
+                      type = types.bool;
+                      default = true;
+                      description = "Whether this extension should be enabled";
+                    };
+                  };
+                }
+              )
+            )
+          );
+      default = { };
       description = ''
         List of Burp extensions.
         Strings like "403-bypasser" are resolved automatically from
-        `burpPackages.$\{pkgs.stdenv.hostPlatform.system}` without needing to reference the Input.
+        `burpPackages.''${pkgs.stdenv.hostPlatform.system}` without needing to reference the input.
       '';
     };
 
     edition = mkOption {
-      type = types.listOf types.str;
+      type = types.listOf (
+        types.enum [
+          "Community"
+          "Pro"
+        ]
+      );
       default = [ "Community" ];
-      description = "Burp config variants: Community / Pro. It defaults to Community but you can set both. This will create the corresponding default files UserConfig\<variant>\.json.";
+      description = ''
+        Burp config variants: Community / Pro.
+        It defaults to Community but you can set both.
+        This will create the corresponding default files UserConfig<variant>.json.
+      '';
     };
   };
 
   config = mkIf cfg.enable {
-    home.packages =
-      map (
-        ext: if builtins.isAttrs ext && builtins.hasAttr "package" ext then ext.package else ext
-      ) normalizedExtensions
-      ++ lib.optional hasPythonExt pkgs.jython
-      ++ lib.optional hasRubyExt pkgs.jruby;
+    programs.burp = {
+      finalSettings = recursiveMerge [
+        (importJSON ../data/config.json)
+        {
+          user_options = recursiveMerge [
+            {
+              extender = recursiveMerge [
+                { extensions = map mkExtensionEntry loadedExtensions; }
 
-    home.file = lib.listToAttrs (
-      map (variant: {
-        name = ".BurpSuite/UserConfig${variant}.json";
-        value = {
-          text = builtins.toJSON (
-            recursiveUpdate defaultConfig (
-              recursiveUpdate extraInterpreterConfig {
-                user_options = recursiveUpdate cfg.settings {
-                  extender.extensions = map mkExtensionEntry normalizedExtensions;
-                };
-              }
-            )
-          );
-          force = true;
-        };
-      }) cfg.edition
-    );
+                (optionalAttrs cfg.enableJython {
+                  python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
+                })
+
+                (optionalAttrs cfg.enableJruby {
+                  ruby.location_of_jruby_jar_file = pkgs.fetchurl {
+                    url = "https://repo1.maven.org/maven2/org/jruby/jruby-complete/10.0.2.0/jruby-complete-10.0.2.0.jar";
+                    hash = "sha256-xaVKvuLAKp/3+gskvssncourqREFuXzl2ZLoWGQm+Iw=";
+                  };
+                })
+              ];
+            }
+
+            cfg.settings
+          ];
+        }
+      ];
+    };
+
+    home = {
+      packages =
+        map (ext: ext.package) loadedExtensions
+        ++ optional cfg.enableJython pkgs.jython
+        ++ optional cfg.enableJruby pkgs.jruby;
+
+      file = pipe cfg.edition [
+        (map (variant: {
+          name = ".BurpSuite/UserConfig${variant}.json";
+          value = {
+            text = toJSON cfg.finalSettings;
+            force = true;
+          };
+        }))
+        listToAttrs
+      ];
+    };
   };
 }
