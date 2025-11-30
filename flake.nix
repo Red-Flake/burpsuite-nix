@@ -45,20 +45,6 @@
         bappPackages // { inherit docs; }
       );
 
-      overlays.default =
-        _: prev:
-        let
-          # Import your Burp packages using the current pkgs
-          extensionsForOverlay = import ./pkgs {
-            inherit lib;
-            pkgs = prev;
-            inherit (prev) fetchzip;
-          };
-        in
-        {
-          burp = extensionsForOverlay;
-        };
-
       homeManagerModules.default = {
         _module.args = {
           burpPackages = self.packages;
