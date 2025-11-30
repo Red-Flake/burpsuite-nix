@@ -8,12 +8,7 @@
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      home-manager,
-      ...
-    }:
+    { self, nixpkgs, ... }:
     let
       inherit (nixpkgs) lib;
 
@@ -47,11 +42,11 @@
           };
           docs = pkgs.callPackage ./docs.nix { inherit pkgs self; };
         in
-        bappPackages // { docs = docs; }
+        bappPackages // { inherit docs; }
       );
 
       overlays.default =
-        final: prev:
+        _: prev:
         let
           # Import your Burp packages using the current pkgs
           extensionsForOverlay = import ./pkgs {
