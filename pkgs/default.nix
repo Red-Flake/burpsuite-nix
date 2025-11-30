@@ -14,7 +14,7 @@ lib.mapAttrs (
     pkg = versionSet.${latest};
   in
   pkgs.stdenvNoCC.mkDerivation {
-    pname = pname;
+    inherit pname;
     version = latest;
 
     src = fetchzip {
@@ -43,10 +43,12 @@ lib.mapAttrs (
     };
 
     passthru.burp = {
-      uuid = pkg.uuid;
-      serialversion = pkg.serialversion;
-      name = pkg.name;
-      extensiontype = pkg.extensiontype;
+      inherit (pkg)
+        extensiontype
+        name
+        serialversion
+        uuid
+        ;
     };
   }
 ) extensions
