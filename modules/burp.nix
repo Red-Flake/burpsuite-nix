@@ -25,6 +25,7 @@ let
     last
     listToAttrs
     literalExpression
+    literalMD
     mkEnableOption
     mkIf
     mkOption
@@ -76,48 +77,60 @@ let
     ruby = "3";
   };
 
-  extensionModule = types.submodule {
-    options = {
-      enable = mkOption {
-        type = types.bool;
-        default = true;
-        description = ''
-          Whether to enable this extension.
-          Disabled extensions won't be present in the generated config.
-        '';
-      };
-
-      loaded = mkOption {
-        type = types.bool;
-        default = true;
-        description = ''
-          Whether to automatically load this extension on Burp startup.
-          Unloaded extensions will still be present, but have to be manually loaded.
-        '';
-      };
-
-      priority = mkOption {
-        type = types.int;
-        defaultText = ''
-          If using the list shorthand: 1000 · 1-based list index.
-          Otherwise, priorities must be set manually.
-        '';
-        description = ''
-          Priority of this module.
-          Modules are loaded in order of ascending priority,
-          so the lowest priority is loaded first.
-        '';
-      };
-
-      package = mkOption {
-        type = types.coercedTo types.str (
-          name: burpPackages.${pkgs.stdenv.hostPlatform.system}.${name}
-        ) types.package;
-        defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${name}";
-        description = "Nix package for this extension, or a package name looked up in the default set";
-      };
-    };
+  packageName = types.str // {
+    description = "package name";
   };
+
+  extensionPackage = types.package // {
+    description = "extension package";
+  };
+
+  extensionModule =
+    types.submodule {
+      options = {
+        enable = mkOption {
+          type = types.bool;
+          default = true;
+          description = ''
+            Whether to enable this extension.
+            Disabled extensions won't be present in the generated config.
+          '';
+        };
+
+        loaded = mkOption {
+          type = types.bool;
+          default = true;
+          description = ''
+            Whether to automatically load this extension on Burp startup.
+            Unloaded extensions will still be present, but have to be manually loaded.
+          '';
+        };
+
+        priority = mkOption {
+          type = types.int;
+          defaultText = literalMD ''
+            If using the list shorthand: 1000 · 1-based list index.
+            Otherwise, priorities must be set manually.
+          '';
+          description = ''
+            Priority of this module.
+            Modules are loaded in order of ascending priority,
+            so the lowest priority is loaded first.
+          '';
+        };
+
+        package = mkOption {
+          type = types.coercedTo packageName (
+            name: burpPackages.${pkgs.stdenv.hostPlatform.system}.${name}
+          ) extensionPackage;
+          defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${name}";
+          description = "Nix package for this extension, or a package name looked up in the default set";
+        };
+      };
+    }
+    // {
+      description = "extension module";
+    };
 
   mkExtensionEntry =
     ext:
@@ -182,7 +195,7 @@ in
     };
 
     extensions = mkOption {
-      type = types.coercedTo (types.listOf (types.either types.str extensionModule)) (flip pipe [
+      type = types.coercedTo (types.listOf (types.either packageName extensionModule)) (flip pipe [
         (imap (
           i: x:
           recursiveMerge [

@@ -113,7 +113,7 @@ Strings like “403-bypasser” are resolved automatically from
 
 
 *Type:*
-(attribute set of (submodule)) or (list of (string or (submodule))) convertible to it
+(attribute set of (submodule)) or (list of (package name or (extension module))) convertible to it
 
 
 
@@ -156,7 +156,7 @@ Nix package for this extension, or a package name looked up in the default set
 
 
 *Type:*
-package or string convertible to it
+extension package or package name convertible to it
 
 
 
@@ -206,13 +206,8 @@ signed integer
 
 
 *Default:*
-
-```nix
-''
-  If using the list shorthand: 1000 · 1-based list index.
-  Otherwise, priorities must be set manually.
-''
-```
+If using the list shorthand: 1000 · 1-based list index\.
+Otherwise, priorities must be set manually\.
 
 *Declared by:*
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
