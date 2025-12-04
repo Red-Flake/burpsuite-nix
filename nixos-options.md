@@ -113,7 +113,7 @@ Strings like “403-bypasser” are resolved automatically from
 
 
 *Type:*
-(attribute set of (submodule)) or (list of string) convertible to it
+(attribute set of (submodule)) or (list of (string or (submodule))) convertible to it
 
 
 
@@ -125,16 +125,38 @@ Strings like “403-bypasser” are resolved automatically from
 
 
 
-## programs\.burp\.extensions\.\<name>\.package
+## programs\.burp\.extensions\.\<name>\.enable
 
 
 
-Nix package for this extension
+Whether to enable this extension\.
+Disabled extensions won’t be present in the generated config\.
 
 
 
 *Type:*
-package
+boolean
+
+
+
+*Default:*
+` true `
+
+*Declared by:*
+ - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.package
+
+
+
+Nix package for this extension, or a package name looked up in the default set
+
+
+
+*Type:*
+package or string convertible to it
 
 
 
@@ -150,7 +172,8 @@ package
 
 
 
-Whether this extension should be enabled
+Whether to automatically load this extension on Burp startup\.
+Unloaded extensions will still be present, but have to be manually loaded\.
 
 
 
@@ -161,6 +184,35 @@ boolean
 
 *Default:*
 ` true `
+
+*Declared by:*
+ - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.priority
+
+
+
+Priority of this module\.
+Modules are loaded in order of ascending priority,
+so the lowest priority is loaded first\.
+
+
+
+*Type:*
+signed integer
+
+
+
+*Default:*
+
+```nix
+''
+  If using the list shorthand: 1000 · 1-based list index.
+  Otherwise, priorities must be set manually.
+''
+```
 
 *Declared by:*
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)

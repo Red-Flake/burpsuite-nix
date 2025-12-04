@@ -8,6 +8,7 @@
 let
   inherit (lib)
     all
+    allUnique
     any
     attrValues
     attrsToList
@@ -17,6 +18,7 @@ let
     flip
     hasPrefix
     head
+    imap
     importJSON
     isAttrs
     isList
@@ -31,6 +33,7 @@ let
     pipe
     readFile
     removePrefix
+    sortOn
     splitString
     tail
     trim
@@ -62,15 +65,58 @@ let
 
   cfg = config.programs.burp;
 
-  loadedExtensions = pipe cfg.extensions [
+  enabledExtensions = pipe cfg.extensions [
     attrValues
-    (filter (ext: ext.loaded))
+    (filter (ext: ext.enable))
   ];
 
   extTypes = {
     java = "1";
     python = "2";
     ruby = "3";
+  };
+
+  extensionModule = types.submodule {
+    options = {
+      enable = mkOption {
+        type = types.bool;
+        default = true;
+        description = ''
+          Whether to enable this extension.
+          Disabled extensions won't be present in the generated config.
+        '';
+      };
+
+      loaded = mkOption {
+        type = types.bool;
+        default = true;
+        description = ''
+          Whether to automatically load this extension on Burp startup.
+          Unloaded extensions will still be present, but have to be manually loaded.
+        '';
+      };
+
+      priority = mkOption {
+        type = types.int;
+        defaultText = ''
+          If using the list shorthand: 1000 · 1-based list index.
+          Otherwise, priorities must be set manually.
+        '';
+        description = ''
+          Priority of this module.
+          Modules are loaded in order of ascending priority,
+          so the lowest priority is loaded first.
+        '';
+      };
+
+      package = mkOption {
+        type = types.coercedTo types.str (
+          name: burpPackages.${pkgs.stdenv.hostPlatform.system}.${name}
+        ) types.package;
+        defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${name}";
+        description = "Nix package for this extension, or a package name looked up in the default set";
+      };
+    };
   };
 
   mkExtensionEntry =
@@ -113,11 +159,11 @@ in
     enable = mkEnableOption "Burp Suite";
 
     enableJython = mkEnableOption "Jython suppport" // {
-      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) loadedExtensions;
+      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) enabledExtensions;
     };
 
     enableJruby = mkEnableOption "Jruby support" // {
-      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.ruby) loadedExtensions;
+      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.ruby) enabledExtensions;
     };
 
     settings = mkOption {
@@ -136,38 +182,27 @@ in
     };
 
     extensions = mkOption {
-      type =
-        types.coercedTo (types.listOf types.str)
-          (flip pipe [
-            (map (name: {
-              inherit name;
-              value = { };
-            }))
-            listToAttrs
-          ])
-          (
-            types.attrsOf (
-              types.submodule (
-                { name, ... }:
+      type = types.coercedTo (types.listOf (types.either types.str extensionModule)) (flip pipe [
+        (imap (
+          i: x:
+          recursiveMerge [
+            { value.priority = 1000 * i; }
+            (
+              if isAttrs x then
                 {
-                  options = {
-                    package = mkOption {
-                      type = types.package;
-                      default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${name};
-                      defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${name}";
-                      description = "Nix package for this extension";
-                    };
-
-                    loaded = mkOption {
-                      type = types.bool;
-                      default = true;
-                      description = "Whether this extension should be enabled";
-                    };
-                  };
+                  name = x.package.pname or x.package;
+                  value = x;
                 }
-              )
+              else
+                {
+                  name = x;
+                  value.package = x;
+                }
             )
-          );
+          ]
+        ))
+        listToAttrs
+      ]) (types.attrsOf extensionModule);
       default = { };
       description = ''
         List of Burp extensions.
@@ -193,6 +228,22 @@ in
   };
 
   config = mkIf cfg.enable {
+    assertions = [
+      {
+        assertion = pipe enabledExtensions [
+          (map (x: x.priority))
+          allUnique
+        ];
+
+        message = ''
+          programs.burp.extensions: all priorities must be unique!
+          If you're using the shorthand way of defining extensions as a list,
+          please only do so once, otherwise the automatically generated priorities
+          will conflict with eachother!
+        '';
+      }
+    ];
+
     programs.burp = {
       finalSettings = recursiveMerge [
         (importJSON ../data/config.json)
@@ -200,7 +251,12 @@ in
           user_options = recursiveMerge [
             {
               extender = recursiveMerge [
-                { extensions = map mkExtensionEntry loadedExtensions; }
+                {
+                  extensions = pipe enabledExtensions [
+                    (sortOn (x: x.priority))
+                    (map mkExtensionEntry)
+                  ];
+                }
 
                 (optionalAttrs cfg.enableJython {
                   python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
@@ -223,7 +279,7 @@ in
 
     home = {
       packages =
-        map (ext: ext.package) loadedExtensions
+        map (ext: ext.package) enabledExtensions
         ++ optional cfg.enableJython pkgs.jython
         ++ optional cfg.enableJruby pkgs.jruby;
 
