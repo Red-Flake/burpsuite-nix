@@ -9,6 +9,7 @@
     "LICENSE"
     ".gitignore"
     "data/*"
+    ".envrc"
   ];
 
   formatter.nixfmt = {

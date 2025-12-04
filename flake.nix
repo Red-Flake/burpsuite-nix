@@ -62,6 +62,24 @@
         }
       );
 
+      devShells = eachSystem (
+        pkgs:
+        let
+          inherit (pkgs.stdenv.hostPlatform) system;
+        in
+        {
+          default = pkgs.mkShell {
+            packages = [
+              self.formatter.${system}
+
+              (pkgs.writeShellScriptBin "mkdocs" ''
+                cp ${self.packages.${system}.docs} nixos-options.md
+              '')
+            ];
+          };
+        }
+      );
+
       checks = eachSystem (pkgs: {
 
         fmt = pkgs.runCommandLocal "fmt-check" { } ''

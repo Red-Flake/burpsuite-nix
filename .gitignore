@@ -2,3 +2,4 @@ result
 result-*
 repl-result-*
 .nixos-test-history
+.direnv
