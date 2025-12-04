@@ -8,7 +8,12 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }:
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
     let
       inherit (nixpkgs) lib;
 
@@ -50,6 +55,54 @@
           burpPackages = self.packages;
         };
         imports = [ ./modules/burp.nix ];
+      };
+
+      homeConfigurations.example = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [
+          self.homeManagerModules.default
+          {
+            home = rec {
+              stateVersion = "25.05";
+              username = "alice";
+              homeDirectory = "/home/${username}";
+            };
+
+            programs.burp = {
+              enable = true;
+
+              extensions = [
+                # Loaded by default
+                "403-bypasser"
+                "json-web-tokens"
+                "js-miner"
+                "param-miner"
+
+                # Installed but not loaded
+                {
+                  package = "http-request-smuggler";
+                  loaded = false;
+                }
+              ];
+
+              # Define which file will be installed, defaults to community
+              edition = [
+                "Community"
+                "Pro"
+              ];
+
+              # Settings that are deep-merged into the default config
+              settings = {
+                display.user_interface = {
+                  # Enable Darkmode
+                  look_and_feel = "Dark";
+                  # Change Scaling
+                  font_size = "17";
+                };
+              };
+            };
+          }
+        ];
       };
 
       formatter = eachSystem (
