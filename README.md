@@ -92,7 +92,7 @@ programs.burp = {
         # Enable Darkmode
         look_and_feel = "Dark";
         # Change Scaling
-        font_size = "17";
+        font_size = 17;
       };
     };
 };
