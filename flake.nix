@@ -70,6 +70,7 @@
 
             programs.burp = {
               enable = true;
+              # proEdition = true;
 
               extensions = [
                 # Loaded by default
@@ -83,12 +84,6 @@
                   package = "http-request-smuggler";
                   loaded = false;
                 }
-              ];
-
-              # Define which file will be installed, defaults to community
-              edition = [
-                "Community"
-                "Pro"
               ];
 
               # Settings that are deep-merged into the default config

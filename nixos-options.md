@@ -1,7 +1,5 @@
 ## programs\.burp\.enable
 
-
-
 Whether to enable Burp Suite\.
 
 
@@ -76,26 +74,21 @@ boolean
 
 
 
-## programs\.burp\.edition
+## programs\.burp\.package
 
-Burp config variants: Community / Pro\.
-It defaults to Community but you can set both\.
-This will create the corresponding default files UserConfig\<variant>\.json\.
+
+
+The burpsuite package to use\.
 
 
 
 *Type:*
-list of (one of “Community”, “Pro”)
+package
 
 
 
 *Default:*
-
-```nix
-[
-  "Community"
-]
-```
+` pkgs.burpsuite `
 
 *Declared by:*
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
@@ -208,6 +201,32 @@ signed integer
 *Default:*
 If using the list shorthand: 1000 · 1-based list index\.
 Otherwise, priorities must be set manually\.
+
+*Declared by:*
+ - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+
+
+
+## programs\.burp\.proEdition
+
+
+
+Whether to enable the Pro edition\.
+
+
+
+*Type:*
+boolean
+
+
+
+*Default:*
+` false `
+
+
+
+*Example:*
+` true `
 
 *Declared by:*
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)

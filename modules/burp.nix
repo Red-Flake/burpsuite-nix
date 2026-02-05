@@ -16,6 +16,7 @@ let
     filter
     findFirst
     flip
+    hasAttr
     hasPrefix
     head
     imap
@@ -29,6 +30,7 @@ let
     mkEnableOption
     mkIf
     mkOption
+    mkPackageOption
     optional
     optionalAttrs
     pipe
@@ -76,6 +78,8 @@ let
     python = "2";
     ruby = "3";
   };
+
+  editionName = if cfg.proEdition then "Pro" else "Community";
 
   packageName = types.str // {
     description = "package name";
@@ -171,6 +175,20 @@ in
   options.programs.burp = {
     enable = mkEnableOption "Burp Suite";
 
+    proEdition = mkEnableOption "the Pro edition";
+
+    package = mkPackageOption pkgs "burpsuite" { };
+
+    finalPackage = mkOption {
+      type = types.package;
+      visible = false;
+      readOnly = true;
+
+      default = cfg.package.override (
+        old: if hasAttr "proEdition" old then { inherit (cfg) proEdition; } else { }
+      );
+    };
+
     enableJython = mkEnableOption "Jython suppport" // {
       default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) enabledExtensions;
     };
@@ -221,21 +239,6 @@ in
         List of Burp extensions.
         Strings like "403-bypasser" are resolved automatically from
         `burpPackages.''${pkgs.stdenv.hostPlatform.system}` without needing to reference the input.
-      '';
-    };
-
-    edition = mkOption {
-      type = types.listOf (
-        types.enum [
-          "Community"
-          "Pro"
-        ]
-      );
-      default = [ "Community" ];
-      description = ''
-        Burp config variants: Community / Pro.
-        It defaults to Community but you can set both.
-        This will create the corresponding default files UserConfig<variant>.json.
       '';
     };
   };
@@ -291,21 +294,17 @@ in
     };
 
     home = {
-      packages =
-        map (ext: ext.package) enabledExtensions
-        ++ optional cfg.enableJython pkgs.jython
-        ++ optional cfg.enableJruby pkgs.jruby;
+      packages = [
+        cfg.finalPackage
+      ]
+      ++ map (ext: ext.package) enabledExtensions
+      ++ optional cfg.enableJython pkgs.jython
+      ++ optional cfg.enableJruby pkgs.jruby;
 
-      file = pipe cfg.edition [
-        (map (variant: {
-          name = ".BurpSuite/UserConfig${variant}.json";
-          value = {
-            text = toJSON cfg.finalSettings;
-            force = true;
-          };
-        }))
-        listToAttrs
-      ];
+      file.".BurpSuite/UserConfig${editionName}.json" = {
+        text = toJSON cfg.finalSettings;
+        force = true;
+      };
     };
   };
 }
