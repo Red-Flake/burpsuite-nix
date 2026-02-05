@@ -27,6 +27,7 @@ let
     listToAttrs
     literalExpression
     literalMD
+    mapAttrsToList
     mkEnableOption
     mkIf
     mkOption
@@ -185,8 +186,30 @@ in
       readOnly = true;
 
       default = cfg.package.override (
-        old: if hasAttr "proEdition" old then { inherit (cfg) proEdition; } else { }
+        old:
+        (if hasAttr "proEdition" old then { inherit (cfg) proEdition; } else { })
+        // {
+          buildFHSEnv =
+            args:
+            old.buildFHSEnv (
+              args
+              // {
+                extraBwrapArgs =
+                  (args.extraBwrapArgs or [ ])
+                  ++ mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
+              }
+            );
+        }
       );
+    };
+
+    wordlists = mkOption {
+      type = types.attrsOf types.path;
+      default = { };
+      description = ''
+        Mapping of wordlist names to paths.
+        These paths will be mounted at /lists/<name> in the Burp sandbox.
+      '';
     };
 
     enableJython = mkEnableOption "Jython suppport" // {

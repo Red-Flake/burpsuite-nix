@@ -57,7 +57,7 @@
         imports = [ ./modules/burp.nix ];
       };
 
-      homeConfigurations.example = home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.example = home-manager.lib.homeManagerConfiguration rec {
         pkgs = import nixpkgs { system = "x86_64-linux"; };
         modules = [
           self.homeManagerModules.default
@@ -71,6 +71,10 @@
             programs.burp = {
               enable = true;
               # proEdition = true;
+
+              wordlists = {
+                seclists = "${pkgs.seclists}/share/wordlists/seclists";
+              };
 
               extensions = [
                 # Loaded by default

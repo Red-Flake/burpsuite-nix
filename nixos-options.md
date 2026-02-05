@@ -254,3 +254,25 @@ JSON value
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
 
 
+
+## programs\.burp\.wordlists
+
+
+
+Mapping of wordlist names to paths\.
+These paths will be mounted at /lists/\<name> in the Burp sandbox\.
+
+
+
+*Type:*
+attribute set of absolute path
+
+
+
+*Default:*
+` { } `
+
+*Declared by:*
+ - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+
+
