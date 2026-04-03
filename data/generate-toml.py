@@ -5,6 +5,7 @@ import base64
 import subprocess
 import requests
 import tomli_w
+import tomli
 import hashlib
 import os
 import argparse
@@ -68,7 +69,26 @@ def extract_shortname(meta: dict) -> str:
     return name.replace(" ", "-")
 
 
-def generate_burp_metadata(output_file: str, currentlist_path: str) :
+def load_existing_extensions(output_file: str) -> dict:
+    """Load existing extensions from TOML for comparison."""
+    if not os.path.exists(output_file):
+        return {}
+    
+    try:
+        with open(output_file, "rb") as f:
+            return tomli.load(f)
+    except Exception:
+        return {}
+
+
+def extension_metadata_key(meta: dict) -> str:
+    """Create a unique key for extension metadata to detect changes."""
+    uuid = meta.get("Uuid", "")
+    serial_version = meta.get("SerialVersion", "")
+    return f"{uuid}|{serial_version}"
+
+
+def generate_burp_metadata(output_file: str, currentlist_path: str):
     print("Fetching extension list...")
     raw = requests.get(BAPP_URL, timeout=15)
     raw.raise_for_status()
@@ -85,14 +105,27 @@ def generate_burp_metadata(output_file: str, currentlist_path: str) :
     else:
         os.makedirs(os.path.dirname(currentlist_path), exist_ok=True)
 
-    # Save new version
-    with open(currentlist_path, "w", encoding="utf-8") as f:
-        f.write(new_list_raw)
-
     print("Changes detected. Regenerating metadata...")
 
     lines = raw.text.splitlines()
     encoded_lines = lines[2:-1]
+
+    # Load existing extensions for comparison
+    existing_extensions = load_existing_extensions(output_file)
+    
+    # Build a map of metadata keys to existing entries
+    existing_meta_map = {}
+    for shortname, versions in existing_extensions.items():
+        if isinstance(versions, dict):
+            for version, ext_data in versions.items():
+                if isinstance(ext_data, dict):
+                    uuid = ext_data.get("uuid", "")
+                    serial_version = ext_data.get("serialversion", "")
+                    
+                    # Only need UUID and SerialVersion
+                    if uuid and serial_version:
+                        meta_key = f"{uuid}|{serial_version}"
+                        existing_meta_map[meta_key] = (shortname, version, ext_data)
 
     extensions = OrderedDict()
 
@@ -118,9 +151,20 @@ def generate_burp_metadata(output_file: str, currentlist_path: str) :
             print(f"Skipping incomplete entry: {meta}")
             continue
 
-        # derive the TOML table key prefix from RepoUrl
         shortname = extract_shortname(meta)
+        meta_key = extension_metadata_key(meta)
 
+        # Check if this extension's metadata hasn't changed
+        if meta_key in existing_meta_map:
+            old_shortname, old_version, old_data = existing_meta_map[meta_key]
+            print(f"[{idx}/{len(encoded_lines)}] Skipping (unchanged): {shortname} ({uuid})")
+            
+            if shortname not in extensions:
+                extensions[shortname] = OrderedDict()
+            extensions[shortname][screen_version] = old_data
+            continue
+
+        # Extension is new or metadata changed - prefetch
         print(f"[{idx}/{len(encoded_lines)}] Prefetching: {shortname} ({uuid})")
 
         try:
@@ -143,6 +187,10 @@ def generate_burp_metadata(output_file: str, currentlist_path: str) :
     print("Writing to", output_file)
     with open(output_file, "wb") as f:
         tomli_w.dump(extensions, f)
+
+    # Save new currentlist after successful generation
+    with open(currentlist_path, "w", encoding="utf-8") as f:
+        f.write(new_list_raw)
 
     print("Done.")
 
