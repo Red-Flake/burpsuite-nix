@@ -1,0 +1,34 @@
+name: Daily update Burp Extensions
+
+on:
+  schedule:
+    # every day at 2:37am UTC, saving server costs of portswigger as it is not a "round" time!
+    - cron: "37 2 * * *"
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install nix
+        uses: cachix/install-nix-action@v31
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
+      - name: Update extensions
+        working-directory: ./data
+        run: ./generate-toml.py
+
+      - name: Commit and push
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: "Chore: update extensions"
+          add: "data/burp-extensions.toml data/currentlist"
