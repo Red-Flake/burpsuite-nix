@@ -4,9 +4,9 @@
   pkgs,
   burpPackages,
   ...
-}:
-let
-  inherit (lib)
+}: let
+  inherit
+    (lib)
     all
     allUnique
     any
@@ -49,23 +49,20 @@ let
   inherit (lib.strings) toJSON;
 
   # https://stackoverflow.com/a/54505212
-  recursiveMerge =
-    let
-      f =
-        attrPath:
-        zipAttrsWith (
-          n: values:
-          if tail values == [ ] then
-            head values
-          else if all isList values then
-            unique (concatLists values)
-          else if all isAttrs values then
-            f (attrPath ++ [ n ]) values
-          else
-            last values
-        );
-    in
-    f [ ];
+  recursiveMerge = let
+    f = attrPath:
+      zipAttrsWith (
+        n: values:
+          if tail values == []
+          then head values
+          else if all isList values
+          then unique (concatLists values)
+          else if all isAttrs values
+          then f (attrPath ++ [n]) values
+          else last values
+      );
+  in
+    f [];
 
   cfg = config.programs.burp;
 
@@ -80,15 +77,22 @@ let
     ruby = "3";
   };
 
-  editionName = if cfg.proEdition then "Pro" else "Community";
+  editionName =
+    if cfg.proEdition
+    then "Pro"
+    else "Community";
 
-  packageName = types.str // {
-    description = "package name";
-  };
+  packageName =
+    types.str
+    // {
+      description = "package name";
+    };
 
-  extensionPackage = types.package // {
-    description = "extension package";
-  };
+  extensionPackage =
+    types.package
+    // {
+      description = "extension package";
+    };
 
   extensionModule =
     types.submodule {
@@ -125,9 +129,11 @@ let
         };
 
         package = mkOption {
-          type = types.coercedTo packageName (
-            name: burpPackages.${pkgs.stdenv.hostPlatform.system}.${name}
-          ) extensionPackage;
+          type =
+            types.coercedTo packageName (
+              name: burpPackages.${pkgs.stdenv.hostPlatform.system}.${name}
+            )
+            extensionPackage;
           defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${name}";
           description = "Nix package for this extension, or a package name looked up in the default set";
         };
@@ -137,48 +143,50 @@ let
       description = "extension module";
     };
 
-  mkExtensionEntry =
-    ext:
-    let
-      pkg = ext.package;
-      dir = "${pkg}/lib/${pkg.pname}";
-      entrypoint = "EntryPoint:";
-    in
-    {
-      bapp_serial_version = pkg.passthru.burp.serialversion;
-      bapp_uuid = pkg.passthru.burp.uuid;
+  mkExtensionEntry = ext: let
+    pkg = ext.package;
+    dir = "${pkg}/lib/${pkg.pname}";
+    entrypoint = "EntryPoint:";
+  in {
+    bapp_serial_version = pkg.passthru.burp.serialversion;
+    bapp_uuid = pkg.passthru.burp.uuid;
 
-      extension_file = pipe "${dir}/BappManifest.bmf" [
-        readFile
-        (splitString "\n")
-        (findFirst (hasPrefix entrypoint) (throw "Missing EntryPoint in ${pkg.name}"))
-        (removePrefix entrypoint)
-        trim
-        (file: "${dir}/${file}")
-      ];
+    extension_file = pipe "${dir}/BappManifest.bmf" [
+      readFile
+      (splitString "\n")
+      (findFirst (hasPrefix entrypoint) (throw "Missing EntryPoint in ${pkg.name}"))
+      (removePrefix entrypoint)
+      trim
+      (file: "${dir}/${file}")
+    ];
 
-      extension_type = pipe extTypes [
-        attrsToList
-        (findFirst (x: x.value == pkg.passthru.burp.extensiontype) (
-          throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}"
-        ))
-        (x: x.name)
-      ];
+    extension_type = pipe extTypes [
+      attrsToList
+      (findFirst (x: x.value == pkg.passthru.burp.extensiontype) (
+        throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}"
+      ))
+      (x: x.name)
+    ];
 
-      inherit (ext) loaded;
-      inherit (pkg.passthru.burp) name;
+    inherit (ext) loaded;
+    inherit (pkg.passthru.burp) name;
 
-      output = "ui";
-      errors = "ui";
-    };
-in
-{
+    output = "ui";
+    errors = "ui";
+  };
+in {
   options.programs.burp = {
     enable = mkEnableOption "Burp Suite";
 
     proEdition = mkEnableOption "the Pro edition";
 
-    package = mkPackageOption pkgs "burpsuite" { };
+    package = mkPackageOption pkgs "burpsuite" {};
+
+    cliArgs = mkOption {
+      type = types.listOf types.str;
+      default = [];
+      description = "Additional command line arguments to pass to Burp";
+    };
 
     finalPackage = mkOption {
       type = types.package;
@@ -187,42 +195,52 @@ in
 
       default = cfg.package.override (
         old:
-        (if hasAttr "proEdition" old then { inherit (cfg) proEdition; } else { })
-        // {
-          buildFHSEnv =
-            args:
-            old.buildFHSEnv (
-              args
-              // {
-                extraBwrapArgs =
-                  (args.extraBwrapArgs or [ ])
-                  ++ mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
-              }
-            );
-        }
+          (
+            if hasAttr "proEdition" old
+            then {inherit (cfg) proEdition;}
+            else {}
+          )
+          // {
+            buildFHSEnv = args:
+              old.buildFHSEnv (
+                args
+                // {
+                  runScript =
+                    (args.runScript or "")
+                    + (lib.strings.optionalString (cfg.cliArgs != []) (" " + lib.strings.escapeShellArgs cfg.cliArgs));
+                  extraBwrapArgs =
+                    (args.extraBwrapArgs or [])
+                    ++ mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
+                }
+              );
+          }
       );
     };
 
     wordlists = mkOption {
       type = types.attrsOf types.path;
-      default = { };
+      default = {};
       description = ''
         Mapping of wordlist names to paths.
         These paths will be mounted at /lists/<name> in the Burp sandbox.
       '';
     };
 
-    enableJython = mkEnableOption "Jython suppport" // {
-      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) enabledExtensions;
-    };
+    enableJython =
+      mkEnableOption "Jython suppport"
+      // {
+        default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) enabledExtensions;
+      };
 
-    enableJruby = mkEnableOption "Jruby support" // {
-      default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.ruby) enabledExtensions;
-    };
+    enableJruby =
+      mkEnableOption "Jruby support"
+      // {
+        default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.ruby) enabledExtensions;
+      };
 
     settings = mkOption {
-      inherit (pkgs.formats.json { }) type;
-      default = { };
+      inherit (pkgs.formats.json {}) type;
+      default = {};
       description = ''
         Overrides for Burp config.json (deep merged).
         Options added here are always wrapped in `user_options`.
@@ -230,7 +248,7 @@ in
     };
 
     finalSettings = mkOption {
-      inherit (pkgs.formats.json { }) type;
+      inherit (pkgs.formats.json {}) type;
       internal = true;
       readOnly = true;
     };
@@ -239,25 +257,24 @@ in
       type = types.coercedTo (types.listOf (types.either packageName extensionModule)) (flip pipe [
         (imap (
           i: x:
-          recursiveMerge [
-            { value.priority = 1000 * i; }
-            (
-              if isAttrs x then
-                {
+            recursiveMerge [
+              {value.priority = 1000 * i;}
+              (
+                if isAttrs x
+                then {
                   name = x.package.pname or x.package;
                   value = x;
                 }
-              else
-                {
+                else {
                   name = x;
                   value.package = x;
                 }
-            )
-          ]
+              )
+            ]
         ))
         listToAttrs
       ]) (types.attrsOf extensionModule);
-      default = { };
+      default = {};
       description = ''
         List of Burp extensions.
         Strings like "403-bypasser" are resolved automatically from
@@ -317,12 +334,13 @@ in
     };
 
     home = {
-      packages = [
-        cfg.finalPackage
-      ]
-      ++ map (ext: ext.package) enabledExtensions
-      ++ optional cfg.enableJython pkgs.jython
-      ++ optional cfg.enableJruby pkgs.jruby;
+      packages =
+        [
+          cfg.finalPackage
+        ]
+        ++ map (ext: ext.package) enabledExtensions
+        ++ optional cfg.enableJython pkgs.jython
+        ++ optional cfg.enableJruby pkgs.jruby;
 
       file.".BurpSuite/UserConfig${editionName}.json" = {
         text = toJSON cfg.finalSettings;

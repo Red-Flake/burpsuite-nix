@@ -65,6 +65,7 @@ imports = [ inputs.burpsuite-nix.homeManagerModules.default ];
 
 programs.burp = {
     enable = true;
+    proEdition = true;
 
     extensions = [
         # Loaded by default
@@ -78,12 +79,6 @@ programs.burp = {
             package = "http-request-smuggler";
             loaded = false;
         }
-    ];
-
-    # Define which file will be installed, defaults to community
-    edition = [
-    "Community"
-    "Pro"
     ];
 
     # Settings that are deep-merged into the default config
@@ -100,8 +95,7 @@ programs.burp = {
 
 ## TODO
 
-- [] Add a Github Action Workflow that updates the Extensions
 - [] Add integration tests
-- [] Only prefetch changed Extensions, not all Extensions on a Change
-- [] Explore compiling the Extensions from Source
+- [] add declarative ca certificate setup
+- [] add license config
 - [] reimplement javas cursed directory name generation to declaratively modify burp extension settings
