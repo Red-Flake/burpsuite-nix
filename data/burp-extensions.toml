@@ -26,11 +26,11 @@ hash = "sha256-B2VoAdqmiXsr86Siw4CU1HsF4aDsJpjuwgvP5Mkb3AE="
 serialversion = "1"
 extensiontype = "2"
 
-[active-scan-plus-plus."2.0.7"]
+[active-scan-plus-plus."2.0.10"]
 name = "Active Scan++"
 uuid = "3123d5b5f25c4128894d97ea1acc4976"
-hash = "sha256-03XoFhP0iTdurr79zG8Zl0hwJAy0zI00I52nhjVdMo8="
-serialversion = "47"
+hash = "sha256-D/mU3BGU82ap3Tz2AyM2+SEGC7mvyCWFt3RA1aVl48w="
+serialversion = "52"
 extensiontype = "1"
 
 [add-track-custom-issues."1.0a"]
@@ -152,6 +152,13 @@ hash = "sha256-C9nAKAyZuJ64vrmrGRNcx8BM4WBbkZVyS9ERpQIxIcc="
 serialversion = "2"
 extensiontype = "1"
 
+[api-workflow-manager."1.0.1"]
+name = "API Workflow Manager"
+uuid = "24e3497855a44575a38302f540108e98"
+hash = "sha256-48vUCsOMi5cZzcPi3EBfcRTF9t1wS4GPLERa7PQK3i4="
+serialversion = "2"
+extensiontype = "2"
+
 [asset-discovery."1.0"]
 name = "Asset Discovery"
 uuid = "d927f0065171485981d6eb49a860fc3e"
@@ -178,6 +185,13 @@ name = "Attack Surface Detector"
 uuid = "47027b96525d4353aea5844781894fb1"
 hash = "sha256-FPUK4LFB3n5q04OSJvi+yQqmDqhTx2pQqjo7Z0pdR/c="
 serialversion = "3"
+extensiontype = "1"
+
+[auraditor."2.0.2"]
+name = "Auraditor, Salesforce Aura and Lightning (LWC) Helper"
+uuid = "9187559a7b634b83abc76f828203c355"
+hash = "sha256-LvMHAClXvalmramybnCfXTXMimqPj02fGHjjBcGBUfI="
+serialversion = "2"
 extensiontype = "1"
 
 [auth-analyzer."1.1.14"]
@@ -222,12 +236,19 @@ hash = "sha256-v1aWP5IjJALHld2SarKIFh+H8BGPotmhZXNoZqpeMgU="
 serialversion = "5"
 extensiontype = "1"
 
-[autorize."1.8.2"]
+[autorize."1.9.4"]
 name = "Autorize"
 uuid = "f9bbac8c4acf4aefa4d7dc92a991af2f"
-hash = "sha256-2gNjQAWbnSBRhH2vbya2E9PAtGMYKSj6LS5HyAJdqGg="
-serialversion = "27"
+hash = "sha256-yl7dKPVaHBKXY970ferv/If/9I+Q5wK9OXKIa++9O/g="
+serialversion = "36"
 extensiontype = "2"
+
+[autovader."1.0.11"]
+name = "AutoVader"
+uuid = "46a8e69964674ff8ae49774e2b720f0c"
+hash = "sha256-LVtvm7apZIb9yTjXt0cCxoIGh3C94T1UwQtBf6fLpqw="
+serialversion = "4"
+extensiontype = "1"
 
 [autowasp."1.0.1a"]
 name = "Autowasp"
@@ -299,11 +320,11 @@ hash = "sha256-J3NY+J7eeuvhw+7mrYMx3LVoHXtd9/gFWy9F+IEWEoI="
 serialversion = "6"
 extensiontype = "1"
 
-[beanstack-stacktrace-fingerprinter."0.6.1a"]
+[beanstack-stacktrace-fingerprinter."0.7.0"]
 name = "BeanStack - Stack-trace Fingerprinter"
 uuid = "2da0e069b2944fcab691f6d00b165078"
-hash = "sha256-P7g7RqRNQUPqNoom4ffauzkFFjR3NK1e31VGx4C4AW0="
-serialversion = "5"
+hash = "sha256-4CeNs5y7t1qR9hoiV2MtHe5QeQTZMlbs+zbYL8trqic="
+serialversion = "6"
 extensiontype = "1"
 
 [blazer."0.3"]
@@ -353,6 +374,13 @@ name = "Browser Repeater"
 uuid = "215390e63f314c20958a23930eb1555a"
 hash = "sha256-oDGIW/KfAQe1jh/kNRchO7MRW9RhihX85OKfs+iqiks="
 serialversion = "1"
+extensiontype = "2"
+
+[bubble-pop."2.1.0"]
+name = "BubblePop - Bubble.io ElasticSearch Decryptor"
+uuid = "03e79720a4d6412b98749ae4fc394201"
+hash = "sha256-SJt3x/DeMfl9c3Hgt8cenRK21Gl3T0stLT/O3MoRC/8="
+serialversion = "2"
 extensiontype = "2"
 
 [buby."1.6.2"]
@@ -411,11 +439,18 @@ hash = "sha256-RajBdF7YcgrG2O7jXkwi+jqEFi37OrGV+TW/fti+xuk="
 serialversion = "2"
 extensiontype = "1"
 
-[burp-variables."1.1.7"]
+[burp-to-discord."1.0.0"]
+name = "Burp to Discord"
+uuid = "fb94931733ef46d89ee260df8f102f2f"
+hash = "sha256-2SqMUQB0CZv8/0eSGUNwH12sBVJjIILfW6M3+kw78nk="
+serialversion = "10"
+extensiontype = "1"
+
+[burp-variables."1.2.0"]
 name = "Burp Variables"
 uuid = "27f89b068a3045649d4df77a863209c1"
-hash = "sha256-1j+tWfR51EZ0F1IYdm70JvhBXPMjl/28msh3kJabe9g="
-serialversion = "5"
+hash = "sha256-IdaoxyTw2w179hNAcwZ0QVUZl+SiG7q8GfeAvwmBwUg="
+serialversion = "6"
 extensiontype = "1"
 
 [burp2slack."1.0"]
@@ -430,6 +465,13 @@ name = "Burp2Telegram"
 uuid = "06414d4e08ae4d32ac40d17e2fd8acc3"
 hash = "sha256-KxiIL8gX+J6oDLFeYPfYLxwSFLKV9eNlm0LALkY5RfE="
 serialversion = "6"
+extensiontype = "1"
+
+[burpcord."2.6.0"]
+name = "Burpcord, Discord Rich Presence for Burp"
+uuid = "b4df2fbd9a9f47468994436e58aa6234"
+hash = "sha256-VKc5G1M7orPAqjWS7BOpUKLKtr2Yx2U42gvrWiedYoI="
+serialversion = "2"
 extensiontype = "1"
 
 [burpcrypto."0.1.9.1"]
@@ -479,6 +521,13 @@ name = "Bypass WAF"
 uuid = "ae2611da3bbc4687953a1f4ba6a4e04c"
 hash = "sha256-gNGJCGoHci0eLJUxCz+fsKUV641a2x5yoAkuCjmU4nQ="
 serialversion = "5"
+extensiontype = "1"
+
+[byte-banter."1.0.0"]
+name = "ByteBanter, BurpAI Intruder Payload Generator"
+uuid = "52a262ab411e4d5ab7f1d3c8fc13cdb3"
+hash = "sha256-h8SXV21kB/ZzY+W/OjACbuQ2Cw/hCrhuUuiEDIDS9nI="
+serialversion = "1"
 extensiontype = "1"
 
 [captcha-converter."1.0"]
@@ -635,11 +684,11 @@ hash = "sha256-Wz0KAZvIjjk5c8dPl/tIQcJVDvANAR6z21+hGbCmiWU="
 serialversion = "3"
 extensiontype = "1"
 
-[copy-as-python-aiohttp."v1.1.1"]
+[copy-as-python-aiohttp."1.1.2"]
 name = "Copy as Python aiohttp"
 uuid = "2945c0fa6ed9448196f24dceabcc84da"
-hash = "sha256-5i2GX1C0B8M5O7S39tvyRcXFdFKOAwIuh7wXslUwDaU="
-serialversion = "1"
+hash = "sha256-Tie5fyl0O7XHk5gYOxCX3fmUU23cimewAR1r6N59IH4="
+serialversion = "3"
 extensiontype = "1"
 
 [copy-as-python-httpx."1.1"]
@@ -663,11 +712,11 @@ hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
 serialversion = "1"
 extensiontype = "2"
 
-[copy-request-response."2.3.0"]
+[copy-request-response."2.4.0"]
 name = "Copy Request Response"
 uuid = "0d05f52c00a64cb2b2bea68744f6316c"
-hash = "sha256-kN8KGcyb9hRipFKJM8crd+ChwFbmYdFlwVlBhj2bI9c="
-serialversion = "28"
+hash = "sha256-MY/fcIWGaiGpFS1aVDJiaqHaDCl28kcYsGI/jw1SZVg="
+serialversion = "30"
 extensiontype = "1"
 
 [copy-to-bcheck."1.1"]
@@ -880,11 +929,11 @@ hash = "sha256-z1zyDILB7eb5I4pKhA/gokd6kh1nWAh6mHQdYTbKEe4="
 serialversion = "3"
 extensiontype = "1"
 
-[dns-exfilnspector."1.2"]
+[dns-exfilnspector."1.3.0"]
 name = "DNS Exfilnspector"
 uuid = "0e9c1b7acd25422ab1fd1df5d1f09bbd"
-hash = "sha256-uEfFkar7EfEiZtKyjpYqUPzexhxgmM4M8cKOIRKJBKI="
-serialversion = "1"
+hash = "sha256-3HiKnpYPtPvIM+5qdqfdEzeENWWN7aXXid5vBlFn2Ro="
+serialversion = "5"
 extensiontype = "2"
 
 [document-my-pentest."1.1.0"]
@@ -897,8 +946,8 @@ extensiontype = "1"
 [dpop-authenticator."1.0"]
 name = "DPoP Authenticator"
 uuid = "5de3ecc589594010bb6cda98c13c990c"
-hash = "sha256-HHl/U7J4N2gE3T3zK2rhiRdLv8d2USwk100REiuZVTk="
-serialversion = "3"
+hash = "sha256-7ZPg4RpTkCAEPEefeRK8ixnNHz4xuF2GHg9zVLburPQ="
+serialversion = "4"
 extensiontype = "1"
 
 [dradis-framework."0.0.4"]
@@ -941,6 +990,13 @@ name = "ExifTool Scanner"
 uuid = "858352a27e6e4a6caa802e61fdeb7dd4"
 hash = "sha256-9ByU610pssV+sG4ucNVf0OTSgP9DZdBYhSe4O85gr6M="
 serialversion = "5"
+extensiontype = "1"
+
+[exporter-plus-plus."3.2.0"]
+name = "Exporter++"
+uuid = "a6517c5a526f46719b8b4f6ebca2144f"
+hash = "sha256-6c8krlZoSuf2OvidMLSic75Vpn4IdsFDmWg4vgCAtN0="
+serialversion = "3"
 extensiontype = "1"
 
 [extended-macro."0.0.5"]
@@ -1027,11 +1083,11 @@ hash = "sha256-4WFad9Py2z/DAMF+0HA2+MFSuM+wHBzaXxli2c3eIbY="
 serialversion = "9"
 extensiontype = "1"
 
-[get-all-parameters."6.0.0"]
+[get-all-parameters."6.2.0"]
 name = "GAP (Get All Parameters, Links, and Words)"
 uuid = "815bb4ab64e240618dc673d65016e919"
-hash = "sha256-NcF/aCedCGhsNOBGsosg7ik251O73+X5UF8dAEDdc/U="
-serialversion = "23"
+hash = "sha256-FICZCcVAYFRgYfiUJT88ow3W22PPtUaogTq+chZk7gk="
+serialversion = "24"
 extensiontype = "2"
 
 [gat-digital-integration."1.0.1"]
@@ -1047,6 +1103,13 @@ uuid = "ae94d3ff6007497d863313fdded20daa"
 hash = "sha256-mJ0DzmZTmDz/Zl6JgNRIOIsHv1Kal6ccxHVqsDfQgEs="
 serialversion = "1"
 extensiontype = "2"
+
+[gitleaks-integration."0.7.1"]
+name = "Gitleaks Integration"
+uuid = "7e8de63b53a5469492f9f9003dd5a322"
+hash = "sha256-b1bHTghGutEuFm9oa+ad50f9M8w22BP9DpoCI+is2Io="
+serialversion = "4"
+extensiontype = "1"
 
 [google-authenticator."1.2.0"]
 name = "Google Authenticator"
@@ -1069,11 +1132,18 @@ hash = "sha256-H3r0rT+0ba5vaaDt53VDMtNgKXaEiWw4DeEFLKydFc4="
 serialversion = "1"
 extensiontype = "1"
 
-[grpc-web-coder."1.0.0"]
+[graphql-security-tester."1.0.0"]
+name = "GraphQL Security Tester"
+uuid = "bd98c38519144301a0a232d8e7df613c"
+hash = "sha256-jIyja263HhVrJPAIjZaa0rfZJkylxwegCE6mKbwvs7M="
+serialversion = "6"
+extensiontype = "1"
+
+[grpc-web-coder."1.1.0"]
 name = "gRPC-Web Coder"
 uuid = "63b92be302fa4521bf18d74b3adbbc00"
-hash = "sha256-9O1e4v9WDp6GoCimJgzXktc8EEG5nyIQwUyWrVQAvwQ="
-serialversion = "2"
+hash = "sha256-SARFPEbtedjpji9P6jRuh378L27YCmrq0V0g3JNboWA="
+serialversion = "3"
 extensiontype = "2"
 
 [gwt-insertion-points."1.2"]
@@ -1090,11 +1160,11 @@ hash = "sha256-L9PEMZ8nmEswPwKKnd8S/fHleocemQlYIyRkcwQxpOI="
 serialversion = "2"
 extensiontype = "1"
 
-[hackvertor."2.2.16"]
+[hackvertor."2.2.45"]
 name = "Hackvertor"
 uuid = "65033cbd2c344fbabe57ac060b5dd100"
-hash = "sha256-UukEjo7cDNZov+qCHKF2r3b5JKp6RPUCaBnERClP0As="
-serialversion = "57"
+hash = "sha256-ned/BZtuAVpc9FxSr8TtCU1Vt+WpntudKSe2qe2YAhs="
+serialversion = "61"
 extensiontype = "1"
 
 [handy-collaborator."0.2a"]
@@ -1123,6 +1193,13 @@ name = "Hashcat Maskprocessor Intruder Payloads"
 uuid = "4a2fa04f480b4edb8a6326598ecd5646"
 hash = "sha256-+6dD/Jeoq6RqlSZL/SLvLB2eHNxMaVB04HqEWVeNXbA="
 serialversion = "1"
+extensiontype = "2"
+
+[header-change-notifier."2.1.0"]
+name = "Header Change Notifier"
+uuid = "93af1c4356884fbe9bb470aae6f8e6e0"
+hash = "sha256-wqztS8j27T/9F0xfgbmVsjShkO5ZgbuFQlBykHF/q5E="
+serialversion = "6"
 extensiontype = "2"
 
 [header-guardian."1.0"]
@@ -1167,11 +1244,11 @@ hash = "sha256-oCrKaAJZWsxZi3YECpMXFNJpw3WSymJV6BgfptneGAU="
 serialversion = "2"
 extensiontype = "1"
 
-[highlighter-and-extractor."4.2.1"]
+[highlighter-and-extractor."4.3.3"]
 name = "Highlighter And Extractor"
 uuid = "a7609ae2055342e9b6ffcf7cbcacf019"
-hash = "sha256-rbp8Lbye+WMSUf1+qXCiOPA4S2RL4z38VE3bkxLFtGY="
-serialversion = "23"
+hash = "sha256-gUi/ff5lCKPPKrZWLTnrvbrn1kkt7f3menCTvs8zzC0="
+serialversion = "24"
 extensiontype = "1"
 
 [history-explorer."1.2"]
@@ -1209,11 +1286,11 @@ hash = "sha256-2Y5QPNtaJjddDCzziQ1pcnKZkI8+RPhRdU23jCLBIj0="
 serialversion = "2"
 extensiontype = "1"
 
-[http-batch-tool."1.0.0"]
+[http-batch-tool."1.1.0"]
 name = "HTTP Batch Tool"
 uuid = "e117f405368f48fa9d87bce7b96e9908"
-hash = "sha256-rfPbgoL4DI+++12kiLTw12JxHtESL+tMCn+MNByaE+s="
-serialversion = "7"
+hash = "sha256-Ld+i1lDQzhoFM8GYwKsnolxVsmBfoXlOZdHmtZS6gBE="
+serialversion = "8"
 extensiontype = "2"
 
 [http-digest-auth."1.0"]
@@ -1223,11 +1300,11 @@ hash = "sha256-J+KpiLoanX6ZFMuiCwrNMWuZLI2tbw5mgdJpfoWW418="
 serialversion = "2"
 extensiontype = "2"
 
-[http-hacker."1.0.0"]
+[http-hacker."1.1.0"]
 name = "HTTP Hacker"
 uuid = "657363a6ea0a42d0be7f0b781249089f"
-hash = "sha256-F/cLQrKsvRFSmXnvfRDPNrpAFMtRQQDMZKHb8tDmF5Q="
-serialversion = "2"
+hash = "sha256-2PS4NzmzAQ2M2o2b7s8osvUEIBk3gRovOGYr/NGIO1M="
+serialversion = "3"
 extensiontype = "1"
 
 [http-history-to-pcap."1.0.0"]
@@ -1314,11 +1391,11 @@ hash = "sha256-pLf3vSuoC8zRavHvAsloUJ7sDBm1YcfmhPltFyl9OZ4="
 serialversion = "2"
 extensiontype = "1"
 
-[inql."6.0.0"]
+[inql."6.1.2"]
 name = "InQL - GraphQL Scanner"
 uuid = "296e9a0730384be4b2fffef7b4e19b1f"
-hash = "sha256-vPIxkxnGbL0mo8cYfduCO2KRX2yBef++HwA38I+B2yA="
-serialversion = "22"
+hash = "sha256-XSc242Q3TwvABgOYh77NZpCJW9i7jbmduEf/Sj+Ll/0="
+serialversion = "27"
 extensiontype = "1"
 
 [intruder-file-payload-generator."1.0"]
@@ -1538,11 +1615,11 @@ hash = "sha256-VKyBJbTXcmEOqvlRUGQnEeCuCtDkswi+JFUDFWvRJZw="
 serialversion = "2"
 extensiontype = "1"
 
-[kerberos-authentication."1.0"]
+[kerberos-authentication."1.0.1"]
 name = "Kerberos Authentication"
 uuid = "94135ed444c84cc095c72e6520bcc583"
-hash = "sha256-JxEQ5dlrHy1q8Q/TkIou8dAnQL2rUqkOXKDCWkdAdPY="
-serialversion = "3"
+hash = "sha256-MeKByf48+/afH2fs+K7MsiGlYbilcHedDcSYE0AtuA8="
+serialversion = "4"
 extensiontype = "1"
 
 [kerberos-upstream-proxy."1.3"]
@@ -1573,11 +1650,11 @@ hash = "sha256-QkrT3iP717o6Extw8p7P3l9qWwolv5Z855fz2g60QV4="
 serialversion = "2"
 extensiontype = "2"
 
-[levo-burp-integration."0.2.0"]
+[levo-burp-integration."0.2.1"]
 name = "Levo.ai Burp Integration"
 uuid = "e1772ac14930453b98d5bff8c4f8b0cd"
-hash = "sha256-E9697n/rtCnDFLSYV65TwbcKcXWUlidzAdi5i90oiIk="
-serialversion = "7"
+hash = "sha256-Lxo6VBRUZhdpNz5cA+7MG47gY457uZj/e5xiVX2btjw="
+serialversion = "8"
 extensiontype = "1"
 
 [license-title-cleaner."1.0"]
@@ -1650,6 +1727,13 @@ hash = "sha256-WLfv7iG8bTx4qNpYQadhj88mRyK0mntdG8XgwLL9xj0="
 serialversion = "2"
 extensiontype = "2"
 
+[magic-variables."1.4.19"]
+name = "Magic Variables"
+uuid = "1c19036ead3241b789cc8fcc45387fa7"
+hash = "sha256-Pf7JbPK6fo8inAaDIbzm7C6/7dCbdS+sIr0wYmmt2iM="
+serialversion = "5"
+extensiontype = "1"
+
 [manual-scan-issues."1.0.3"]
 name = "Manual Scan Issues"
 uuid = "3ebca77f69434faea1e3e97e0269fe17"
@@ -1664,11 +1748,11 @@ hash = "sha256-+KZzl6M0QDkZMPUXSXDbWML644D/N5JA69dROOt6lJU="
 serialversion = "1"
 extensiontype = "1"
 
-[mcp-server."1.1.1"]
+[mcp-server."1.2.1"]
 name = "MCP Server"
 uuid = "9952290f04ed4f628e624d0aa9dccebc"
-hash = "sha256-Hzio92I7bYqGc1k05k0dZnu97yq4YQspxTjsJhcWaYw="
-serialversion = "5"
+hash = "sha256-FwLrLwoN1xTL9o9H3ZdYuKXhGBILvoIN01tJRikEukE="
+serialversion = "7"
 extensiontype = "1"
 
 [message-pack."1.0"]
@@ -1689,6 +1773,13 @@ extensiontype = "1"
 name = "MindMap Exporter"
 uuid = "676b2e91c5a347289fca66fa67cca545"
 hash = "sha256-iS5m/sSMS0eh0HYdkXYKxVfoQWUy6IfUL80PzjD0sq8="
+serialversion = "3"
+extensiontype = "1"
+
+[mitm-decryption."3.3.7"]
+name = "MITM Decryption"
+uuid = "fff7c6ccd34a478f909f125aa392db3d"
+hash = "sha256-WBmLtZ581nuQoq4Qe3D2yxDpsZdaASQixl+p9XrQ1aQ="
 serialversion = "3"
 extensiontype = "1"
 
@@ -1839,6 +1930,13 @@ hash = "sha256-otlM/2sISvwicIMJsMZsBigHym5269ttpTpMnnZjMrw="
 serialversion = "5"
 extensiontype = "1"
 
+[packet-purifier."1.2.0"]
+name = "Packet Purifier"
+uuid = "8eac0db6c905449ea747398a229fbf6b"
+hash = "sha256-oZG7Gp4wto71VwuCXnWV9dxGsP/580kYACpB/5NG6PQ="
+serialversion = "4"
+extensiontype = "1"
+
 [padding-oracle-hunter."1.2"]
 name = "Padding Oracle Hunter"
 uuid = "0efabfee59404068a8c4071fa18a2e00"
@@ -1853,11 +1951,11 @@ hash = "sha256-hHbUS418d5D7LThhmVhwoWTRf6CcLCUAtmomB98v4Ts="
 serialversion = "2"
 extensiontype = "2"
 
-[param-miner."1.55"]
+[param-miner."1.57"]
 name = "Param Miner"
 uuid = "17d2949a985c4b7ca092728dba871943"
-hash = "sha256-fvIqQDUupFl2yruTpTzIloUTvLp1S9iaZ9QkxFWi8T0="
-serialversion = "34"
+hash = "sha256-HYZ5b2aqCxRqSBFSMEXKEr5PQQYLti+Kh9Zv7epD+fM="
+serialversion = "36"
 extensiontype = "1"
 
 [paramalyzer."2.2.2"]
@@ -1951,6 +2049,13 @@ hash = "sha256-Y7K3p4ABJ8EwuyxNrZyT/Z4Gcrv1gRzwb+9SEpV9BI4="
 serialversion = "13"
 extensiontype = "2"
 
+[pentest-tools-integration."1.0.0"]
+name = "Pentest-Tools.com Integration"
+uuid = "63717e913b0349b38779083e9ae4a64b"
+hash = "sha256-ZLmnc7CuXtEhK60jv4tdIOLXbfNi7yhJu85QaVixlUg="
+serialversion = "4"
+extensiontype = "1"
+
 [peoplesoft-token-extractor."1.0"]
 name = "PeopleSoft Token Extractor"
 uuid = "df04d7d1af004ed6b50c555c4920232d"
@@ -1979,11 +2084,11 @@ hash = "sha256-mDPpFaYbv9rcm369Vi8I001L2RKjuDFxBr4Tpz2OhMI="
 serialversion = "1"
 extensiontype = "1"
 
-[piper."0.7.1"]
+[piper."0.8"]
 name = "Piper"
 uuid = "e4e0f6c4f0274754917dcb5f4937bb9e"
-hash = "sha256-3p4Bj7bV3JIWwHwXYo6U2rqftDqR8G9I2wUKfusYnk4="
-serialversion = "10"
+hash = "sha256-TdsV4fQVfOjAKBPAXUrVYeCf8qT1dVwOFJFxomhg+tc="
+serialversion = "17"
 extensiontype = "1"
 
 [postman-burp-importer."1.0.4"]
@@ -2049,6 +2154,13 @@ hash = "sha256-wmxMGbBfyvUDMsb3mjcAKBUWU9Zedt4lHF8xBCnoodk="
 serialversion = "3"
 extensiontype = "1"
 
+[proxy-rotate."1.0.1"]
+name = "Proxy Rotate"
+uuid = "e50efd0778ac492eacf20271512a202f"
+hash = "sha256-6JJ+Kim/hd+stzpEJCE0T/8WSt9hrIVNDo4CX3EJGSo="
+serialversion = "9"
+extensiontype = "1"
+
 [psycho-path."1.1.1"]
 name = "PsychoPATH"
 uuid = "554059e593ce446585574b92344b9675"
@@ -2056,11 +2168,11 @@ hash = "sha256-jTCtafFvux62akg50FTuwyWLCVGKzrZJGtJJ6t+yFzc="
 serialversion = "8"
 extensiontype = "1"
 
-[pwnfox-for-chromium."1.2.1"]
+[pwnfox-for-chromium."1.3.2"]
 name = "PwnFox For Chromium"
 uuid = "239c6b45a4ae4834acc90202566a1aac"
-hash = "sha256-Ix03OYoljVdV01x65bvBl9NDRnVg/NzZ8gosMp935GQ="
-serialversion = "2"
+hash = "sha256-d65jnue1QGQOTDzvOGtBa8SPqVnI/cyyD6cCpxpLvaE="
+serialversion = "5"
 extensiontype = "1"
 
 [pyburp."1.0.1"]
@@ -2070,12 +2182,12 @@ hash = "sha256-uyfHe5BncjYwRCMTdt4osgshm8oUsz8lw0WNfBHrUKc="
 serialversion = "4"
 extensiontype = "1"
 
-[pycript."1.0"]
+[pycript."2.0"]
 name = "PyCript"
 uuid = "4826bfa0c67d41a8b518139186693131"
-hash = "sha256-8nHRlgnw+vHi/zau7WN4Y5vaPOki0fZ+DfGrVqmk2pM="
-serialversion = "6"
-extensiontype = "2"
+hash = "sha256-WqQq477tnZ7SS6OHy+1Vb7lOCD+Bg7bAv8MZ4aN3zSE="
+serialversion = "8"
+extensiontype = "1"
 
 [python-scripter."2.1"]
 name = "Python Scripter"
@@ -2089,6 +2201,13 @@ name = "Qualys WAS"
 uuid = "3b0105b95e4645a7929faa0cbda1df28"
 hash = "sha256-SkmDAf1FgzJ+QiMWli36NTtEOn1WxStF/slzQgg97CM="
 serialversion = "9"
+extensiontype = "1"
+
+[quick-update-headers."1.0.0"]
+name = "Quick Update Headers"
+uuid = "4bebc64c95554d9fa71e5ffd1d67b400"
+hash = "sha256-EuXbh0ALIhNPniv1dWC5L+q2xCxaxXBi78zuf2SLib8="
+serialversion = "3"
 extensiontype = "1"
 
 [quicker-context."1.0"]
@@ -2110,6 +2229,13 @@ name = "Random IP Address Header"
 uuid = "3a656c1be14148c6bf95642af42eb854"
 hash = "sha256-KLBnVoo9ul1xmQZ+aZaUjah8XBQXwXGkS8gBqaKIMr0="
 serialversion = "1"
+extensiontype = "1"
+
+[rank-anomaly-context-menu."0.0.1"]
+name = "Rank Anomaly Context Menu"
+uuid = "beda434e9de54dc6b28fb4bfcb69839e"
+hash = "sha256-IZ1NIvlM797COu8pXlql0b2ra+7Ir73BdTAyXIkhS9Y="
+serialversion = "7"
 extensiontype = "1"
 
 [raw-hexler."0.1.2"]
@@ -2168,11 +2294,11 @@ hash = "sha256-SdDstiWnKYVrzmtNHrdq64HXidMlGKa8+HDrEF/hgXY="
 serialversion = "2"
 extensiontype = "1"
 
-[report-lm."0.1.0"]
+[report-lm."1.0.2"]
 name = "ReportLM"
 uuid = "c29264074acc4aacb5b424e6a033ba5d"
-hash = "sha256-kkxMfsq7T9Azqz0Shh15oliiZE4IlHA1sXwiEELRFU8="
-serialversion = "2"
+hash = "sha256-BQ0fPQbZ6w4awmbTqYO9gf6Qnj7+z/An7ywosKC0z5w="
+serialversion = "5"
 extensiontype = "1"
 
 [request-highlighter."0.3"]
@@ -2217,11 +2343,11 @@ hash = "sha256-g2QGNr7MOBNsumCaMCGBfj5qmFR7uZB7uypSzJNA8sA="
 serialversion = "7"
 extensiontype = "2"
 
-[response-overview."1.4"]
+[response-overview."1.6.0"]
 name = "Response Overview"
 uuid = "e63f09f290ad4d9ea20031e84767b303"
-hash = "sha256-ppnmFOpR7hNIBGhwrws3mXlT33l20Sa+hIPTz/r7HEI="
-serialversion = "11"
+hash = "sha256-cnOZjPv4qouEiFONj+2GxcMtxQS5Z+pQXalsHF5N/Ks="
+serialversion = "17"
 extensiontype = "1"
 
 [response-pattern-matcher."2.0.1"]
@@ -2280,11 +2406,11 @@ hash = "sha256-pQpattmS9VmO3ZIQUFn66az8GSmB4IvYhTTCFn6SUmo="
 serialversion = "2"
 extensiontype = "2"
 
-[saml-raider."2.4.0"]
+[saml-raider."2.5.2"]
 name = "SAML Raider"
 uuid = "c61cfa893bb14db4b01775554f7b802e"
-hash = "sha256-9uS88O3kpiE9qSE+ENg4m1MDdzxsec1TNgwcIpBw5PU="
-serialversion = "23"
+hash = "sha256-52kaFujiGxTgiffc7KgPTbsp7fq7uq+fLqnhR9g18s8="
+serialversion = "29"
 extensiontype = "1"
 
 [saml-re-quest."2.1"]
@@ -2300,6 +2426,13 @@ uuid = "25cf44e09aaf4acc9b5f49373c90199a"
 hash = "sha256-Wz8vqhm8+0fKFwO97PZtXZcBVhV4lS3+KGna4jirGSo="
 serialversion = "3"
 extensiontype = "1"
+
+[saver-logger."1.0.0"]
+name = "Saver Logger"
+uuid = "0cd5a55f876d4a8c8bd2e6a21e38af61"
+hash = "sha256-0HAhWNOQ8UKTClZ6Eh8p8io+u5buq58SLBf1VquqVQI="
+serialversion = "3"
+extensiontype = "2"
 
 [scan-manual-insertion-point."0.1"]
 name = "Scan manual insertion point"
@@ -2362,6 +2495,13 @@ name = "Session Handler+"
 uuid = "e4aa4cee811f43af96b2cd5e7e81598e"
 hash = "sha256-Wb2iKmmAHoya0EEmc7hfZYNcvMFKqMTYHa1N+lR/nSA="
 serialversion = "1"
+extensiontype = "2"
+
+[session-keeper."1.0.0"]
+name = "Session Keeper"
+uuid = "3c04a8add92e445eb5b50acd92275be4"
+hash = "sha256-DIUDGqusEEFcLHCJReUjc5TpsVQjAaqTj87+ZyTI31I="
+serialversion = "2"
 extensiontype = "2"
 
 [session-timeout-test."1.0"]
@@ -2623,11 +2763,11 @@ hash = "sha256-3/qmfWOwX3yTiaxMm0V5gHA1zJEbSCDlNtzuPs0F2Oc="
 serialversion = "1"
 extensiontype = "2"
 
-[trusted-domain-cors-scanner."1.0.0"]
+[trusted-domain-cors-scanner."1.1.0"]
 name = "Trusted Domain CORS Scanner"
 uuid = "c257bcb0b6254a578535edb2dcee87d0"
-hash = "sha256-gvJNXLrhn0zAnH+VKfHGkxQRRytESC/LXJt9M5jDqCk="
-serialversion = "1"
+hash = "sha256-GVkyBX/xxqSkGrZhtIv7RQtq+4jSAwWy7sbjuy/Whzc="
+serialversion = "2"
 extensiontype = "1"
 
 [trusted-types-checker."1.0"]
@@ -2797,6 +2937,13 @@ uuid = "49e9917c721e4abfa4c2540b07f35eb7"
 hash = "sha256-d+7lkmm3e1vK/CehtL6iDPzVHhxO3pdUfrwYvxbyJ+8="
 serialversion = "1"
 extensiontype = "2"
+
+[window-title-controller."1.0.0"]
+name = "Window Title Controller"
+uuid = "964aacecc32f42f7a4681617869c0b47"
+hash = "sha256-uaQr8PAI75YZuGyUhvOBEGFIZevjOyJAX3tNO1e9QEM="
+serialversion = "3"
+extensiontype = "1"
 
 [wordlist-extractor."1.0"]
 name = "Wordlist Extractor"
