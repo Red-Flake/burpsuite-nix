@@ -10,7 +10,9 @@
     all
     any
     attrsToList
+    attrValues
     concatLists
+    filter
     findFirst
     hasAttr
     hasPrefix
@@ -58,7 +60,10 @@
 
   cfg = config.programs.burp;
 
-  enabledExtensions = lib.filter (ext: ext.enable) (lib.attrValues cfg.extensions);
+  enabledExtensions = pipe cfg.extensions [
+    attrValues
+    (filter (ext: ext.enable))
+  ];
 
   extTypes = {
     java = "1";
@@ -82,6 +87,42 @@
     // {
       description = "extension package";
     };
+
+  extensionModule = types.submoduleWith {
+    shorthandOnlyDefinesConfig = false;
+    modules = [
+      ({config, ...}: {
+        options.enable = mkOption {
+          type = types.bool;
+          default = true;
+          description = ''
+            Whether to enable this extension.
+            Disabled extensions won't be present in the generated config.
+          '';
+        };
+
+        options.loaded = mkOption {
+          type = types.bool;
+          default = true;
+          description = ''
+            Whether to automatically load this extension on Burp startup.
+            Unloaded extensions will still be present, but have to be manually loaded.
+          '';
+        };
+
+        options.package = mkOption {
+          type =
+            types.coercedTo packageName (
+              pkgName: burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkgName}
+            )
+            extensionPackage;
+          default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${config._module.args.name};
+          defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${_module.args.name}";
+          description = "Nix package for this extension, or a package name looked up in the default set";
+        };
+      })
+    ];
+  };
 
   mkExtensionEntry = ext: let
     pkg = ext.package;
@@ -194,41 +235,7 @@ in {
     };
 
     extensions = mkOption {
-      type = types.attrsOf (types.submoduleWith {
-        shorthandOnlyDefinesConfig = false;
-        modules = [
-          ({config, ...}: {
-            options.enable = mkOption {
-              type = types.bool;
-              default = true;
-              description = ''
-                Whether to enable this extension.
-                Disabled extensions won't be present in the generated config.
-              '';
-            };
-
-            options.loaded = mkOption {
-              type = types.bool;
-              default = true;
-              description = ''
-                Whether to automatically load this extension on Burp startup.
-                Unloaded extensions will still be present, but have to be manually loaded.
-              '';
-            };
-
-            options.package = mkOption {
-              type =
-                types.coercedTo packageName (
-                  pkgName: burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkgName}
-                )
-                extensionPackage;
-              default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${config._module.args.name};
-              defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${_module.args.name}";
-              description = "Nix package for this extension, or a package name looked up in the default set";
-            };
-          })
-        ];
-      });
+      type = types.attrsOf extensionModule;
       default = {};
       description = ''
         Attribute set of Burp extensions.
@@ -239,7 +246,6 @@ in {
   };
 
   config = mkIf cfg.enable {
-
     programs.burp = {
       finalSettings = recursiveMerge [
         (importJSON ../data/config.json)
