@@ -120,14 +120,14 @@ list of string
 
 
 
-List of Burp extensions\.
-Strings like “403-bypasser” are resolved automatically from
+Attribute set of Burp extensions\.
+Extension names like “403-bypasser” are resolved automatically from
 ` burpPackages.${pkgs.stdenv.hostPlatform.system} ` without needing to reference the input\.
 
 
 
 *Type:*
-(attribute set of (submodule)) or (list of (package name or (extension module))) convertible to it
+attribute set of (submodule)
 
 
 
@@ -175,7 +175,7 @@ extension package or package name convertible to it
 
 
 *Default:*
-` burpPackages.${pkgs.stdenv.hostPlatform.system}.${name} `
+` burpPackages.${pkgs.stdenv.hostPlatform.system}.${_module.args.name} `
 
 *Declared by:*
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
@@ -198,30 +198,6 @@ boolean
 
 *Default:*
 ` true `
-
-*Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
-
-
-
-## programs\.burp\.extensions\.\<name>\.priority
-
-
-
-Priority of this module\.
-Modules are loaded in order of ascending priority,
-so the lowest priority is loaded first\.
-
-
-
-*Type:*
-signed integer
-
-
-
-*Default:*
-If using the list shorthand: 1000 · 1-based list index\.
-Otherwise, priorities must be set manually\.
 
 *Declared by:*
  - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
@@ -302,7 +278,7 @@ attribute set of absolute path
 
 
 
-Java user preferences as flat key-value pairs per preference path\.
+Java user preferences as nested attribute sets\. Each top-level key is a preference path, with nested key-value pairs for individual preferences\.
 
 
 
@@ -313,6 +289,21 @@ attribute set of attribute set of string
 
 *Default:*
 ` { } `
+
+
+
+*Example:*
+
+```nix
+{
+  burp = {
+    "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
+  };
+  "burp/extensions/_HTTP Request Smuggler" = {
+    "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
+  };
+}
+```
 
 *Declared by:*
  - [modules/javaUserPrefs/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/javaUserPrefs/default\.nix)

@@ -67,19 +67,19 @@ programs.burp = {
     enable = true;
     proEdition = true;
 
-    extensions = [
-        # Loaded by default
-        "403-bypasser"
-        "json-web-tokens"
-        "js-miner"
-        "param-miner"
+    extensions = {
+      # Loaded by default
+      "403-bypasser".enable = true;
+      "json-web-tokens".enable = true;
+      "js-miner".enable = true;
+      "param-miner".enable = true;
 
-        # Installed but not loaded
-        {
-            package = "http-request-smuggler";
-            loaded = false;
-        }
-    ];
+      # Installed but not loaded
+      "http-request-smuggler" = {
+        enable = true;
+        loaded = false;
+      };
+    };
 
     # Settings that are deep-merged into the default config
     settings = {
@@ -98,6 +98,7 @@ programs.burp = {
 - [] Add integration tests
 - [] add declarative ca certificate setup
 - [] add license config
+- [] add extension loading order
 - [] merge prefs.xml configs if they already exist
 - [] remove the need for the python script and implement the encoding in pure nix
 - [] reimplement javas cursed directory name generation to declaratively modify burp extension settings

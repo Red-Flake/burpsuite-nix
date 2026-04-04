@@ -73,19 +73,19 @@
               seclists = "${pkgs.seclists}/share/wordlists/seclists";
             };
 
-            extensions = [
+            extensions = {
               # Loaded by default
-              "403-bypasser"
-              "json-web-tokens"
-              "js-miner"
-              "param-miner"
+              "403-bypasser".enable = true;
+              "json-web-tokens".enable = true;
+              "js-miner".enable = true;
+              "param-miner".enable = true;
 
               # Installed but not loaded
-              {
-                package = "http-request-smuggler";
+              "http-request-smuggler" = {
+                enable = true;
                 loaded = false;
-              }
-            ];
+              };
+            };
 
             # Settings that are deep-merged into the default config
             settings = {
