@@ -189,8 +189,9 @@ def generate_burp_metadata(output_file: str, currentlist_path: str):
         tomli_w.dump(extensions, f)
 
     # Save new currentlist after successful generation
-    with open(currentlist_path, "w", encoding="utf-8") as f:
-        f.write(new_list_raw)
+    if file_hash(new_list_raw) == file_hash(old_list_raw):
+        with open(currentlist_path, "w", encoding="utf-8") as f:
+            f.write(new_list_raw)
 
     print("Done.")
 
