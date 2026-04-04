@@ -48,7 +48,10 @@
       _module.args = {
         burpPackages = self.packages;
       };
-      imports = [./modules/burp.nix];
+      imports = [
+        ./modules/burp.nix
+        ./modules/javaUserPrefs
+      ];
     };
 
     homeConfigurations.example = home-manager.lib.homeManagerConfiguration rec {

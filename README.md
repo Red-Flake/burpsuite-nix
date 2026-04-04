@@ -98,4 +98,6 @@ programs.burp = {
 - [] Add integration tests
 - [] add declarative ca certificate setup
 - [] add license config
+- [] merge prefs.xml configs if they already exist
+- [] remove the need for the python script and implement the encoding in pure nix
 - [] reimplement javas cursed directory name generation to declaratively modify burp extension settings

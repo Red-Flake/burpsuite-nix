@@ -344,7 +344,7 @@ in {
 
       file.".BurpSuite/UserConfig${editionName}.json" = {
         text = toJSON cfg.finalSettings;
-        force = true;
+        force = false;
       };
     };
   };
