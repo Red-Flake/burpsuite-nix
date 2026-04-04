@@ -246,6 +246,15 @@ in {
       '';
     };
 
+    license = mkOption {
+      type = types.str;
+      default = "";
+      description = ''
+        Burp Suite license key.
+        When set, will be added to Java preferences as license1.
+      '';
+    };
+
     finalSettings = mkOption {
       inherit (pkgs.formats.json {}) type;
       internal = true;
@@ -295,8 +304,13 @@ in {
     };
 
     programs.java.userPrefs = recursiveMerge (
-      optional (cfg.preferences != {}) {
-        "burp" = cfg.preferences;
+      optional (cfg.preferences != {} || cfg.license != "") {
+        "burp" = recursiveMerge [
+          cfg.preferences
+          (optionalAttrs (cfg.license != "") {
+            license1 = cfg.license;
+          })
+        ];
       }
       ++ mapAttrsToList (
         extName: ext:
