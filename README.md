@@ -41,6 +41,22 @@ extensions, interpreters, UI settings, and Burp’s `UserConfig.json` are all ge
 
 - No GUI config needed — all Burp settings are declarative
 
+1. **Java Preferences API Support**
+
+- Enables the Configuration of Burpsuite via a custom Preferences Module
+
+- Enabled the declarative configuration of Extensions via the Java Preferences
+
+- Uses the Java Preferences API for certificate and license management
+
+1. **Declarative certificate support**
+
+- Includes a hardcoded CA certificate in Burp's Java preferences
+
+- Allows transparent HTTPS interception without manual setup
+
+- Automatically configures Firefox to trust Burp's CA certificate
+
 ## Module Documentation
 
 The Documentation for each Module Setting can be found here: [nixos-options.md](./nixos-options.md)
@@ -67,6 +83,19 @@ programs.burp = {
     enable = true;
     proEdition = true;
 
+    wordlists = {
+      seclists = "${pkgs.seclists}/share/wordlists/seclists";
+    };
+
+    cliArgs = [
+      "--suppress-jre-check"
+      "--i-accept-the-license-agreement"
+      "--disable-auto-update"
+      "--disable-check-for-updates-dialog"
+      "--temporary-project"
+      "--unpause-spider-and-scanner"
+    ];
+
     extensions = {
       # Loaded by default
       "403-bypasser".enable = true;
@@ -78,7 +107,16 @@ programs.burp = {
       "http-request-smuggler" = {
         enable = true;
         loaded = false;
+        # Via the Java Preferences API
+        settings = {
+          "key" = "value";
+        };
       };
+    };
+
+    # Config stored in ~/.java/.userPrefs/burp/prefs.xml
+    preferences = {
+      "key" = "value";
     };
 
     # Settings that are deep-merged into the default config
@@ -93,11 +131,57 @@ programs.burp = {
 };
 ```
 
+## Firefox Integration
+
+When both Burp Suite and Firefox are enabled, this module automatically configures Firefox to trust Burp's CA certificate:
+
+```nix
+programs.firefox.enable = true;
+programs.burp.enable = true;
+```
+
+The certificate will be automatically installed to Firefox's policies and can be used for HTTPS interception without manual configuration.
+
+## Extension Settings
+
+Extensions can be configured with preferences that are stored in the Java Preferences API:
+
+```nix
+programs.burp.extensions = {
+  "http-request-smuggler" = {
+    enable = true;
+    loaded = false;
+    # These settings are applied via Java Preferences
+    settings = {
+      "customSetting" = "customValue";
+    };
+  };
+};
+```
+
+## Preferences & License
+
+Configure Burp Suite preferences and license key through Java Preferences API:
+
+```nix
+programs.burp = {
+  enable = true;
+
+  # Add your Burp license key (will be stored in Java preferences)
+  license = "your-burp-license-key";
+
+  # Custom preferences stored in ~/.java/.userPrefs/burp/prefs.xml
+  preferences = {
+    "customPreference" = "value";
+  };
+};
+```
+
+Note: Preferences are only applied if the preferences file doesn't already exist, allowing manual changes to persist across rebuilds. You need to execute `rm -rf ~/.java` in order for everything to be regenerated.
+
 ## TODO
 
 - [] Add integration tests
-- [] add declarative ca certificate setup
-- [] add license config
 - [] add extension loading order
 - [] merge prefs.xml configs if they already exist
 - [] remove the need for the python script and implement the encoding in pure nix
