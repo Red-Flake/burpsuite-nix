@@ -101,4 +101,3 @@ programs.burp = {
 - [] add extension loading order
 - [] merge prefs.xml configs if they already exist
 - [] remove the need for the python script and implement the encoding in pure nix
-- [] reimplement javas cursed directory name generation to declaratively modify burp extension settings

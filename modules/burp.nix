@@ -120,6 +120,15 @@
           defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${_module.args.name}";
           description = "Nix package for this extension, or a package name looked up in the default set";
         };
+
+        options.settings = mkOption {
+          inherit (pkgs.formats.json {}) type;
+          default = {};
+          description = ''
+            Sets preferences for this extension via the Java Preferences API.
+            Options added here are only applied, if the prefs file doesn't already exist.
+          '';
+        };
       })
     ];
   };
@@ -228,6 +237,15 @@ in {
       '';
     };
 
+    preferences = mkOption {
+      inherit (pkgs.formats.json {}) type;
+      default = {};
+      description = ''
+        Sets preferences set by Burpsuite via the Java Preferences API.
+        Options added here are only applied, if the prefs file doesn't already exist.
+      '';
+    };
+
     finalSettings = mkOption {
       inherit (pkgs.formats.json {}) type;
       internal = true;
@@ -276,6 +294,19 @@ in {
       ];
     };
 
+    programs.java.userPrefs = recursiveMerge (
+      optional (cfg.preferences != {}) {
+        "burp" = cfg.preferences;
+      }
+      ++ mapAttrsToList (
+        extName: ext:
+          optionalAttrs (ext.enable && ext.settings != {}) {
+            "burp/extensions/_${ext.package.passthru.burp.name}" = ext.settings;
+          }
+      )
+      cfg.extensions
+    );
+
     home = {
       packages =
         [
@@ -287,7 +318,7 @@ in {
 
       file.".BurpSuite/UserConfig${editionName}.json" = {
         text = toJSON cfg.finalSettings;
-        force = false;
+        force = true;
       };
     };
   };
