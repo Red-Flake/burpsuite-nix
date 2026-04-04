@@ -320,8 +320,8 @@ in {
 
                 (optionalAttrs cfg.enableJruby {
                   ruby.location_of_jruby_jar_file = pkgs.fetchurl {
-                    url = "https://repo1.maven.org/maven2/org/jruby/jruby-complete/10.0.2.0/jruby-complete-10.0.2.0.jar";
-                    hash = "sha256-xaVKvuLAKp/3+gskvssncourqREFuXzl2ZLoWGQm+Iw=";
+                    url = "https://repo1.maven.org/maven2/org/jruby/jruby-complete/10.0.4.0/jruby-complete-10.0.4.0.jar";
+                    hash = "sha256-5p9Hcdd7ZdKPqb15vQpmOwKaOFgLHtlMmrWJ56YyiP8=";
                   };
                 })
               ];
