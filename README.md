@@ -112,6 +112,16 @@ programs.burp = {
           "key" = "value";
         };
       };
+
+      "pwnfox" = {
+        enable = true;
+        # Just fetch the JAR directly - no derivation needed!
+        package = pkgs.fetchurl {
+          url = "https://github.com/yeswehack/PwnFox/releases/download/v1.0.3/PwnFox.jar";
+          hash = "sha256-7drvaK/5L9afUHSXgD+G3auXJ1FYJXMiSO1ELaCNlx4=";
+        };
+        extensiontype = "1";
+      };
     };
 
     # Config stored in ~/.java/.userPrefs/burp/prefs.xml

@@ -71,6 +71,26 @@
     ruby = "3";
   };
 
+  # Check if an extension is a custom extension (not from BApp store)
+  isCustomExtension = ext: ext.extensiontype != "";
+
+  # Check if a package is a direct JAR file (from fetchurl/fetchFromGitHub)
+  isDirectJar = pkg: builtins.isPath pkg || (lib.isDerivation pkg && pkg.name != null && (lib.hasSuffix ".jar" pkg.name));
+
+  # Get the extension type from either custom metadata or package passthru
+  getExtensionType = ext:
+    if isCustomExtension ext
+    then ext.extensiontype
+    else ext.package.passthru.burp.extensiontype;
+
+  # Get the extension name from either direct JAR, custom metadata, or package passthru
+  getExtensionName = ext:
+    if isDirectJar ext.package
+    then lib.removeSuffix ".jar" ext.package.name
+    else if isCustomExtension ext
+    then ext.package.name
+    else ext.package.passthru.burp.name;
+
   editionName =
     if cfg.proEdition
     then "Pro"
@@ -118,7 +138,49 @@
             extensionPackage;
           default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${config._module.args.name};
           defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${_module.args.name}";
-          description = "Nix package for this extension, or a package name looked up in the default set";
+          description = ''
+            Nix package for this extension. Can be:
+            - A package name string (resolved from burpPackages)
+            - A full derivation
+            - A fetchurl/fetchFromGitHub result for the JAR file directly
+          '';
+        };
+
+        options.uuid = mkOption {
+          type = types.str;
+          default = "";
+          description = ''
+            UUID for custom extensions fetched from sources other than the BApp store.
+            Required when using custom GitHub extensions.
+          '';
+        };
+
+        options.serialversion = mkOption {
+          type = types.str;
+          default = "1";
+          description = ''
+            Serial version for custom extensions fetched from sources other than the BApp store.
+            Required when using custom GitHub extensions.
+          '';
+        };
+
+        options.extensiontype = mkOption {
+          type = types.str;
+          default = "";
+          description = ''
+            Extension type for custom extensions fetched from sources other than the BApp store.
+            Values: "1" for Java, "2" for Python, "3" for Ruby.
+            Required when using custom GitHub extensions.
+          '';
+        };
+
+        options.entrypoint = mkOption {
+          type = types.str;
+          default = "";
+          description = ''
+            Override the entrypoint for the extension (JAR file name relative to the lib directory).
+            Only needed for custom extensions that don't have BappManifest.bmf.
+          '';
         };
 
         options.settings = mkOption {
@@ -135,31 +197,50 @@
 
   mkExtensionEntry = ext: let
     pkg = ext.package;
-    dir = "${pkg}/lib/${pkg.pname}";
     entrypoint = "EntryPoint:";
-  in {
-    bapp_serial_version = pkg.passthru.burp.serialversion;
-    bapp_uuid = pkg.passthru.burp.uuid;
 
-    extension_file = pipe "${dir}/BappManifest.bmf" [
-      readFile
-      (splitString "\n")
-      (findFirst (hasPrefix entrypoint) (throw "Missing EntryPoint in ${pkg.name}"))
-      (removePrefix entrypoint)
-      trim
-      (file: "${dir}/${file}")
-    ];
+    # Build directory path - either lib subdir for full packages or direct for JAR files
+    dir =
+      if isDirectJar pkg then
+        builtins.dirOf (builtins.toString pkg)
+      else
+        "${pkg}/lib/${pkg.pname}";
+
+    # Get entrypoint - for direct JARs it's just the filename, otherwise parse or use override
+    getEntrypoint =
+      if isDirectJar pkg then
+        builtins.toString pkg
+      else if ext.entrypoint != "" then
+        "${dir}/${ext.entrypoint}"
+      else
+        pipe "${dir}/BappManifest.bmf" [
+          readFile
+          (splitString "\n")
+          (findFirst (hasPrefix entrypoint) (throw "Missing EntryPoint in ${pkg.name} and no custom entrypoint provided"))
+          (removePrefix entrypoint)
+          trim
+          (file: "${dir}/${file}")
+        ];
+
+    # For custom extensions, use provided metadata, otherwise use passthru.burp
+    getSerialVersion = if isCustomExtension ext then ext.serialversion else pkg.passthru.burp.serialversion;
+    getUuid = if isCustomExtension ext then ext.uuid else pkg.passthru.burp.uuid;
+  in {
+    bapp_serial_version = getSerialVersion;
+    bapp_uuid = getUuid;
+
+    extension_file = getEntrypoint;
 
     extension_type = pipe extTypes [
       attrsToList
-      (findFirst (x: x.value == pkg.passthru.burp.extensiontype) (
-        throw "Unsupported Burp extensiontype: ${pkg.passthru.burp.extensiontype}"
+      (findFirst (x: x.value == getExtensionType ext) (
+        throw "Unsupported Burp extensiontype: ${getExtensionType ext}"
       ))
       (x: x.name)
     ];
 
     inherit (ext) loaded;
-    inherit (pkg.passthru.burp) name;
+    name = getExtensionName ext;
 
     output = "ui";
     errors = "ui";
@@ -219,13 +300,13 @@ in {
     enableJython =
       mkEnableOption "Jython suppport"
       // {
-        default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.python) enabledExtensions;
+        default = any (ext: getExtensionType ext == extTypes.python) enabledExtensions;
       };
 
     enableJruby =
       mkEnableOption "Jruby support"
       // {
-        default = any (ext: ext.package.passthru.burp.extensiontype == extTypes.ruby) enabledExtensions;
+        default = any (ext: getExtensionType ext == extTypes.ruby) enabledExtensions;
       };
 
     settings = mkOption {
@@ -329,7 +410,7 @@ in {
       ++ mapAttrsToList (
         extName: ext:
           optionalAttrs (ext.enable && ext.settings != {}) {
-            "burp/extensions/_${ext.package.passthru.burp.name}" = ext.settings;
+            "burp/extensions/_${getExtensionName ext}" = ext.settings;
           }
       )
       cfg.extensions
@@ -347,7 +428,7 @@ in {
         [
           cfg.finalPackage
         ]
-        ++ map (ext: ext.package) enabledExtensions
+        ++ map (ext: ext.package) (filter (ext: !isDirectJar ext.package) enabledExtensions)
         ++ optional cfg.enableJython pkgs.jython
         ++ optional cfg.enableJruby pkgs.jruby;
 
