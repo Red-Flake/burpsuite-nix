@@ -1,6 +1,36 @@
-# burpsuite-nix
+<h1 align="center">
+  <img src="https://raw.githubusercontent.com/Red-Flake/artwork/main/logos/RedFlake_Logo_256x256px.png" width="250px"/>
+  <div>burpsuite-nix</div>
+  <br>
+  <div>
+    <a href="https://github.com/Red-Flake/red-flake-nix/issues">
+        <img src="https://img.shields.io/github/issues/Red-Flake/burpsuite-nix?color=f5a97f&labelColor=303446&style=for-the-badge">
+    </a>
+    <a href="https://github.com/Red-Flake/red-flake-nix/stargazers">
+        <img src="https://img.shields.io/github/stars/Red-Flake/burpsuite-nix?color=c6a0f6&labelColor=303446&style=for-the-badge">
+    </a>
+    <a href="https://github.com/Red-Flake/red-flake-nix">
+        <img src="https://img.shields.io/github/repo-size/Red-Flake/burpsuite-nix?color=ea999c&labelColor=303446&style=for-the-badge">
+    </a>
+    <a href="https://github.com/Red-Flake/red-flake-nix/blob/main/LICENSE">
+        <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=GPL-3&logoColor=ca9ee6&colorA=313244&colorB=a6da95"/>
+    </a>
+    <a href="https://nixos.org">
+        <img src="https://img.shields.io/badge/NixOS-25.11-blue.svg?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+    </a>
+     <a href="https://github.com/nix-community/home-manager">
+        <img src="https://img.shields.io/badge/home_manager-25.11-blue?style=for-the-badge&labelColor=303446&logo=NixOS&logoColor=white&color=91D7E3">
+    </a>
+     <a href="https://img.shields.io/github/actions/workflow/status/Red-Flake/burpsuite-nix/update-extensions.yml">
+        <img src="https://img.shields.io/github/actions/workflow/status/Red-Flake/red-flake-nix/ci.yml?style=for-the-badge&label=CI&labelColor=303446">
+    </a>
+  </div>
+  <a href="https://builtwithnix.org">
+      <img src="https://builtwithnix.org/badge.svg"/>
+  </a>
+</h1>
 
-Declarative Burp Suite configuration for Nix and Home Manager — including automatic installation and configuration of Burp extensions (BApps), Jython, JRuby, and Burp configuration files.
+Declarative Burp Suite configuration for Nix and Home Manager — including automatic installation and configuration of Burp extensions (BApps), Jython, JRuby, Burp configuration files, automatic certificate provisioning and much more.
 
 `burpsuite-nix` makes Burp Suite fully reproducible:
 extensions, interpreters, UI settings, and Burp’s `UserConfig.json` are all generated automatically through Nix.
