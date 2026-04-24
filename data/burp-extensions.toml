@@ -1048,11 +1048,11 @@ hash = "sha256-Bi7LUxvjFHeqAtvZSRsggjvdUfXhUnmZGeD78b9QlY4="
 serialversion = "5"
 extensiontype = "2"
 
-[firewall-ferret."1.2.1"]
+[firewall-ferret."1.3.0"]
 name = "Firewall Ferret"
 uuid = "ca894f9bab6446f0aa7eac712a7b80ca"
-hash = "sha256-UmzY64SQ0lU6IoOWab8h/ftQIbjI6gXwjGCJsdbpY1U="
-serialversion = "1"
+hash = "sha256-1GfldJNx5sXLrrHk3cNJG27e8jMQCNbVQSkTeIYWDjI="
+serialversion = "2"
 extensiontype = "1"
 
 [flow."1.25a"]
@@ -1258,11 +1258,11 @@ hash = "sha256-q7pHhyWBWvfNTssTrMHpANlYwJLVbBVRWbgm/ygtm30="
 serialversion = "2"
 extensiontype = "1"
 
-[host-header-inchecktion."1.2.3"]
+[host-header-inchecktion."1.3.0"]
 name = "Host Header Inchecktion"
 uuid = "3908768b9ae945d8adf583052ad2e3b3"
-hash = "sha256-L8e/rzMhyrNQiIjrCMa8wyHhPolJp/j/sFv0RBBJysw="
-serialversion = "5"
+hash = "sha256-D4Od64upTMn7yCx/CDojqL2CkaaAscfjEXtuIpx4Ff4="
+serialversion = "6"
 extensiontype = "1"
 
 [hotpatch."1.0.18"]
@@ -1594,11 +1594,11 @@ hash = "sha256-UqvkUVRFPZuNpEc3TbIsnDIjMqE8k0s+geHtxpUUszA="
 serialversion = "3"
 extensiontype = "1"
 
-[jwt-editor."2.6"]
+[jwt-editor."2.6.1"]
 name = "JWT Editor"
 uuid = "26aaa5ded2f74beea19e2ed8345a93dd"
-hash = "sha256-JgmKPKf/jnOiDq1G+mn+jEvdeWWG6IBFOV1gE9BoRaE="
-serialversion = "20"
+hash = "sha256-0YjgRQqUoguzeRqbczeLazjE7oZKpmEOIEdTgDgqcoY="
+serialversion = "21"
 extensiontype = "1"
 
 [jwt-monitor."1.1.1"]
