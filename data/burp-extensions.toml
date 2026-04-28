@@ -2175,11 +2175,11 @@ hash = "sha256-d65jnue1QGQOTDzvOGtBa8SPqVnI/cyyD6cCpxpLvaE="
 serialversion = "5"
 extensiontype = "1"
 
-[pyburp."1.0.1"]
+[pyburp."1.0.2"]
 name = "PyBurp"
 uuid = "d8969aceb89d4dc38e996f3c3579880d"
-hash = "sha256-uyfHe5BncjYwRCMTdt4osgshm8oUsz8lw0WNfBHrUKc="
-serialversion = "4"
+hash = "sha256-Ayzz0167VTIO7n2G7ey/CAwaUiKc/GXcLEJM4DoCRJE="
+serialversion = "8"
 extensiontype = "1"
 
 [pycript."2.0"]
