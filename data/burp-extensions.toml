@@ -2245,6 +2245,13 @@ hash = "sha256-425SLgvt8AOOcVvlpeJ3Qa3ldoVuFcrUQlUXdQQPrSE="
 serialversion = "2"
 extensiontype = "1"
 
+[redsys-psd2-request-signer."2.0.0"]
+name = "Redsys PSD2 Request Signer"
+uuid = "91049d4873124486b7748a352e0d2561"
+hash = "sha256-EYU/uzrOrZHtMIVNA80kYYKyA8pB6a22iTuhF8OlvPI="
+serialversion = "1"
+extensiontype = "2"
+
 [reflected-file-download-checker."1.0"]
 name = "Reflected File Download Checker"
 uuid = "34cd4392e7e04999b9ca0cc91f58886c"
@@ -2676,6 +2683,13 @@ extensiontype = "2"
 name = "Swagger Parser"
 uuid = "858b991209be484d87e0e63c63a24c14"
 hash = "sha256-kLkl8civRrYEmac2FsC2eLu1cYbWweKRU7EuQv6NgNk="
+serialversion = "2"
+extensiontype = "2"
+
+[swapper."1.0.0"]
+name = "Swapper"
+uuid = "0077e9930f0147679b6c5ddbedac52be"
+hash = "sha256-kbyl6opVLcStlhuGCHT/GdetQQdzX3jklYgeebA0jiU="
 serialversion = "2"
 extensiontype = "2"
 
