@@ -1398,11 +1398,11 @@ hash = "sha256-XSc242Q3TwvABgOYh77NZpCJW9i7jbmduEf/Sj+Ll/0="
 serialversion = "27"
 extensiontype = "1"
 
-[intigriti-quick-scope."1.0.0"]
+[intigriti-quick-scope."1.1.1"]
 name = "Intigriti Quick Scope"
 uuid = "8e0a61f11d4d4e4aba25137eea1e1164"
-hash = "sha256-Hd3eBDHO8/pH0TpiWGoEScNDL6wSf9pmpblQd2LLmso="
-serialversion = "5"
+hash = "sha256-mR9tOFov4YRI8ifk7hsIu/E80P2nmf2oie0+f8KLr1k="
+serialversion = "6"
 extensiontype = "1"
 
 [intruder-file-payload-generator."1.0"]
