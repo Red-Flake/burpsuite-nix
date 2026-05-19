@@ -523,11 +523,11 @@ hash = "sha256-gNGJCGoHci0eLJUxCz+fsKUV641a2x5yoAkuCjmU4nQ="
 serialversion = "5"
 extensiontype = "1"
 
-[byte-banter."1.0.0"]
-name = "ByteBanter, BurpAI Intruder Payload Generator"
+[byte-banter."2.0.0"]
+name = "ByteBanter, AI Intruder Payload Generator"
 uuid = "52a262ab411e4d5ab7f1d3c8fc13cdb3"
-hash = "sha256-h8SXV21kB/ZzY+W/OjACbuQ2Cw/hCrhuUuiEDIDS9nI="
-serialversion = "1"
+hash = "sha256-Wx3YYr5nyswCrzhs26jI2xukydGx/mQpnITZBqPGx6s="
+serialversion = "3"
 extensiontype = "1"
 
 [captcha-converter."1.0"]
