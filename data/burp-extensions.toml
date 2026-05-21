@@ -526,8 +526,8 @@ extensiontype = "1"
 [byte-banter."2.0.0"]
 name = "ByteBanter, AI Intruder Payload Generator"
 uuid = "52a262ab411e4d5ab7f1d3c8fc13cdb3"
-hash = "sha256-Wx3YYr5nyswCrzhs26jI2xukydGx/mQpnITZBqPGx6s="
-serialversion = "3"
+hash = "sha256-F98UidNCmGtAK6SzvSlMxk2S5CRnLeUJldACzAihCMk="
+serialversion = "4"
 extensiontype = "1"
 
 [captcha-converter."1.0"]
