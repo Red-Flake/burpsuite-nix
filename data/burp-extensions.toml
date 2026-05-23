@@ -166,11 +166,11 @@ hash = "sha256-KSrsQBd3VmHMU6h/g2VkgCDlR1ra6BDrazUUeYUu+xo="
 serialversion = "3"
 extensiontype = "2"
 
-[asset-saver."1.0"]
+[asset-saver."1.1.0"]
 name = "Asset Saver"
 uuid = "02418b1040fb44d0b99c52f0a04d87f7"
-hash = "sha256-fSFWJdAKVhxtAk0XcPUldTCMQOy+4x86YNGpoYBxk4k="
-serialversion = "2"
+hash = "sha256-Yj3y0oGvuxmf4yDbZPeu35mmIfIg3bEdVRTs3SRkGi0="
+serialversion = "4"
 extensiontype = "1"
 
 [attack-selector."0.1"]
@@ -467,11 +467,11 @@ hash = "sha256-KxiIL8gX+J6oDLFeYPfYLxwSFLKV9eNlm0LALkY5RfE="
 serialversion = "6"
 extensiontype = "1"
 
-[burpcord."2.6.0"]
+[burpcord."2.7.1"]
 name = "Burpcord, Discord Rich Presence for Burp"
 uuid = "b4df2fbd9a9f47468994436e58aa6234"
-hash = "sha256-VKc5G1M7orPAqjWS7BOpUKLKtr2Yx2U42gvrWiedYoI="
-serialversion = "2"
+hash = "sha256-3zDcE0UCqieud2rVIJdvH3j8MiN8db/1xG2hbcjjmR8="
+serialversion = "5"
 extensiontype = "1"
 
 [burpcrypto."0.1.9.1"]
@@ -1160,11 +1160,11 @@ hash = "sha256-L9PEMZ8nmEswPwKKnd8S/fHleocemQlYIyRkcwQxpOI="
 serialversion = "2"
 extensiontype = "1"
 
-[hackvertor."2.2.45"]
+[hackvertor."2.2.51"]
 name = "Hackvertor"
 uuid = "65033cbd2c344fbabe57ac060b5dd100"
-hash = "sha256-ned/BZtuAVpc9FxSr8TtCU1Vt+WpntudKSe2qe2YAhs="
-serialversion = "61"
+hash = "sha256-eCaqzvJVahkY2XRJX/mXoQOQsVk0aXiRwLsbZ/KUh90="
+serialversion = "64"
 extensiontype = "1"
 
 [handy-collaborator."0.2a"]
