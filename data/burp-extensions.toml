@@ -1755,11 +1755,11 @@ hash = "sha256-+KZzl6M0QDkZMPUXSXDbWML644D/N5JA69dROOt6lJU="
 serialversion = "1"
 extensiontype = "1"
 
-[mcp-server."1.2.2"]
+[mcp-server."1.3.0"]
 name = "MCP Server"
 uuid = "9952290f04ed4f628e624d0aa9dccebc"
-hash = "sha256-qw8136mfOCCTmv9s0JpcA/aaFbXFL068eIDVs8Su9gc="
-serialversion = "8"
+hash = "sha256-eXiiv2nIK6VUEYeM6rb7u07x3STVhjEP5PYWuKsIkPo="
+serialversion = "10"
 extensiontype = "1"
 
 [message-pack."1.0"]
