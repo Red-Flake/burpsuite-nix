@@ -1958,11 +1958,11 @@ hash = "sha256-hHbUS418d5D7LThhmVhwoWTRf6CcLCUAtmomB98v4Ts="
 serialversion = "2"
 extensiontype = "2"
 
-[param-miner."1.57"]
+[param-miner."1.58"]
 name = "Param Miner"
 uuid = "17d2949a985c4b7ca092728dba871943"
-hash = "sha256-HYZ5b2aqCxRqSBFSMEXKEr5PQQYLti+Kh9Zv7epD+fM="
-serialversion = "36"
+hash = "sha256-ZKyY0ApV1cZsVGVKZpRKZ5DHLKa1EGWBfJJVvJ5htk8="
+serialversion = "37"
 extensiontype = "1"
 
 [paramalyzer."2.2.2"]
