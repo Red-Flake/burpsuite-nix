@@ -2203,11 +2203,11 @@ hash = "sha256-pvGVaKwWSiXSRgbWaZr+IoMWdid00DnRghxlR8pguc8="
 serialversion = "6"
 extensiontype = "2"
 
-[qualys-was."2.0.2"]
+[qualys-was."2.0.3"]
 name = "Qualys WAS"
 uuid = "3b0105b95e4645a7929faa0cbda1df28"
-hash = "sha256-SkmDAf1FgzJ+QiMWli36NTtEOn1WxStF/slzQgg97CM="
-serialversion = "9"
+hash = "sha256-nAouC5TQiVQjEKH+/HK+C/rvPoyfvqpQ7WwrWk6oGOY="
+serialversion = "12"
 extensiontype = "1"
 
 [quick-update-headers."1.0.0"]
