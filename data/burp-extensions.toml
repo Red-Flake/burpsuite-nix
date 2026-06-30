@@ -2336,6 +2336,13 @@ hash = "sha256-FzBmrYD/zX7TmXfoQ6ve6bvD6bkhnW7qrDi3VMBJ8Q8="
 serialversion = "4"
 extensiontype = "2"
 
+[request-redactor-x."1.0"]
+name = "Request Redactor X"
+uuid = "a26e2cd0dc1a4fb89010e46d3924b5a4"
+hash = "sha256-g0lr1tsE1l/tn2Ydmz59N6m5tCwroFF41LbGgeghnpE="
+serialversion = "5"
+extensiontype = "2"
+
 [request-timer."1.0.2"]
 name = "Request Timer"
 uuid = "56675bcf2a804d3096465b2868ec1d65"
