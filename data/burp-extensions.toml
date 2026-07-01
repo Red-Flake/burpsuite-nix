@@ -1762,6 +1762,13 @@ hash = "sha256-eXiiv2nIK6VUEYeM6rb7u07x3STVhjEP5PYWuKsIkPo="
 serialversion = "10"
 extensiontype = "1"
 
+[mcp-server-scanner."0.1.0"]
+name = "MCP Server Scanner"
+uuid = "331a84edb4134705ad2ef25b90f626f2"
+hash = "sha256-TIyAubjhDHTE+sN3tDO9wlZUeEbf6OFUCE6GVv/6J00="
+serialversion = "4"
+extensiontype = "1"
+
 [message-pack."1.0"]
 name = "MessagePack"
 uuid = "c199ec3330864d548ff7d6bf761960ba"
@@ -2672,11 +2679,11 @@ hash = "sha256-48qNHKMFhUcU+LYUriSr+46On0fFz1la5FQDTbL4fj8="
 serialversion = "4"
 extensiontype = "2"
 
-[stepper."1.4.2"]
+[stepper."2.3.4"]
 name = "Stepper"
 uuid = "065d156ecefd480fa3efa36e05d55f77"
-hash = "sha256-bhYvwcJmfrjSeOMqL0hiWy9mPoTgVPo4LT3mSQpRFzk="
-serialversion = "6"
+hash = "sha256-u6ss3ootSqABX4466a2Wal6Tc8q/3iMNB4oQcKcLbxI="
+serialversion = "10"
 extensiontype = "1"
 
 [sticky-burp."1.0.3"]
