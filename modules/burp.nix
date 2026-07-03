@@ -4,9 +4,9 @@
   pkgs,
   burpPackages,
   ...
-}: let
-  inherit
-    (lib)
+}:
+let
+  inherit (lib)
     all
     any
     attrsToList
@@ -43,20 +43,23 @@
   inherit (lib.strings) toJSON;
 
   # https://stackoverflow.com/a/54505212
-  recursiveMerge = let
-    f = attrPath:
-      zipAttrsWith (
-        n: values:
-          if tail values == []
-          then head values
-          else if all isList values
-          then unique (concatLists values)
-          else if all isAttrs values
-          then f (attrPath ++ [n]) values
-          else last values
-      );
-  in
-    f [];
+  recursiveMerge =
+    let
+      f =
+        attrPath:
+        zipAttrsWith (
+          n: values:
+          if tail values == [ ] then
+            head values
+          else if all isList values then
+            unique (concatLists values)
+          else if all isAttrs values then
+            f (attrPath ++ [ n ]) values
+          else
+            last values
+        );
+    in
+    f [ ];
 
   cfg = config.programs.burp;
 
@@ -75,43 +78,37 @@
   isCustomExtension = ext: ext.extensiontype != "";
 
   # Check if a package is a direct JAR file (from fetchurl/fetchFromGitHub)
-  isDirectJar = pkg: builtins.isPath pkg || (lib.isDerivation pkg && pkg.name != null && (lib.hasSuffix ".jar" pkg.name));
+  isDirectJar =
+    pkg:
+    builtins.isPath pkg
+    || (lib.isDerivation pkg && pkg.name != null && (lib.hasSuffix ".jar" pkg.name));
 
   # Get the extension type from either custom metadata or package passthru
-  getExtensionType = ext:
-    if isCustomExtension ext
-    then ext.extensiontype
-    else ext.package.passthru.burp.extensiontype;
+  getExtensionType =
+    ext: if isCustomExtension ext then ext.extensiontype else ext.package.passthru.burp.extensiontype;
 
   # Get the extension name from either direct JAR, custom metadata, or package passthru
-  getExtensionName = ext:
-    if isDirectJar ext.package
-    then lib.removeSuffix ".jar" ext.package.name
-    else if isCustomExtension ext
-    then ext.package.name
-    else ext.package.passthru.burp.name;
+  getExtensionName =
+    ext:
+    if isDirectJar ext.package then
+      lib.removeSuffix ".jar" ext.package.name
+    else if isCustomExtension ext then
+      ext.package.name
+    else
+      ext.package.passthru.burp.name;
 
-  editionName =
-    if cfg.proEdition
-    then "Pro"
-    else "Community";
+  packageName = types.str // {
+    description = "package name";
+  };
 
-  packageName =
-    types.str
-    // {
-      description = "package name";
-    };
-
-  extensionPackage =
-    types.package
-    // {
-      description = "extension package";
-    };
+  extensionPackage = types.package // {
+    description = "extension package";
+  };
 
   extensionModule = types.submoduleWith {
     shorthandOnlyDefinesConfig = false;
     modules = [
-      ({config, ...}: {
+      ({ config, ... }: {
         options.enable = mkOption {
           type = types.bool;
           default = true;
@@ -131,11 +128,9 @@
         };
 
         options.package = mkOption {
-          type =
-            types.coercedTo packageName (
-              pkgName: burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkgName}
-            )
-            extensionPackage;
+          type = types.coercedTo packageName (
+            pkgName: burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkgName}
+          ) extensionPackage;
           default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${config._module.args.name};
           defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${_module.args.name}";
           description = ''
@@ -184,8 +179,8 @@
         };
 
         options.settings = mkOption {
-          inherit (pkgs.formats.json {}) type;
-          default = {};
+          inherit (pkgs.formats.json { }) type;
+          default = { };
           description = ''
             Sets preferences for this extension via the Java Preferences API.
             Options added here are only applied, if the prefs file doesn't already exist.
@@ -195,67 +190,70 @@
     ];
   };
 
-  mkExtensionEntry = ext: let
-    pkg = ext.package;
-    entrypoint = "EntryPoint:";
+  mkExtensionEntry =
+    ext:
+    let
+      pkg = ext.package;
+      entrypoint = "EntryPoint:";
 
-    # Build directory path - either lib subdir for full packages or direct for JAR files
-    dir =
-      if isDirectJar pkg then
-        builtins.dirOf (builtins.toString pkg)
-      else
-        "${pkg}/lib/${pkg.pname}";
+      # Build directory path - either lib subdir for full packages or direct for JAR files
+      dir = if isDirectJar pkg then dirOf (toString pkg) else "${pkg}/lib/${pkg.pname}";
 
-    # Get entrypoint - for direct JARs it's just the filename, otherwise parse or use override
-    getEntrypoint =
-      if isDirectJar pkg then
-        builtins.toString pkg
-      else if ext.entrypoint != "" then
-        "${dir}/${ext.entrypoint}"
-      else
-        pipe "${dir}/BappManifest.bmf" [
-          readFile
-          (splitString "\n")
-          (findFirst (hasPrefix entrypoint) (throw "Missing EntryPoint in ${pkg.name} and no custom entrypoint provided"))
-          (removePrefix entrypoint)
-          trim
-          (file: "${dir}/${file}")
-        ];
+      # Get entrypoint - for direct JARs it's just the filename, otherwise parse or use override
+      getEntrypoint =
+        if isDirectJar pkg then
+          toString pkg
+        else if ext.entrypoint != "" then
+          "${dir}/${ext.entrypoint}"
+        else
+          pipe "${dir}/BappManifest.bmf" [
+            readFile
+            (splitString "\n")
+            (findFirst (hasPrefix entrypoint) (
+              throw "Missing EntryPoint in ${pkg.name} and no custom entrypoint provided"
+            ))
+            (removePrefix entrypoint)
+            trim
+            (file: "${dir}/${file}")
+          ];
 
-    # For custom extensions, use provided metadata, otherwise use passthru.burp
-    getSerialVersion = if isCustomExtension ext then ext.serialversion else pkg.passthru.burp.serialversion;
-    getUuid = if isCustomExtension ext then ext.uuid else pkg.passthru.burp.uuid;
-  in {
-    bapp_serial_version = getSerialVersion;
-    bapp_uuid = getUuid;
+      # For custom extensions, use provided metadata, otherwise use passthru.burp
+      getSerialVersion =
+        if isCustomExtension ext then ext.serialversion else pkg.passthru.burp.serialversion;
+      getUuid = if isCustomExtension ext then ext.uuid else pkg.passthru.burp.uuid;
+    in
+    {
+      bapp_serial_version = getSerialVersion;
+      bapp_uuid = getUuid;
 
-    extension_file = getEntrypoint;
+      extension_file = getEntrypoint;
 
-    extension_type = pipe extTypes [
-      attrsToList
-      (findFirst (x: x.value == getExtensionType ext) (
-        throw "Unsupported Burp extensiontype: ${getExtensionType ext}"
-      ))
-      (x: x.name)
-    ];
+      extension_type = pipe extTypes [
+        attrsToList
+        (findFirst (x: x.value == getExtensionType ext) (
+          throw "Unsupported Burp extensiontype: ${getExtensionType ext}"
+        ))
+        (x: x.name)
+      ];
 
-    inherit (ext) loaded;
-    name = getExtensionName ext;
+      inherit (ext) loaded;
+      name = getExtensionName ext;
 
-    output = "ui";
-    errors = "ui";
-  };
-in {
+      output = "ui";
+      errors = "ui";
+    };
+in
+{
   options.programs.burp = {
     enable = mkEnableOption "Burp Suite";
 
     proEdition = mkEnableOption "the Pro edition";
 
-    package = mkPackageOption pkgs "burpsuite" {};
+    package = mkPackageOption pkgs "burpsuite" { };
 
     cliArgs = mkOption {
       type = types.listOf types.str;
-      default = [];
+      default = [ ];
       description = "Additional command line arguments to pass to Burp";
     };
 
@@ -266,52 +264,50 @@ in {
 
       default = cfg.package.override (
         old:
-          (
-            if hasAttr "proEdition" old
-            then {inherit (cfg) proEdition;}
-            else {}
-          )
-          // {
-            buildFHSEnv = args:
-              old.buildFHSEnv (
-                args
-                // {
-                  runScript =
-                    (args.runScript or "")
-                    + (lib.strings.optionalString (cfg.cliArgs != []) (" " + lib.strings.escapeShellArgs cfg.cliArgs));
-                  extraBwrapArgs =
-                    (args.extraBwrapArgs or [])
-                    ++ mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
-                }
-              );
-          }
+        (
+          if hasAttr "iconName" old then
+            { iconName = if cfg.proEdition then "pro" else "community"; }
+          else
+            { }
+        )
+        // {
+          buildFHSEnv =
+            args:
+            old.buildFHSEnv (
+              args
+              // {
+                runScript =
+                  (args.runScript or "")
+                  + (lib.strings.optionalString (cfg.cliArgs != [ ]) (" " + lib.strings.escapeShellArgs cfg.cliArgs));
+                extraBwrapArgs =
+                  (args.extraBwrapArgs or [ ])
+                  ++ mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
+              }
+            );
+        }
       );
     };
 
     wordlists = mkOption {
       type = types.attrsOf types.path;
-      default = {};
+      default = { };
       description = ''
         Mapping of wordlist names to paths.
         These paths will be mounted at /lists/<name> in the Burp sandbox.
       '';
     };
 
-    enableJython =
-      mkEnableOption "Jython suppport"
-      // {
-        default = any (ext: getExtensionType ext == extTypes.python) enabledExtensions;
-      };
+    enableJython = mkEnableOption "Jython suppport" // {
+      default = any (ext: getExtensionType ext == extTypes.python) enabledExtensions;
+    };
 
-    enableJruby =
-      mkEnableOption "Jruby support"
-      // {
-        default = any (ext: getExtensionType ext == extTypes.ruby) enabledExtensions;
-      };
+    enableJruby = mkEnableOption "Jruby support" // {
+      default = any (ext: getExtensionType ext == extTypes.ruby) enabledExtensions;
+    };
 
     settings = mkOption {
-      inherit (pkgs.formats.json {}) type;
-      default = {};
+      inherit (pkgs.formats.json { }) type;
+      default = { };
       description = ''
         Overrides for Burp config.json (deep merged).
         Options added here are always wrapped in `user_options`.
@@ -319,8 +315,8 @@ in {
     };
 
     preferences = mkOption {
-      inherit (pkgs.formats.json {}) type;
-      default = {};
+      inherit (pkgs.formats.json { }) type;
+      default = { };
       description = ''
         Sets preferences set by Burpsuite via the Java Preferences API.
         Options added here are only applied, if the prefs file doesn't already exist.
@@ -337,14 +333,14 @@ in {
     };
 
     finalSettings = mkOption {
-      inherit (pkgs.formats.json {}) type;
+      inherit (pkgs.formats.json { }) type;
       internal = true;
       readOnly = true;
     };
 
     extensions = mkOption {
       type = types.attrsOf extensionModule;
-      default = {};
+      default = { };
       description = ''
         Attribute set of Burp extensions.
         Extension names like "403-bypasser" are resolved automatically from
@@ -356,7 +352,7 @@ in {
       type = types.submodule {
         options.enable = mkEnableOption "hyprpaper integration";
       };
-      default = {};
+      default = { };
       description = ''
         Hyprpaper integration options.
       '';
@@ -395,7 +391,7 @@ in {
     };
 
     programs.java.userPrefs = recursiveMerge (
-      optional (cfg.preferences != {} || cfg.license != "") {
+      optional (cfg.preferences != { } || cfg.license != "") {
         "burp" = recursiveMerge [
           cfg.preferences
           (optionalAttrs (cfg.license != "") {
@@ -409,11 +405,10 @@ in {
       }
       ++ mapAttrsToList (
         extName: ext:
-          optionalAttrs (ext.enable && ext.settings != {}) {
-            "burp/extensions/_${getExtensionName ext}" = ext.settings;
-          }
-      )
-      cfg.extensions
+        optionalAttrs (ext.enable && ext.settings != { }) {
+          "burp/extensions/_${getExtensionName ext}" = ext.settings;
+        }
+      ) cfg.extensions
     );
 
     programs.firefox.policies = mkIf config.programs.firefox.enable {
@@ -424,15 +419,14 @@ in {
     };
 
     home = {
-      packages =
-        [
-          cfg.finalPackage
-        ]
-        ++ map (ext: ext.package) (filter (ext: !isDirectJar ext.package) enabledExtensions)
-        ++ optional cfg.enableJython pkgs.jython
-        ++ optional cfg.enableJruby pkgs.jruby;
+      packages = [
+        cfg.finalPackage
+      ]
+      ++ map (ext: ext.package) (filter (ext: !isDirectJar ext.package) enabledExtensions)
+      ++ optional cfg.enableJython pkgs.jython
+      ++ optional cfg.enableJruby pkgs.jruby;
 
-      file.".BurpSuite/UserConfig${editionName}.json" = {
+      file.".BurpSuite/UserConfig.json" = {
         text = toJSON cfg.finalSettings;
         force = true;
       };

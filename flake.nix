@@ -139,7 +139,11 @@
         pkgs:
         let
           tests = import ./tests {
-            inherit pkgs self home-manager;
+            inherit
+              pkgs
+              self
+              home-manager
+              ;
           };
 
           interactiveTests = lib.mapAttrs' (

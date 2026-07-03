@@ -7,12 +7,14 @@
 {
   burp = pkgs.testers.runNixOSTest {
     name = "burp";
+    enableOCR = true;
 
     imports = [
       ./burp.nix
     ];
 
     defaults = {
+
       imports = [
         home-manager.nixosModules.home-manager
       ];

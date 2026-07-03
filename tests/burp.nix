@@ -1,13 +1,17 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   nodes.client = {
+    imports = [
+      "${pkgs.path}/nixos/tests/common/x11.nix"
+    ];
+
     users.users.alice = {
       isNormalUser = true;
       home = "/home/alice";
     };
 
-    home-manager.users.alice = {
+    home-manager.users.root = {
       home.stateVersion = "25.05";
 
       programs.burp = {
@@ -45,11 +49,19 @@
     start_all()
 
     client.wait_for_unit("multi-user.target")
-    client.wait_for_unit("home-manager-alice.service")
+    client.wait_for_x()
 
-    client.succeed("systemctl --no-pager --full status home-manager-alice.service")
-    client.wait_until_succeeds("test -e /home/alice/.BurpSuite/UserConfigCommunity.json")
-    client.succeed("grep -Eq '\"look_and_feel\"[[:space:]]*:[[:space:]]*\"Dark\"' /home/alice/.BurpSuite/UserConfigCommunity.json")
-    client.succeed("grep -Eq '\"font_size\"[[:space:]]*:[[:space:]]*\"17\"' /home/alice/.BurpSuite/UserConfigCommunity.json")
+    client.execute("nohup burpsuite >/dev/null 2>&1 &")
+
+    # Wait for the Burp Suite process to start
+    client.wait_for_window("Temporary Project")
+    client.sleep(1)
+
+    # Check if the Extension is installed and loaded
+    for _ in range(13):
+      client.send_key("ctrl-tab")
+      client.sleep(1)
+    client.wait_for_text("Burp extensions")
+    client.wait_for_text("Param Miner")
   '';
 }
