@@ -7,139 +7,163 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = {
-    self,
-    nixpkgs,
-    home-manager,
-    ...
-  }: let
-    inherit (nixpkgs) lib;
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }:
+    let
+      inherit (nixpkgs) lib;
 
-    eachSystem = f:
-      lib.genAttrs systems (
-        system: let
-          pkgs = import nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        in
+      eachSystem =
+        f:
+        lib.genAttrs systems (
+          system:
+          let
+            pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          in
           f pkgs
+        );
+
+      systems = [
+        "x86_64-linux"
+        "aarch64-linux"
+        "x86_64-darwin"
+        "aarch64-darwin"
+      ];
+    in
+    {
+      packages = eachSystem (
+        pkgs:
+        let
+          bappPackages = import ./pkgs {
+            inherit lib pkgs;
+            inherit (pkgs) fetchzip;
+          };
+          docs = pkgs.callPackage ./docs.nix { inherit pkgs self; };
+        in
+        bappPackages // { inherit docs; }
       );
 
-    systems = [
-      "x86_64-linux"
-      "aarch64-linux"
-      "x86_64-darwin"
-      "aarch64-darwin"
-    ];
-  in {
-    packages = eachSystem (
-      pkgs: let
-        bappPackages = import ./pkgs {
-          inherit lib pkgs;
-          inherit (pkgs) fetchzip;
+      homeManagerModules.default = {
+        _module.args = {
+          burpPackages = self.packages;
         };
-        docs = pkgs.callPackage ./docs.nix {inherit pkgs self;};
-      in
-        bappPackages // {inherit docs;}
-    );
-
-    homeManagerModules.default = {
-      _module.args = {
-        burpPackages = self.packages;
+        imports = [
+          ./modules/burp.nix
+          ./modules/javaUserPrefs
+        ];
       };
-      imports = [
-        ./modules/burp.nix
-        ./modules/javaUserPrefs
-      ];
-    };
 
-    homeConfigurations.example = home-manager.lib.homeManagerConfiguration rec {
-      pkgs = import nixpkgs {system = "x86_64-linux";};
-      modules = [
-        self.homeManagerModules.default
-        {
-          home = rec {
-            stateVersion = "25.05";
-            username = "alice";
-            homeDirectory = "/home/${username}";
-          };
-
-          programs.burp = {
-            enable = true;
-            # proEdition = true;
-
-            wordlists = {
-              seclists = "${pkgs.seclists}/share/wordlists/seclists";
+      homeConfigurations.example = home-manager.lib.homeManagerConfiguration rec {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        modules = [
+          self.homeManagerModules.default
+          {
+            home = rec {
+              stateVersion = "25.05";
+              username = "alice";
+              homeDirectory = "/home/${username}";
             };
 
-            extensions = {
-              # Loaded by default
-              "403-bypasser".enable = true;
-              "json-web-tokens".enable = true;
-              "js-miner".enable = true;
-              "param-miner".enable = true;
+            programs.burp = {
+              enable = true;
+              # proEdition = true;
 
-              # Installed but not loaded
-              "http-request-smuggler" = {
-                enable = true;
-                loaded = false;
+              wordlists = {
+                seclists = "${pkgs.seclists}/share/wordlists/seclists";
+              };
+
+              extensions = {
+                # Loaded by default
+                "403-bypasser".enable = true;
+                "json-web-tokens".enable = true;
+                "js-miner".enable = true;
+                "param-miner".enable = true;
+
+                # Installed but not loaded
+                "http-request-smuggler" = {
+                  enable = true;
+                  loaded = false;
+                };
+              };
+
+              # Settings that are deep-merged into the default config
+              settings = {
+                display.user_interface = {
+                  # Enable Darkmode
+                  look_and_feel = "Dark";
+                  # Change Scaling
+                  font_size = "17";
+                };
               };
             };
+          }
+        ];
+      };
 
-            # Settings that are deep-merged into the default config
-            settings = {
-              display.user_interface = {
-                # Enable Darkmode
-                look_and_feel = "Dark";
-                # Change Scaling
-                font_size = "17";
-              };
-            };
-          };
-        }
-      ];
-    };
-
-    formatter = eachSystem (
-      pkgs:
+      formatter = eachSystem (
+        pkgs:
         pkgs.treefmt.withConfig {
           settings = lib.mkMerge [
             ./treefmt.nix
-            {_module.args = {inherit pkgs;};}
+            { _module.args = { inherit pkgs; }; }
           ];
         }
-    );
+      );
 
-    devShells = eachSystem (
-      pkgs: let
-        inherit (pkgs.stdenv.hostPlatform) system;
-      in {
-        default = pkgs.mkShell {
-          packages = [
-            self.formatter.${system}
+      devShells = eachSystem (
+        pkgs:
+        let
+          inherit (pkgs.stdenv.hostPlatform) system;
+        in
+        {
+          default = pkgs.mkShell {
+            packages = [
+              self.formatter.${system}
 
-            (pkgs.writeShellScriptBin "mkdocs" ''
-              cp ${self.packages.${system}.docs} nixos-options.md
-            '')
-          ];
-        };
-      }
-    );
+              (pkgs.writeShellScriptBin "mkdocs" ''
+                cp ${self.packages.${system}.docs} nixos-options.md
+              '')
+            ];
+          };
+        }
+      );
 
-    checks = eachSystem (pkgs: {
-      fmt = pkgs.runCommandLocal "fmt-check" {} ''
-        cp -r --no-preserve=mode ${self} repo
-        ${lib.getExe self.formatter.${pkgs.stdenv.hostPlatform.system}} -C repo --ci
-        touch $out
-      '';
+      checks = eachSystem (
+        pkgs:
+        let
+          tests = import ./tests {
+            inherit pkgs self home-manager;
+          };
 
-      docs = pkgs.runCommandLocal "docs-check" {} ''
-        diff -U3 --color=auto ${./nixos-options.md} ${self.packages.${pkgs.stdenv.hostPlatform.system}.docs}
-        touch $out
-      '';
-    });
-  };
+          interactiveTests = lib.mapAttrs' (
+            name: test: lib.nameValuePair "${name}Interactive" test.driverInteractive
+          ) tests;
+        in
+        tests
+        // interactiveTests
+        // {
+          fmt = pkgs.runCommandLocal "fmt-check" { } ''
+            cp -r --no-preserve=mode ${self} repo
+            ${lib.getExe self.formatter.${pkgs.stdenv.hostPlatform.system}} -C repo --ci
+            touch $out
+          '';
+
+          docs = pkgs.runCommandLocal "docs-check" { } ''
+            diff -U3 --color=auto \
+              ${./nixos-options.md} \
+              ${self.packages.${pkgs.stdenv.hostPlatform.system}.docs}
+            touch $out
+          '';
+        }
+      );
+    };
   nixConfig = {
     abort-on-warn = true;
     commit-lock-file-summary = "chore: update flake.lock";
