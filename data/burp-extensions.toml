@@ -621,6 +621,13 @@ hash = "sha256-p6H/rM8vxC7BniD2cxGLAqNW3DwnfkmBcJt45uiYWTg="
 serialversion = "2"
 extensiontype = "1"
 
+[command-runner."1.0.0"]
+name = "Command Runner"
+uuid = "ad22e877b4344ac7b72fbd5dd407ae84"
+hash = "sha256-MoTUWRJRQk+gt3OvNhRxPC/CSLu3k7UL72rLw2mA+qg="
+serialversion = "1"
+extensiontype = "1"
+
 [commentator."1.2a"]
 name = "Commentator"
 uuid = "fc5658afca9144d7b49f611aac557539"
