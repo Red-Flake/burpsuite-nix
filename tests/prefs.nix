@@ -14,7 +14,8 @@
         "burp" = {
           "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
         };
-        "burp/extensions/_HTTP Request Smuggler" = {
+        # The _ is needed as burpsuite prefixes every extension name with it, otherwise it wouldnt be encoded
+        "burp/extensions/_JWT Editor" = {
           "global.suite.deviceId" = "test";
         };
       };
@@ -49,7 +50,7 @@
     ### Check that the special path encoding works correctly
     ###
 
-    path = """/home/alice/.java/.userPrefs/burp/extensions/_!&8!]!"`!&@!`!!g!&)!~@"x!(`!~@"z!(@!)!"^!\'0!d@"n!\'c!b!"l!()=/prefs.xml"""
+    path = """/home/alice/.java/.userPrefs/burp/extensions/_!&8!]g"|!&@!)!"&!'@!a@"0!'8!cg==/prefs.xml"""
 
     client.succeed(f"test -e {shlex.quote(path)}")
 
