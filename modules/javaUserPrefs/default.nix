@@ -20,46 +20,54 @@ let
     );
 
   # Generate the complete XML document
-  prefsToXml =
-    entries:
-    "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<!DOCTYPE map SYSTEM \"http://java.sun.com/dtd/preferences.dtd\">\n<map MAP_XML_VERSION=\"1.0\">\n  ${entriesToXml entries}\n</map>";
+  prefsToXml = entries: ''
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE map SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+    <map MAP_XML_VERSION="1.0">
+      ${entriesToXml entries}
+    </map>
+  '';
 
-  # Helper to run gen.py and get encoded path
-  # TODO: Only run this if necessary(forbidden character in the path)
+  needsEncoding =
+    path: builtins.match "^[ -~]*$" path == null || builtins.match ".*[./_].*" path != null;
+
+  # Helper to run gen.java and get the encoded path
   encodePathForJavaPrefs =
-    p:
-    lib.removeSuffix "\n" (
-      builtins.readFile (
-        pkgs.runCommand "encoded-path-${lib.strings.sanitizeDerivationName p}" { } ''
-          ${getExe pkgs.jdk} ${./gen.java} --directory ${lib.escapeShellArg p} > $out
-        ''
+    path:
+    if needsEncoding path then
+      lib.removeSuffix "\n" (
+        builtins.readFile (
+          pkgs.runCommand "encoded-path-${lib.strings.sanitizeDerivationName path}" { } ''
+            ${getExe pkgs.jdk} ${./gen.java} --directory ${lib.escapeShellArg path} > $out
+          ''
+        )
       )
-    );
+    else
+      path;
 
-  # Generate shell commands for each path
-  # TODO: Switch from home.activationScript to systemt.user.tmpfiles
-  generateShellCommands = builtins.concatStringsSep "\n" (
-    map (
-      p:
+  generateTmpfilesRules = [
+    "d %h/.java 0755 - - -"
+    "d %h/.java/.userPrefs 0755 - - -"
+  ]
+  ++ lib.concatLists (
+    lib.mapAttrsToList (
+      path: entries:
       let
-        encodedPath = encodePathForJavaPrefs p;
+        encodedPath = encodePathForJavaPrefs path;
+
+        xml = pkgs.writeText "java-prefs-${lib.strings.sanitizeDerivationName encodedPath}.xml" (
+          prefsToXml entries
+        );
+
+        prefsDir = "%h/.java/.userPrefs/${encodedPath}";
       in
-      ''
-        prefsDir="$HOME/.java/.userPrefs/$(printf %s ${lib.escapeShellArg encodedPath})"
-        mkdir -p "$prefsDir"
-
-        prefsFile="$prefsDir/prefs.xml"
-
-        # Only write if file doesn't exist, use heredoc to safely handle all characters
-        if [[ ! -f "$prefsFile" ]]; then
-          cat > "$prefsFile" <<'EOF'
-        ${prefsToXml (cfg.${p})}
-        EOF
-          chmod 644 "$prefsFile"
-        fi
-      ''
-    ) (lib.attrNames cfg)
+      [
+        "d ${lib.escapeShellArg prefsDir} 0755 - - -"
+        "C ${lib.escapeShellArg prefsDir}/prefs.xml 0644 - - - ${xml}"
+      ]
+    ) cfg
   );
+
 in
 {
   options = {
@@ -69,7 +77,7 @@ in
       description = "Java user preferences as nested attribute sets. Each top-level key is a preference path, with nested key-value pairs for individual preferences.";
       # TODO: Change the data model to a nested tree
       example = {
-        "burp" = {
+        burp = {
           "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
         };
         "burp/extensions/_HTTP Request Smuggler" = {
@@ -80,8 +88,6 @@ in
   };
 
   config = mkIf (cfg != { }) {
-    home.activation.writeJavaUserPrefs = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      ${generateShellCommands}
-    '';
+    systemd.user.tmpfiles.rules = generateTmpfilesRules;
   };
 }

@@ -63,5 +63,25 @@
 
     actual = client.succeed(f"cat {shlex.quote(path)}")
     assert actual == expected, f"Unexpected prefs.xml for special path:\n{actual}"
+
+    ###
+    ### Check that the file creation works correctly
+    ###
+
+    client.succeed("echo modified >> /home/alice/.java/.userPrefs/burp/prefs.xml")
+
+    client.succeed("runuser -l alice -c 'systemd-tmpfiles --create --user'")
+
+    client.succeed("grep -q modified /home/alice/.java/.userPrefs/burp/prefs.xml")
+
+    # Test that the file is created if it does not exist
+
+    client.succeed("rm /home/alice/.java/.userPrefs/burp/prefs.xml")
+    client.succeed(f"rm {shlex.quote(path)}")
+
+    client.succeed("runuser -l alice -c 'systemd-tmpfiles --create --user'")
+
+    client.succeed("test -f /home/alice/.java/.userPrefs/burp/prefs.xml")
+    client.succeed(f"test -e {shlex.quote(path)}")
   '';
 }
