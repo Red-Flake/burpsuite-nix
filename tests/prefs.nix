@@ -8,15 +8,17 @@
     };
 
     home-manager.users.alice = {
-      home.stateVersion = "25.05";
+      home.stateVersion = "26.05";
 
       programs.java.userPrefs = {
-        "burp" = {
+        burp = {
           "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
-        };
-        # The _ is needed as burpsuite prefixes every extension name with it, otherwise it wouldnt be encoded
-        "burp/extensions/_JWT Editor" = {
-          "global.suite.deviceId" = "test";
+          extensions = {
+            # The _ is needed as burpsuite prefixes every extension name with it, otherwise it wouldnt be encoded
+            "_JWT Editor" = {
+              "global.suite.deviceId" = "test";
+            };
+          };
         };
       };
     };
