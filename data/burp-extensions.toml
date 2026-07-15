@@ -1951,6 +1951,13 @@ hash = "sha256-otlM/2sISvwicIMJsMZsBigHym5269ttpTpMnnZjMrw="
 serialversion = "5"
 extensiontype = "1"
 
+[owasp-api-security-top-ten-scanner."2.3.2"]
+name = "OWASP API Security Top 10 Scanner"
+uuid = "4894a4ba29ec4303990196a6bbc5d67b"
+hash = "sha256-lT8dMdj6MEClbLgEC7nwxD5pKk85y/mppUGrg2ipq7o="
+serialversion = "4"
+extensiontype = "1"
+
 [packet-purifier."1.2.0"]
 name = "Packet Purifier"
 uuid = "8eac0db6c905449ea747398a229fbf6b"
