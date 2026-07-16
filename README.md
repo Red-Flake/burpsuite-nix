@@ -217,11 +217,10 @@ programs.burp = {
 };
 ```
 
-Note: Preferences are only applied if the preferences file doesn't already exist, allowing manual changes to persist across rebuilds. You need to execute `rm -rf ~/.java` in order for everything to be regenerated.
+Note: Preferences are only applied if the preferences file doesn't already exist, allowing manual changes to persist across rebuilds. You need to execute `rm -rf ~/.java/.userPrefs/burp` in order for everything to be regenerated.
 
 ## TODO
 
-- [] Add integration tests
-- [] add extension loading order
-- [] merge prefs.xml configs if they already exist
-- [] remove the need for the python script and implement the encoding in pure nix
+- [ ] add extension loading order
+- [ ] maybe add macos support for the java preferences module
+- [ ] split-up the burpsuite module
