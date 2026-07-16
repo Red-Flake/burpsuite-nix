@@ -6,11 +6,6 @@
       "${pkgs.path}/nixos/tests/common/x11.nix"
     ];
 
-    users.users.alice = {
-      isNormalUser = true;
-      home = "/home/alice";
-    };
-
     home-manager.users.root = {
       home.stateVersion = "26.05";
 
@@ -63,7 +58,7 @@
 
     # Wait for the Burp Suite process to start
     client.wait_for_window("Temporary Project")
-    client.sleep(2)
+    client.sleep(5)
     client.screenshot("temporary-project")
 
     # Check if the Extension is installed and loaded
@@ -71,9 +66,9 @@
     for _ in range(14):
       client.send_key("ctrl-tab")
       client.sleep(1)
+    client.screenshot("extensions-tab")
     client.wait_for_text("Burp extensions")
     client.wait_for_text("Param Miner")
-    client.screenshot("extensions-tab")
 
     # Check if Extension settings work
 
@@ -84,7 +79,7 @@
       client.sleep(1)
     client.send_key("right")
     client.send_key("right")
-    client.wait_for_text("Yellow")
     client.screenshot("extension-settings")
+    client.wait_for_text("Yellow")
   '';
 }

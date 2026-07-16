@@ -55,7 +55,7 @@
           burpPackages = self.packages;
         };
         imports = [
-          ./modules/burp.nix
+          ./modules/burp
           ./modules/javaUserPrefs
         ];
       };
@@ -66,7 +66,7 @@
           self.homeManagerModules.default
           {
             home = rec {
-              stateVersion = "25.05";
+              stateVersion = "26.05";
               username = "alice";
               homeDirectory = "/home/${username}";
             };

@@ -352,7 +352,7 @@ in
   config = mkIf cfg.enable {
     programs.burp = {
       finalSettings = recursiveMerge [
-        (importJSON ../data/config.json)
+        (importJSON ../../data/config.json)
         {
           user_options = recursiveMerge [
             {
@@ -428,7 +428,7 @@ in
         force = true;
       };
       # Expose the hardcoded cacert
-      file.".BurpSuite/cacert.der".source = ../data/cacert.der;
+      file.".BurpSuite/cacert.der".source = ../../data/cacert.der;
     };
   };
 }
