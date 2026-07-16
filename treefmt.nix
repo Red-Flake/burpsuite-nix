@@ -2,7 +2,8 @@
   lib,
   pkgs,
   ...
-}: {
+}:
+{
   tree-root-file = "treefmt.nix";
   on-unmatched = "fatal";
   excludes = [
@@ -16,7 +17,7 @@
 
   formatter.nixfmt = {
     command = lib.getExe pkgs.nixfmt-rfc-style;
-    includes = ["*.nix"];
-    options = ["--strict"];
+    includes = [ "*.nix" ];
+    options = [ "--strict" ];
   };
 }

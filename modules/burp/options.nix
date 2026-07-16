@@ -76,7 +76,11 @@ let
         };
 
         options.extensiontype = mkOption {
-          type = types.str;
+          type = types.enum [
+            "1"
+            "2"
+            "3"
+          ];
           default = "";
           description = ''
             Extension type for custom extensions fetched from sources other than the BApp store.

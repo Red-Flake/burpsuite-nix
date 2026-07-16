@@ -223,4 +223,3 @@ Note: Preferences are only applied if the preferences file doesn't already exist
 
 - [ ] add extension loading order
 - [ ] maybe add macos support for the java preferences module
-- [ ] split-up the burpsuite module
