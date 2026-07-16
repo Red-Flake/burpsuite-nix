@@ -7,14 +7,12 @@
 }:
 let
   inherit (lib)
-    attrValues
     filter
     importJSON
     mapAttrsToList
     mkIf
     optional
     optionalAttrs
-    pipe
     ;
 
   inherit (lib.strings) toJSON;
@@ -34,10 +32,13 @@ let
     mkExtensionEntry
     ;
 
-  enabledExtensions = pipe cfg.extensions [
-    attrValues
-    (filter (ext: ext.enable))
-  ];
+  sortedExtensions = lib.hm.dag.topoSort cfg.extensions;
+
+  enabledExtensions =
+    if sortedExtensions ? result then
+      filter (ext: ext.enable) (map (entry: entry.data) sortedExtensions.result)
+    else
+      throw "Dependency cycle in Burp extensions: ${builtins.toJSON sortedExtensions}";
 in
 {
 
@@ -124,7 +125,10 @@ in
 
           (recursiveMerge (
             mapAttrsToList (
-              extName: ext:
+              _: entry:
+              let
+                ext = entry.data;
+              in
               optionalAttrs (ext.enable && ext.settings != { }) {
                 extensions = {
                   "${"_${getExtensionName ext}"}" = ext.settings;

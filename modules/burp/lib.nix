@@ -51,7 +51,7 @@ let
   };
 
   # Check if an extension is a custom extension (not from BApp store)
-  isCustomExtension = ext: ext.extensiontype != "";
+  isCustomExtension = ext: ext.extensiontype != null;
 
   # Check if a package is a direct JAR file (from fetchurl/fetchFromGitHub)
   isDirectJar =

@@ -2,6 +2,7 @@
   pkgs,
   self,
   home-manager,
+  lib,
 }:
 
 {
@@ -10,7 +11,9 @@
     enableOCR = true;
 
     imports = [
-      ./burp.nix
+      (import ./burp.nix {
+        inherit pkgs lib home-manager;
+      })
     ];
 
     defaults = {

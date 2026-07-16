@@ -143,6 +143,7 @@
               pkgs
               self
               home-manager
+              lib
               ;
           };
 

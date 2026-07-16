@@ -24,7 +24,7 @@ let
   extensionModule = types.submoduleWith {
     shorthandOnlyDefinesConfig = false;
     modules = [
-      ({ config, ... }: {
+      ({ dagName, ... }: {
         options.enable = mkOption {
           type = types.bool;
           default = true;
@@ -47,8 +47,13 @@ let
           type = types.coercedTo packageName (
             pkgName: burpPackages.${pkgs.stdenv.hostPlatform.system}.${pkgName}
           ) extensionPackage;
-          default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${config._module.args.name};
-          defaultText = literalExpression "burpPackages.\${pkgs.stdenv.hostPlatform.system}.\${_module.args.name}";
+
+          default = burpPackages.${pkgs.stdenv.hostPlatform.system}.${dagName};
+
+          defaultText = literalExpression ''
+            burpPackages.\${pkgs.stdenv.hostPlatform.system}.<extension-name>
+          '';
+
           description = ''
             Nix package for this extension. Can be:
             - A package name string (resolved from burpPackages)
@@ -76,12 +81,14 @@ let
         };
 
         options.extensiontype = mkOption {
-          type = types.enum [
-            "1"
-            "2"
-            "3"
-          ];
-          default = "";
+          type = types.nullOr (
+            types.enum [
+              "1"
+              "2"
+              "3"
+            ]
+          );
+          default = null;
           description = ''
             Extension type for custom extensions fetched from sources other than the BApp store.
             Values: "1" for Java, "2" for Python, "3" for Ruby.
@@ -177,12 +184,13 @@ in
     };
 
     extensions = mkOption {
-      type = types.attrsOf extensionModule;
+      type = lib.hm.types.dagOf extensionModule;
       default = { };
       description = ''
         Attribute set of Burp extensions.
         Extension names like "403-bypasser" are resolved automatically from
         `burpPackages.''${pkgs.stdenv.hostPlatform.system}` without needing to reference the input.
+        Extension ordering can be controlled with lib.hm.dag.entryBefore and lib.hm.dag.entryAfter.
       '';
     };
   };

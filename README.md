@@ -134,7 +134,7 @@ programs.burp = {
       "param-miner".enable = true;
 
       # Installed but not loaded
-      "http-request-smuggler" = {
+      "http-request-smuggler" lib.hm.dag.entryAfter [ "pwnfox" ] = {
         enable = true;
         loaded = false;
         # Via the Java Preferences API
@@ -218,8 +218,3 @@ programs.burp = {
 ```
 
 Note: Preferences are only applied if the preferences file doesn't already exist, allowing manual changes to persist across rebuilds. You need to execute `rm -rf ~/.java/.userPrefs/burp` in order for everything to be regenerated.
-
-## TODO
-
-- [ ] add extension loading order
-- [ ] maybe add macos support for the java preferences module

@@ -1,6 +1,14 @@
-{ pkgs, ... }:
-
 {
+  pkgs,
+  home-manager,
+  lib,
+  ...
+}:
+let
+  hmLib = import "${home-manager}/modules/lib/stdlib-extended.nix" lib;
+in
+{
+
   nodes.client = {
     imports = [
       "${pkgs.path}/nixos/tests/common/x11.nix"
@@ -13,7 +21,7 @@
         enable = true;
 
         extensions."param-miner".enable = true;
-        extensions."jwt-editor" = {
+        extensions."jwt-editor" = hmLib.hm.dag.entryAfter [ "param-miner" ] {
           enable = true;
           settings = {
             # YELLOW is not default, Orange is
