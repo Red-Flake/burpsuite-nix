@@ -5,7 +5,12 @@
   ...
 }:
 let
-  inherit (lib) mkIf mkOption;
+  inherit (lib)
+    mkIf
+    mkOption
+    isString
+    isAttrs
+    ;
 
   cfg = config.programs.java.userPrefs;
 
@@ -15,9 +20,7 @@ let
 
   assertValidTree =
     tree:
-    lib.all (value: builtins.isString value || (builtins.isAttrs value && assertValidTree value)) (
-      lib.attrValues tree
-    );
+    lib.all (value: isString value || (isAttrs value && assertValidTree value)) (lib.attrValues tree);
 
   generateTmpfilesRules =
     let

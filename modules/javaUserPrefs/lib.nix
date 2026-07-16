@@ -1,19 +1,25 @@
 { lib, pkgs }:
 
 let
-  inherit (lib) getExe;
+  inherit (lib)
+    getExe
+    match
+    readFile
+    isString
+    isAttrs
+    foldl'
+    ;
 in
 rec {
   concatPath = parent: child: if parent == "" then child else "${parent}/${child}";
 
-  needsEncoding =
-    name: builtins.match "^[ -~]*$" name == null || builtins.match ".*[./_].*" name != null;
+  needsEncoding = name: match "^[ -~]*$" name == null || match ".*[./_].*" name != null;
 
   encodeNodeName =
     name:
     if needsEncoding name then
       lib.removeSuffix "\n" (
-        builtins.readFile (
+        readFile (
           pkgs.runCommand "encoded-node-${lib.strings.sanitizeDerivationName name}" { } ''
             ${getExe pkgs.jdk} ${./gen.java} --directory ${lib.escapeShellArg name} > "$out"
           ''
@@ -27,15 +33,15 @@ rec {
     let
       values = lib.attrValues tree;
 
-      entries = lib.filterAttrs (_: value: builtins.isString value) tree;
+      entries = lib.filterAttrs (_: value: isString value) tree;
 
-      children = lib.filterAttrs (_: value: builtins.isAttrs value) tree;
+      children = lib.filterAttrs (_: value: isAttrs value) tree;
 
       childPrefs = lib.concatMapAttrs (
         name: value: flattenPrefs (concatPath prefsPath (encodeNodeName name)) value
       ) children;
     in
-    assert lib.all (value: builtins.isString value || builtins.isAttrs value) values;
+    assert lib.all (value: isString value || isAttrs value) values;
 
     (lib.optionalAttrs (entries != { } && prefsPath != "") {
       "${prefsPath}" = entries;
@@ -47,7 +53,7 @@ rec {
     let
       parts = lib.filter (x: x != "") (lib.splitString "/" prefsPath);
 
-      prefixes = builtins.foldl' (
+      prefixes = foldl' (
         acc: part:
         acc
         ++ [
