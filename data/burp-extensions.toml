@@ -551,6 +551,13 @@ hash = "sha256-PrOvchDiL8BLXP0btqgRQeoX8CnNU8Wsc7t9HmH8RRU="
 serialversion = "3"
 extensiontype = "1"
 
+[ckeditor-passive-scanner."3.0.0"]
+name = "CKEditor Passive Scanner"
+uuid = "26769bee604642299551c2fe11933a7d"
+hash = "sha256-mkNch4jOHzS5+HOx7zL1GB/7qGWB8Iz86KQ3mTDuzYQ="
+serialversion = "2"
+extensiontype = "1"
+
 [client-side-path-traversal-exploitation."1.0"]
 name = "Client-Site Path Traversal Exploitation"
 uuid = "eefe20568a894635b500ad13fdc8a683"
@@ -711,6 +718,13 @@ uuid = "b324647b6efa4b6a8f346389730df160"
 hash = "sha256-SRRzq2uL2eSO+zXZdxPyIaI+ofqwaYZxNUYkoAkgGSM="
 serialversion = "10"
 extensiontype = "1"
+
+[copy-as-x8-command."1.0.0"]
+name = "Copy as X8 Command"
+uuid = "435c123879654608a42bc84d9026f34b"
+hash = "sha256-+XpXolWmDy9tSlDP0T5iGV3CzoU1OLJ/9rkY0UOa4ro="
+serialversion = "1"
+extensiontype = "2"
 
 [copy-headers-as-arguments."1.0"]
 name = "Copy Headers as Arguments"
@@ -1013,11 +1027,11 @@ hash = "sha256-Q5wtGGqqFQq6wqRpXY+79ahEEMdFl6O1B9dUDheDyhc="
 serialversion = "2"
 extensiontype = "1"
 
-[extensibility-helper."3.1.0"]
+[extensibility-helper."3.2.1"]
 name = "Extensibility Helper"
 uuid = "41274be469184a56b06d6a791ce8a9ce"
-hash = "sha256-A9D9glM2exFIWFjjT6KNYV1paiY3I/yGV8rGF4jVnlY="
-serialversion = "9"
+hash = "sha256-znt7qh7c8XC1cbNrC1YUN3/rm8p1QRWRDdKs2dIq+so="
+serialversion = "11"
 extensiontype = "1"
 
 [faction-integration."1.1"]
