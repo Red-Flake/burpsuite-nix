@@ -810,11 +810,11 @@ hash = "sha256-xQbXTdotjNlzwxkxVPt1DZ0/0zL8pc1Ub5ay7qXTI7Y="
 serialversion = "4"
 extensiontype = "1"
 
-[cstc."1.3.6"]
+[cstc."1.3.7"]
 name = "CSTC, Modular HTTP Manipulator"
 uuid = "866df66d339d4bcd9b599772aff32efd"
-hash = "sha256-tOcWIrxhYlJO8mjw/kRXFKmjh+0n/Wko5CeiBrmndjg="
-serialversion = "13"
+hash = "sha256-H0I9i8IBcOjT6Gl0tskurvmF3WORTKv6qk5npHxjmPA="
+serialversion = "14"
 extensiontype = "1"
 
 [c-surfer."1.1a"]
@@ -1272,11 +1272,11 @@ hash = "sha256-oCrKaAJZWsxZi3YECpMXFNJpw3WSymJV6BgfptneGAU="
 serialversion = "2"
 extensiontype = "1"
 
-[highlighter-and-extractor."4.3.3"]
+[highlighter-and-extractor."5.3.1"]
 name = "Highlighter And Extractor"
 uuid = "a7609ae2055342e9b6ffcf7cbcacf019"
-hash = "sha256-gUi/ff5lCKPPKrZWLTnrvbrn1kkt7f3menCTvs8zzC0="
-serialversion = "24"
+hash = "sha256-pPi00Rtza8BIj2aVqpfC/Bk0AnbyppQQhm0aTk4La+E="
+serialversion = "25"
 extensiontype = "1"
 
 [history-explorer."1.2"]
