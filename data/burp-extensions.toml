@@ -2588,11 +2588,11 @@ hash = "sha256-2TOtEmWjUyGgQW8VDt44k8PezekdUwltuR5Ge6lgYVE="
 serialversion = "9"
 extensiontype = "1"
 
-[sharpener."4.5"]
+[sharpener."4.92"]
 name = "Sharpener"
 uuid = "3c5025b0e19d419a8f339ee0c30391dd"
-hash = "sha256-Mu/f/xT7k5WX8jUc2EOWOjur6iWADETVDEvcKMuRjPc="
-serialversion = "44"
+hash = "sha256-T2hFZUMksxxrrGEdWNRFmL8dfKYPPJ7j9sALJ6c+L+U="
+serialversion = "45"
 extensiontype = "1"
 
 [sheet-intruder."1.1.0"]
