@@ -530,11 +530,11 @@ hash = "sha256-gNGJCGoHci0eLJUxCz+fsKUV641a2x5yoAkuCjmU4nQ="
 serialversion = "5"
 extensiontype = "1"
 
-[byte-banter."2.0.0"]
+[byte-banter."3.0.0"]
 name = "ByteBanter, AI Intruder Payload Generator"
 uuid = "52a262ab411e4d5ab7f1d3c8fc13cdb3"
-hash = "sha256-F98UidNCmGtAK6SzvSlMxk2S5CRnLeUJldACzAihCMk="
-serialversion = "4"
+hash = "sha256-8a2VDfF1RC28fRERpZ4/oJjUW30s02b6JUXKRIEjMcM="
+serialversion = "6"
 extensiontype = "1"
 
 [captcha-converter."1.0"]
@@ -1746,6 +1746,13 @@ name = "Logger++"
 uuid = "470b7057b86f41c396a97903377f3d81"
 hash = "sha256-9OVhJJM0smjMCX37OKQhvc+XBeqXl5tjiN9KZnNN1CI="
 serialversion = "22"
+extensiontype = "1"
+
+[logic-mapper."1.0.0"]
+name = "Logic Mapper"
+uuid = "ecc8609971b34364a16e8804e9e276be"
+hash = "sha256-01kkX6Y2pRomqjv7Qg/8MV6jCdNg+9Ut3Lc93GOPQwM="
+serialversion = "1"
 extensiontype = "1"
 
 [look-over-there."1.1"]
