@@ -761,6 +761,13 @@ hash = "sha256-29BLs6sEj/LwBaPeQPxXnMBAPskNHZWlU8Er+N5qlOk="
 serialversion = "3"
 extensiontype = "1"
 
+[crlf-powered-desync-scanner."1.0.0"]
+name = "CRLF-Powered Desync Scanner"
+uuid = "dcdb347f593040a1b8c11f4e7aa2816f"
+hash = "sha256-BwttZge+pSY1q07ObeUSElzfobtms1SnsUPk59s39Ew="
+serialversion = "3"
+extensiontype = "1"
+
 [crypto-attacker."0.01"]
 name = "Crypto Attacker"
 uuid = "eaf6bdff2fbe4fd59e15661cdc9e1957"
@@ -1356,11 +1363,11 @@ hash = "sha256-ZipxEkHHmC6jzyzqZFXLKCqBbymhHKRqpxH/tMk5OPY="
 serialversion = "12"
 extensiontype = "1"
 
-[http-request-smuggler."3.0.2"]
+[http-request-smuggler."3.1.0"]
 name = "HTTP Request Smuggler"
 uuid = "aaaa60ef945341e8a450217a54a11646"
-hash = "sha256-fY8VbZSGS3ZtGFwieIGEi0UC+yDxkcP1ANAe8R31OCQ="
-serialversion = "51"
+hash = "sha256-XJVgA6J1DrpdPCP5wVNy/DSiA+s9xgK4tz4Y6psdXII="
+serialversion = "52"
 extensiontype = "1"
 
 [httpoxy-scanner."1.0"]
@@ -2007,11 +2014,11 @@ hash = "sha256-hHbUS418d5D7LThhmVhwoWTRf6CcLCUAtmomB98v4Ts="
 serialversion = "2"
 extensiontype = "2"
 
-[param-miner."1.58"]
+[param-miner."1.59"]
 name = "Param Miner"
 uuid = "17d2949a985c4b7ca092728dba871943"
-hash = "sha256-ZKyY0ApV1cZsVGVKZpRKZ5DHLKa1EGWBfJJVvJ5htk8="
-serialversion = "37"
+hash = "sha256-JW+w/0k7jyf7OTvr1le5HIBSYEIWjxaQc76svlwXNMk="
+serialversion = "39"
 extensiontype = "1"
 
 [paramalyzer."2.2.2"]
@@ -2861,11 +2868,11 @@ hash = "sha256-A+x4hIYaUFfn6z5JZti3aorotzFB0D047xcCfBykSIE="
 serialversion = "5"
 extensiontype = "2"
 
-[turbo-intruder."1.62"]
+[turbo-intruder."1.70"]
 name = "Turbo Intruder"
 uuid = "9abaa233088242e8be252cd4ff534988"
-hash = "sha256-spGh5019OlCMjaeQHBmt2Y5c98zo02JqYCIPMdrwmKc="
-serialversion = "65"
+hash = "sha256-T5HyFrouhJKytsTYq8sZgZWuJqzJsZucy5yCKwMIWgM="
+serialversion = "66"
 extensiontype = "1"
 
 [twilio-otp-authenticator."1.0.1"]
