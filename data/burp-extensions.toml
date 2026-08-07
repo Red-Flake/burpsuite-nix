@@ -26,11 +26,11 @@ hash = "sha256-B2VoAdqmiXsr86Siw4CU1HsF4aDsJpjuwgvP5Mkb3AE="
 serialversion = "1"
 extensiontype = "2"
 
-[active-scan-plus-plus."2.0.10"]
+[active-scan-plus-plus."2.0.11"]
 name = "Active Scan++"
 uuid = "3123d5b5f25c4128894d97ea1acc4976"
-hash = "sha256-D/mU3BGU82ap3Tz2AyM2+SEGC7mvyCWFt3RA1aVl48w="
-serialversion = "52"
+hash = "sha256-T+KEHOYLsEuCmaXNWakqKvVPN9FPiiENqva/1gBq1xA="
+serialversion = "53"
 extensiontype = "1"
 
 [add-track-custom-issues."1.0a"]
