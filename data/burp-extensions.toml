@@ -2112,11 +2112,11 @@ hash = "sha256-Y7K3p4ABJ8EwuyxNrZyT/Z4Gcrv1gRzwb+9SEpV9BI4="
 serialversion = "13"
 extensiontype = "2"
 
-[pentest-tools-integration."1.0.0"]
+[pentest-tools-integration."1.0.1"]
 name = "Pentest-Tools.com Integration"
 uuid = "63717e913b0349b38779083e9ae4a64b"
-hash = "sha256-ZLmnc7CuXtEhK60jv4tdIOLXbfNi7yhJu85QaVixlUg="
-serialversion = "4"
+hash = "sha256-3/qWTvdBWEnIRZpmpu5NSP7flkD4P99v+I4RKVljqV0="
+serialversion = "5"
 extensiontype = "1"
 
 [peoplesoft-token-extractor."1.0"]
@@ -2231,11 +2231,11 @@ hash = "sha256-jTCtafFvux62akg50FTuwyWLCVGKzrZJGtJJ6t+yFzc="
 serialversion = "8"
 extensiontype = "1"
 
-[pwnfox-for-chromium."1.3.2"]
+[pwnfox-for-chromium."1.3.4"]
 name = "PwnFox For Chromium"
 uuid = "239c6b45a4ae4834acc90202566a1aac"
-hash = "sha256-d65jnue1QGQOTDzvOGtBa8SPqVnI/cyyD6cCpxpLvaE="
-serialversion = "5"
+hash = "sha256-QCSsoYoCLgZmQ3rSN54uHF4/CmVyxJXFyUMCkcMbL6Y="
+serialversion = "6"
 extensiontype = "1"
 
 [pyburp."1.0.2"]
@@ -2447,6 +2447,13 @@ uuid = "a112997070354d249b64b4cf68eabc04"
 hash = "sha256-iFOCjJuxaPDwxpr5E2gb9Wcuk7l2GmzMqZIMdGPjHck="
 serialversion = "1"
 extensiontype = "2"
+
+[reverse-shell-receiver."1.0.0"]
+name = "Reverse Shell Receiver"
+uuid = "93dc0a922a9b4b3f994a8fc881509093"
+hash = "sha256-JcAuKTh8wpaglsqoIwDdgGSJK7C8R7d+WATqIVUxH8k="
+serialversion = "1"
+extensiontype = "1"
 
 [route-vul-scan."1.4"]
 name = "RouteVulScan"
