@@ -530,11 +530,11 @@ hash = "sha256-gNGJCGoHci0eLJUxCz+fsKUV641a2x5yoAkuCjmU4nQ="
 serialversion = "5"
 extensiontype = "1"
 
-[byte-banter."3.0.0"]
+[byte-banter."3.1.0"]
 name = "ByteBanter, AI Intruder Payload Generator"
 uuid = "52a262ab411e4d5ab7f1d3c8fc13cdb3"
-hash = "sha256-8a2VDfF1RC28fRERpZ4/oJjUW30s02b6JUXKRIEjMcM="
-serialversion = "6"
+hash = "sha256-za/drV4EpLRrdBOeIPQAXK9J1+a56qhw0b25zJrkRNA="
+serialversion = "7"
 extensiontype = "1"
 
 [captcha-converter."1.0"]
@@ -1342,11 +1342,11 @@ hash = "sha256-2PS4NzmzAQ2M2o2b7s8osvUEIBk3gRovOGYr/NGIO1M="
 serialversion = "3"
 extensiontype = "1"
 
-[http-history-to-pcap."1.0.0"]
+[http-history-to-pcap."1.1.0"]
 name = "HTTP History to PCAP"
 uuid = "1de644f1b90e4f54bc385bd1ffc1b147"
-hash = "sha256-wP65pY75eWyPESn8mjE3Br2xQDfadYx/50v+aSos9LA="
-serialversion = "3"
+hash = "sha256-IvhFPNRHbRknqYZjK0vGhZy9adNIW/BObCz3IwPHgXE="
+serialversion = "4"
 extensiontype = "1"
 
 [methods-discloser."1.0"]
