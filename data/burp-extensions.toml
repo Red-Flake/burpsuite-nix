@@ -2679,6 +2679,13 @@ hash = "sha256-ny964XOXsL+nTK1WVrJf0mHrANJi984HBXszX0lYe60="
 serialversion = "4"
 extensiontype = "2"
 
+[spec-ops-openapi-swagger-workbench."1.4.2"]
+name = "SpecOps, OpenAPI/Swagger Workbench"
+uuid = "a7244f1092db4db3a609e4c306307312"
+hash = "sha256-KRJSJMiZLoeNisU+ly9/L9Adh4XEXyDZlAMcTgkmIZI="
+serialversion = "1"
+extensiontype = "1"
+
 [spoofproof."1.0.3"]
 name = "SpoofProof - Domain Spoofing Validation"
 uuid = "a321360c6e114b3dab6f2c67d68c241a"
