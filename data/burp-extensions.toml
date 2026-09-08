@@ -1636,11 +1636,11 @@ hash = "sha256-UqvkUVRFPZuNpEc3TbIsnDIjMqE8k0s+geHtxpUUszA="
 serialversion = "3"
 extensiontype = "1"
 
-[jwt-editor."2.6.1"]
+[jwt-editor."2.6.2"]
 name = "JWT Editor"
 uuid = "26aaa5ded2f74beea19e2ed8345a93dd"
-hash = "sha256-0YjgRQqUoguzeRqbczeLazjE7oZKpmEOIEdTgDgqcoY="
-serialversion = "21"
+hash = "sha256-a9qcdgo7EcAyxSeaGi/wKuBzlN1aOSJXTrYtPd0OxDo="
+serialversion = "22"
 extensiontype = "1"
 
 [jwt-monitor."1.1.1"]
