@@ -1370,6 +1370,13 @@ hash = "sha256-XJVgA6J1DrpdPCP5wVNy/DSiA+s9xgK4tz4Y6psdXII="
 serialversion = "52"
 extensiontype = "1"
 
+[http-3-adapter."0.0.1"]
+name = "HTTP/3 Adapter"
+uuid = "bfd526811899438080ca4bb6b8a03ab5"
+hash = "sha256-ztnDK9dmAot6ZqvuwbcfRglkgOk+Gol8NmsDTMIKbSo="
+serialversion = "1"
+extensiontype = "1"
+
 [httpoxy-scanner."1.0"]
 name = "HTTPoxy Scanner"
 uuid = "9c9877825cbd428bab27a25d0ea17178"
@@ -2882,11 +2889,11 @@ hash = "sha256-A+x4hIYaUFfn6z5JZti3aorotzFB0D047xcCfBykSIE="
 serialversion = "5"
 extensiontype = "2"
 
-[turbo-intruder."1.70"]
+[turbo-intruder."2.0.0"]
 name = "Turbo Intruder"
 uuid = "9abaa233088242e8be252cd4ff534988"
-hash = "sha256-T5HyFrouhJKytsTYq8sZgZWuJqzJsZucy5yCKwMIWgM="
-serialversion = "66"
+hash = "sha256-ebZkifbXU6kz9IFGOvtHBcgHkyXealOm9J7QhmEEQl8="
+serialversion = "68"
 extensiontype = "1"
 
 [twilio-otp-authenticator."1.0.1"]
