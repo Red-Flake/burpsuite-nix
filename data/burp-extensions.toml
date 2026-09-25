@@ -1286,11 +1286,11 @@ hash = "sha256-pPi00Rtza8BIj2aVqpfC/Bk0AnbyppQQhm0aTk4La+E="
 serialversion = "25"
 extensiontype = "1"
 
-[history-explorer."1.2"]
+[history-explorer."2.1.0"]
 name = "History Explorer"
 uuid = "18d22d6559364e30ad44b506604822f9"
-hash = "sha256-q7pHhyWBWvfNTssTrMHpANlYwJLVbBVRWbgm/ygtm30="
-serialversion = "2"
+hash = "sha256-cGokl+loIa7zvjjT/NjGFDT/lEMftbWQZAEdavt/p98="
+serialversion = "7"
 extensiontype = "1"
 
 [host-header-inchecktion."1.3.0"]
@@ -1846,6 +1846,13 @@ hash = "sha256-WBmLtZ581nuQoq4Qe3D2yxDpsZdaASQixl+p9XrQ1aQ="
 serialversion = "3"
 extensiontype = "1"
 
+[mongobleed-detector."1.0.0"]
+name = "MongoBleed Detector"
+uuid = "f1ae6441975240d2b27a90e96664fb2e"
+hash = "sha256-qFkPoBgjpj6HPk7PuUdVRZBw7Wk+RA9xQvqY8XP9jss="
+serialversion = "1"
+extensiontype = "1"
+
 [multi-session-replay."0.6.2"]
 name = "Multi Session Replay"
 uuid = "47319d00cae2447e8319db423913e19c"
@@ -1930,11 +1937,11 @@ hash = "sha256-JDiEn7XjmZWjM4WS4iYWRWInMNxjVViDDwbQE8zE1jQ="
 serialversion = "5"
 extensiontype = "2"
 
-[nuclei-template-generator."1.1.3"]
+[nuclei-template-generator."1.1.4"]
 name = "Nuclei Template Generator Plugin"
 uuid = "526f5564b7414bfe978e650d8ea6567b"
-hash = "sha256-jeXkORXZLerM63GDKFBHY9QIM9J4enUBnf7puf73+1k="
-serialversion = "4"
+hash = "sha256-ayY7IsoujaHAScrhKvLn2wj5Jymk718iacCmf5fm9mk="
+serialversion = "5"
 extensiontype = "1"
 
 [nucleus-burp-extension."1.2"]
