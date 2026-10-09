@@ -768,6 +768,13 @@ hash = "sha256-BwttZge+pSY1q07ObeUSElzfobtms1SnsUPk59s39Ew="
 serialversion = "3"
 extensiontype = "1"
 
+[cryptic-burp."1.1"]
+name = "CrypticBurp, Encrypted Traffic Editor"
+uuid = "8532da5bf4b24516be32f54c5fc394b5"
+hash = "sha256-IMLAwE0mKyVH+Miog9xoLqkLK7eans37amDo+0zDojQ="
+serialversion = "2"
+extensiontype = "1"
+
 [crypto-attacker."0.01"]
 name = "Crypto Attacker"
 uuid = "eaf6bdff2fbe4fd59e15661cdc9e1957"
