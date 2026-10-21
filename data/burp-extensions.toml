@@ -26,11 +26,11 @@ hash = "sha256-B2VoAdqmiXsr86Siw4CU1HsF4aDsJpjuwgvP5Mkb3AE="
 serialversion = "1"
 extensiontype = "2"
 
-[active-scan-plus-plus."2.0.11"]
+[active-scan-plus-plus."2.0.12"]
 name = "Active Scan++"
 uuid = "3123d5b5f25c4128894d97ea1acc4976"
-hash = "sha256-T+KEHOYLsEuCmaXNWakqKvVPN9FPiiENqva/1gBq1xA="
-serialversion = "53"
+hash = "sha256-tpnhzKMyCROhXUc1uUfwY4Qd3ro6nocJfQlLPSqOzzs="
+serialversion = "54"
 extensiontype = "1"
 
 [add-track-custom-issues."1.0a"]
@@ -1412,11 +1412,11 @@ hash = "sha256-yfqOL+9/KnfQ094JPZJHK/NC15ZV068MDvZYlpDz+g4="
 serialversion = "3"
 extensiontype = "1"
 
-[image-location-scanner."1.2"]
+[image-location-scanner."1.3.0"]
 name = "Image Location and Privacy Scanner"
 uuid = "f3aec37088aa494c81962d965219be46"
-hash = "sha256-SGIwXFv9ap8hOauYPbRddcgagXMFEr/w8bLZI6KJY7o="
-serialversion = "9"
+hash = "sha256-UHf69N7gzwZaPFhqlSd18cTvVGKgki2/kgEwY7J+bkE="
+serialversion = "11"
 extensiontype = "1"
 
 [image-metadata."2.1.2"]
