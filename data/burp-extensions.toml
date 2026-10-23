@@ -29,8 +29,8 @@ extensiontype = "2"
 [active-scan-plus-plus."2.0.14"]
 name = "Active Scan++"
 uuid = "3123d5b5f25c4128894d97ea1acc4976"
-hash = "sha256-QDywC2nOQDhtEJDdzbdL5Bf7AefTXy8yKmI7Cz70oN4="
-serialversion = "56"
+hash = "sha256-+gYUWllTjqwROKhKkZCBimp+JuQc1mSBsOKs/Y+adKo="
+serialversion = "57"
 extensiontype = "1"
 
 [add-track-custom-issues."1.0a"]
