@@ -39,6 +39,8 @@ let
       filter (ext: ext.enable) (map (entry: entry.data) sortedExtensions.result)
     else
       throw "Dependency cycle in Burp extensions: ${builtins.toJSON sortedExtensions}";
+
+  burpCa = ../../data/cacert.der;
 in
 {
 
@@ -143,7 +145,7 @@ in
     programs.firefox.policies = mkIf config.programs.firefox.enable {
       Certificates = {
         ImportEnterpriseRoots = true;
-        Install = [ "~/.BurpSuite/cacert.der" ];
+        Install = [ "${burpCa}" ];
       };
     };
 
@@ -158,7 +160,7 @@ in
         force = true;
       };
       # Expose the hardcoded cacert
-      file.".BurpSuite/cacert.der".source = ../../data/cacert.der;
+      file.".BurpSuite/cacert.der".source = burpCa;
     };
   };
 }
