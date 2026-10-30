@@ -565,6 +565,13 @@ hash = "sha256-mkNch4jOHzS5+HOx7zL1GB/7qGWB8Iz86KQ3mTDuzYQ="
 serialversion = "2"
 extensiontype = "1"
 
+[click-jackalope."1.0.0"]
+name = "Click-Jackalope - Clickjacking POC generator"
+uuid = "64ae2a5e5ebd45eb97690f7f583bb8dc"
+hash = "sha256-4UdWwPNOd5A3o+kLxC2EflHr0LDuCdcrHUbaVx7tBtA="
+serialversion = "4"
+extensiontype = "1"
+
 [client-side-path-traversal-exploitation."1.0"]
 name = "Client-Site Path Traversal Exploitation"
 uuid = "eefe20568a894635b500ad13fdc8a683"
