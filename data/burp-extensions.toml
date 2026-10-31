@@ -1002,8 +1002,8 @@ extensiontype = "1"
 [dradis-framework."0.0.4"]
 name = "Dradis Framework"
 uuid = "c1be8787ebdd45f58c091f6ae30f1af2"
-hash = "sha256-19FBCoDjBKOaN46fZwV9aQuYBjqIWyu7VrfbAq9uH10="
-serialversion = "5"
+hash = "sha256-iBy1WEhMfM0C7rG9Eb4o2SfYwGeJcEp3jMXD/9DO5C4="
+serialversion = "6"
 extensiontype = "3"
 
 [elastic-burp."1.4"]
