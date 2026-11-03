@@ -1989,8 +1989,8 @@ extensiontype = "2"
 [office-open-xml-editor."1.0"]
 name = "Office Open XML Editor"
 uuid = "7d7782b6cc1c4d7e9b4d22cb3dbdc20d"
-hash = "sha256-pqlwcsu3+z0WqUo9XuCl/yUkXkYq2ZaW7VB2mZOkXYI="
-serialversion = "0"
+hash = "sha256-necmdzEiK/UvTbBHV/1kq8s8qQtm0EmVLRkxbmhwvig="
+serialversion = "1"
 extensiontype = "2"
 
 [okta-totp-authenticator."1.0.2"]
@@ -2150,8 +2150,8 @@ extensiontype = "1"
 [peoplesoft-token-extractor."1.0"]
 name = "PeopleSoft Token Extractor"
 uuid = "df04d7d1af004ed6b50c555c4920232d"
-hash = "sha256-hsrEisdBJa6L3qPjB9r+87MUA2LKl4B8PvCgvamil0o="
-serialversion = "0"
+hash = "sha256-ljp7YbZsic2A1YILrlCohJXR30Kb5SB4vh46K2mMnUg="
+serialversion = "1"
 extensiontype = "2"
 
 [php-object-injection-check."1.1"]
@@ -2626,8 +2626,8 @@ extensiontype = "1"
 [session-tracking-checks."1.0"]
 name = "Session Tracking Checks"
 uuid = "1ab99dc6b61b45469759fdc38f371278"
-hash = "sha256-HUCjuxFpO9jqWT60YpJ0WkuOil52WdbRrpf2xu3na4k="
-serialversion = "0"
+hash = "sha256-i3DbD2nMJo8MQdanRt/bt90MMoOkn8Xzp7qt7P1wZsU="
+serialversion = "1"
 extensiontype = "2"
 
 [shadow-repeater."1.2.3"]
@@ -3087,8 +3087,8 @@ extensiontype = "2"
 
 [ws-security."1.0a"]
 name = "WS Security"
-uuid = "i5431k07za13636g0o9a1733ke7h10g3"
-hash = "sha256-89HFT6YtxuONHF7XL5hmc4eolpISAnwr8tkZ0LcFFVw="
+uuid = "c5e42f25e4ab4c66a3d9f5c46801ab9e"
+hash = "sha256-km7FxmqdoJhl/OyFWo9XrpCw4hcLqmEnT8ODUl4ZCCg="
 serialversion = "6"
 extensiontype = "1"
 
