@@ -1818,11 +1818,11 @@ hash = "sha256-+KZzl6M0QDkZMPUXSXDbWML644D/N5JA69dROOt6lJU="
 serialversion = "1"
 extensiontype = "1"
 
-[mcp-server."1.3.0"]
+[mcp-server."1.4.0"]
 name = "MCP Server"
 uuid = "9952290f04ed4f628e624d0aa9dccebc"
-hash = "sha256-eXiiv2nIK6VUEYeM6rb7u07x3STVhjEP5PYWuKsIkPo="
-serialversion = "10"
+hash = "sha256-wU1fyWj9cA5CgKyChNfVW+6zOagr3E+lQ2nAKHqXjrw="
+serialversion = "12"
 extensiontype = "1"
 
 [mcp-server-scanner."0.1.0"]
