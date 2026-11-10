@@ -12,7 +12,11 @@
 
     imports = [
       (import ./burp.nix {
-        inherit pkgs lib home-manager;
+        inherit
+          pkgs
+          lib
+          home-manager
+          ;
       })
     ];
 

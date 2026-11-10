@@ -31,10 +31,6 @@ in
         };
 
         cliArgs = [
-          "--suppress-jre-check"
-          "--i-accept-the-license-agreement"
-          "--disable-auto-update"
-          "--disable-check-for-updates-dialog"
           "--temporary-project"
           "--unpause-spider-and-scanner"
         ];
@@ -62,32 +58,29 @@ in
     client.wait_for_unit("multi-user.target")
     client.wait_for_x()
 
-    client.execute("nohup burpsuite >/dev/null 2>&1 &")
+    with subtest("Burp Suite is running"):
+      client.execute("nohup burpsuite >/dev/null 2>&1 &")
+      client.wait_for_window("Temporary Project")
+      client.sleep(5)
+      client.screenshot("temporary-project")
 
-    # Wait for the Burp Suite process to start
-    client.wait_for_window("Temporary Project")
-    client.sleep(5)
-    client.screenshot("temporary-project")
+    with subtest("Extension is installed and loaded"):
+      for _ in range(14):
+        client.send_key("ctrl-tab")
+        client.sleep(1)
+      client.screenshot("extensions-tab")
+      client.wait_for_text("Burp extensions")
+      client.wait_for_text("Param Miner")
 
-    # Check if the Extension is installed and loaded
-
-    for _ in range(14):
+    with subtest("Extension settings are applied correctly"):
       client.send_key("ctrl-tab")
-      client.sleep(1)
-    client.screenshot("extensions-tab")
-    client.wait_for_text("Burp extensions")
-    client.wait_for_text("Param Miner")
-
-    # Check if Extension settings work
-
-    client.send_key("ctrl-tab")
-    client.send_key("ctrl-tab")
-    for _ in range(17):
-      client.send_key("tab")
-      client.sleep(1)
-    client.send_key("right")
-    client.send_key("right")
-    client.screenshot("extension-settings")
-    client.wait_for_text("Yellow")
+      client.send_key("ctrl-tab")
+      for _ in range(17):
+        client.send_key("tab")
+        client.sleep(1)
+      client.send_key("right")
+      client.send_key("right")
+      client.screenshot("extension-settings")
+      client.wait_for_text("Yellow")
   '';
 }

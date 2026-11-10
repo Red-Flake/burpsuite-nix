@@ -60,27 +60,35 @@ in
       );
       finalPackage = cfg.package.override (
         old:
-        (
-          if lib.hasAttr "iconName" old then
-            { iconName = if cfg.proEdition then "pro" else "community"; }
-          else
-            { }
-        )
-        // {
-          buildFHSEnv =
-            args:
-            old.buildFHSEnv (
-              args
-              // {
-                runScript =
-                  (args.runScript or "")
-                  + (lib.strings.optionalString (cfg.cliArgs != [ ]) (" " + lib.strings.escapeShellArgs cfg.cliArgs));
-                extraBwrapArgs =
-                  (args.extraBwrapArgs or [ ])
-                  ++ mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
-              }
-            );
-        }
+        let
+          commonArgs = {
+            iconName = if cfg.proEdition then "pro" else "community";
+            licenseAccepted = true;
+          };
+        in
+        if lib.hasAttr "buildFHSEnv" old then
+          commonArgs
+          // {
+            buildFHSEnv =
+              args:
+              old.buildFHSEnv (
+                args
+                // {
+                  runScript =
+                    (args.runScript or "")
+                    + (lib.strings.optionalString (cfg.cliArgs != [ ]) (" " + lib.strings.escapeShellArgs cfg.cliArgs));
+
+                  extraBwrapArgs =
+                    (args.extraBwrapArgs or [ ])
+                    ++ lib.mapAttrsToList (dst: src: "--ro-bind ${src} /lists/${dst}") cfg.wordlists;
+                }
+              );
+          }
+        else
+          commonArgs
+          // {
+            burpArgs = cfg.cliArgs;
+          }
       );
       finalSettings = recursiveMerge [
         (importJSON ../../data/config.json)
