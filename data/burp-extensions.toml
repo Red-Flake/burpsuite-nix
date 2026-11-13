@@ -1188,12 +1188,12 @@ hash = "sha256-jIyja263HhVrJPAIjZaa0rfZJkylxwegCE6mKbwvs7M="
 serialversion = "6"
 extensiontype = "1"
 
-[grpc-web-coder."1.1.0"]
+[grpc-web-coder."2.0.0"]
 name = "gRPC-Web Coder"
 uuid = "63b92be302fa4521bf18d74b3adbbc00"
-hash = "sha256-SARFPEbtedjpji9P6jRuh378L27YCmrq0V0g3JNboWA="
-serialversion = "3"
-extensiontype = "2"
+hash = "sha256-K4RKfPYz6CLaSWss0Zhib7TsGkcTBpYpqMllJDSJk7c="
+serialversion = "7"
+extensiontype = "1"
 
 [gwt-insertion-points."1.2"]
 name = "GWT Insertion Points"
