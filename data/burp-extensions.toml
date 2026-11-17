@@ -1825,11 +1825,11 @@ hash = "sha256-wU1fyWj9cA5CgKyChNfVW+6zOagr3E+lQ2nAKHqXjrw="
 serialversion = "12"
 extensiontype = "1"
 
-[mcp-server-scanner."0.1.0"]
+[mcp-server-scanner."2.1.2"]
 name = "MCP Server Scanner"
 uuid = "331a84edb4134705ad2ef25b90f626f2"
-hash = "sha256-TIyAubjhDHTE+sN3tDO9wlZUeEbf6OFUCE6GVv/6J00="
-serialversion = "4"
+hash = "sha256-5dWmuUTQlGN3HL3ED2XUU0YHP9+UswPiorZ7sp/CqlY="
+serialversion = "5"
 extensiontype = "1"
 
 [message-pack."1.0"]
