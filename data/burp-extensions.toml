@@ -1828,8 +1828,8 @@ extensiontype = "1"
 [mcp-server-scanner."2.1.2"]
 name = "MCP Server Scanner"
 uuid = "331a84edb4134705ad2ef25b90f626f2"
-hash = "sha256-5dWmuUTQlGN3HL3ED2XUU0YHP9+UswPiorZ7sp/CqlY="
-serialversion = "5"
+hash = "sha256-uJAAI/0jtU/AF2krEs10LUiq6diRNQTc308UV7OVv14="
+serialversion = "6"
 extensiontype = "1"
 
 [message-pack."1.0"]
