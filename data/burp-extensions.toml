@@ -1671,11 +1671,11 @@ hash = "sha256-dU3mP40uX2xoqyHOTLD7/rYVZm8/PkKEw/wAu1qWELw="
 serialversion = "10"
 extensiontype = "1"
 
-[jwt-scanner."2.1.0"]
+[jwt-scanner."2.2.0"]
 name = "JWT Scanner"
 uuid = "be6af6a556df4423846b25080dbde88c"
-hash = "sha256-VKyBJbTXcmEOqvlRUGQnEeCuCtDkswi+JFUDFWvRJZw="
-serialversion = "2"
+hash = "sha256-9ZRFhIj9wTM/ws/vDu4XUivVkZ5zR4j6ok9QRzrHmmQ="
+serialversion = "6"
 extensiontype = "1"
 
 [kerberos-authentication."1.0.1"]
@@ -2152,6 +2152,13 @@ name = "PeopleSoft Token Extractor"
 uuid = "df04d7d1af004ed6b50c555c4920232d"
 hash = "sha256-ljp7YbZsic2A1YILrlCohJXR30Kb5SB4vh46K2mMnUg="
 serialversion = "1"
+extensiontype = "2"
+
+[permitter."1.0.0"]
+name = "Permitter"
+uuid = "16c6952955d24498856b307eb4fb05ad"
+hash = "sha256-W/9677CpMSiNBt/YGIHQDsgVDBT0zqf7H3OUEm8Se7A="
+serialversion = "5"
 extensiontype = "2"
 
 [php-object-injection-check."1.1"]
@@ -2931,12 +2938,19 @@ hash = "sha256-JqoLCUurn2ybIJQMj1zy/oJ1pR2hMiYL3/+3cXmwMM4="
 serialversion = "2"
 extensiontype = "2"
 
-[type-xplorer."1.0.0"]
+[type-xplorer."1.1.0"]
 name = "Type Xplorer"
 uuid = "b12907f6b1a848c98accc35a5bdfda76"
-hash = "sha256-EzuCQQ3mV7LcwTJuMSYToEI7xbX/An0nWMGzpg4mZFM="
-serialversion = "3"
+hash = "sha256-54IF0qdT6mg5UgvvCaLxVzyYt1MV8mQSRoB9PNbi/cs="
+serialversion = "5"
 extensiontype = "2"
+
+[unicode-shortcut."0.9.6"]
+name = "Unicode Shortcut"
+uuid = "8c73a9c0c0ca4e9fa958bb9975424b0c"
+hash = "sha256-VQCfhAkVEaxWZGfvLbtvt+MU3brWbseT+42wTXHg0+s="
+serialversion = "1"
+extensiontype = "1"
 
 [ununicode."1.3.0"]
 name = "UnUnicode"
