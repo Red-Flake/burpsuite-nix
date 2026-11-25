@@ -101,7 +101,7 @@ in
                 }
 
                 (optionalAttrs cfg.enableJython {
-                  python.location_of_jython_standalone_jar_file = "${pkgs.jython}/jython.jar";
+                  python.location_of_jython_standalone_jar_file = "${pkgs.jython}/share/jython.jar";
                 })
 
                 (optionalAttrs cfg.enableJruby {
