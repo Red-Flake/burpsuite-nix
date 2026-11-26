@@ -1209,11 +1209,11 @@ hash = "sha256-L9PEMZ8nmEswPwKKnd8S/fHleocemQlYIyRkcwQxpOI="
 serialversion = "2"
 extensiontype = "1"
 
-[hackvertor."2.2.67"]
+[hackvertor."2.2.69"]
 name = "Hackvertor"
 uuid = "65033cbd2c344fbabe57ac060b5dd100"
-hash = "sha256-vNkoRyeOFend39/JxKcYTlz84nyce3pTdxhM9K8BBwY="
-serialversion = "67"
+hash = "sha256-+yqYpRp8QWAooAn7dsrBjqjzDMQMdoziVdKVMKpFL1o="
+serialversion = "68"
 extensiontype = "1"
 
 [handy-collaborator."0.2a"]
