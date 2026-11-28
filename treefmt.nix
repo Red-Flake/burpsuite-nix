@@ -1,6 +1,4 @@
 { lib, pkgs, ... }: {
-  tree-root-file = "treefmt.nix";
-  on-unmatched = "fatal";
   excludes = [
     "*.lock"
     "*.md"
@@ -12,10 +10,11 @@
     "*.yml"
     "*.java"
   ];
-
   formatter.nixfmt = {
     command = lib.getExe pkgs.nixfmt;
     includes = [ "*.nix" ];
     options = [ "--strict" ];
   };
+  on-unmatched = "fatal";
+  tree-root-file = "treefmt.nix";
 }

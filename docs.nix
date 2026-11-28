@@ -1,12 +1,12 @@
 {
   gawk,
   gnused,
+  home-manager,
   lib,
   nixosOptionsDoc,
+  pkgs,
   runCommand,
   self,
-  pkgs,
-  home-manager,
 }:
 let
   webUrl = "https://github.com/Red-Flake/burpsuite-nix/blob/master";
@@ -17,9 +17,9 @@ let
       {
         config = {
           home = {
+            homeDirectory = "/home/alice";
             stateVersion = "26.05";
             username = "alice";
-            homeDirectory = "/home/alice";
           };
         };
       }

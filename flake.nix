@@ -44,7 +44,9 @@
             inherit lib pkgs;
             inherit (pkgs) fetchzip;
           };
-          docs = pkgs.callPackage ./docs.nix { inherit pkgs self home-manager; };
+          docs = pkgs.callPackage ./docs.nix {
+            inherit pkgs self home-manager;
+          };
         in
         bappPackages // { inherit docs; }
       );
