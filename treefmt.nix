@@ -1,9 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}:
-{
+{ lib, pkgs, ... }: {
   tree-root-file = "treefmt.nix";
   on-unmatched = "fatal";
   excludes = [
@@ -13,6 +8,9 @@
     ".gitignore"
     "data/*"
     ".envrc"
+    "*.yaml"
+    "*.yml"
+    "*.java"
   ];
 
   formatter.nixfmt = {

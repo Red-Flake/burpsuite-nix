@@ -14,9 +14,7 @@ let
 
   cfg = config.programs.java.userPrefs;
 
-  javaLib = import ./lib.nix {
-    inherit lib pkgs;
-  };
+  javaLib = import ./lib.nix { inherit lib pkgs; };
 
   assertValidTree =
     tree:
@@ -35,9 +33,7 @@ let
           map (
             prefsPath:
             (map (parent: "d %h/.java/.userPrefs/${parent} 0755 - - -") (javaLib.parentPaths prefsPath))
-            ++ [
-              "d %h/.java/.userPrefs/${prefsPath} 0755 - - -"
-            ]
+            ++ [ "d %h/.java/.userPrefs/${prefsPath} 0755 - - -" ]
           ) (lib.attrNames prefs)
         )
       );
@@ -52,9 +48,7 @@ let
 
             prefsFile = "%h/.java/.userPrefs/${prefsPath}/prefs.xml";
           in
-          [
-            "C ${lib.escapeShellArg prefsFile} 0644 - - - ${xml}"
-          ]
+          [ "C ${lib.escapeShellArg prefsFile} 0644 %U %G - ${xml}" ]
         ) prefs
       );
     in

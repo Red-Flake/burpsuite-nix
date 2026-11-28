@@ -12,15 +12,21 @@ boolean
 
 
 *Default:*
-` false `
+
+```nix
+false
+```nix
 
 
 
 *Example:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -38,15 +44,21 @@ boolean
 
 
 *Default:*
-` false `
+
+```nix
+false
+```nix
 
 
 
 *Example:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -54,7 +66,7 @@ boolean
 
 
 
-Whether to enable Jython suppport\.
+Whether to enable Jython support\.
 
 
 
@@ -64,15 +76,21 @@ boolean
 
 
 *Default:*
-` false `
+
+```nix
+false
+```nix
 
 
 
 *Example:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -90,10 +108,13 @@ package
 
 
 *Default:*
-` pkgs.burpsuite `
+
+```nix
+pkgs.burpsuite
+```nix
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -109,10 +130,13 @@ list of string
 
 
 *Default:*
-` [ ] `
+
+```nix
+[ ]
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -123,19 +147,23 @@ list of string
 Attribute set of Burp extensions\.
 Extension names like “403-bypasser” are resolved automatically from
 ` burpPackages.${pkgs.stdenv.hostPlatform.system} ` without needing to reference the input\.
+Extension ordering can be controlled with lib\.hm\.dag\.entryBefore and lib\.hm\.dag\.entryAfter\.
 
 
 
 *Type:*
-attribute set of (submodule)
+DAG of submodule
 
 
 
 *Default:*
-` { } `
+
+```nix
+{ }
+```nix
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -154,10 +182,13 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -165,7 +196,11 @@ boolean
 
 
 
-Nix package for this extension, or a package name looked up in the default set
+Nix package for this extension\. Can be:
+
+ - A package name string (resolved from burpPackages)
+ - A full derivation
+ - A fetchurl/fetchFromGitHub result for the JAR file directly
 
 
 
@@ -175,10 +210,64 @@ extension package or package name convertible to it
 
 
 *Default:*
-` burpPackages.${pkgs.stdenv.hostPlatform.system}.${_module.args.name} `
+
+```nix
+burpPackages.\x86_64-linux.<extension-name>
+```nix
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.entrypoint
+
+
+
+Override the entrypoint for the extension (JAR file name relative to the lib directory)\.
+Only needed for custom extensions that don’t have BappManifest\.bmf\.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+
+```nix
+""
+```
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.extensiontype
+
+
+
+Extension type for custom extensions fetched from sources other than the BApp store\.
+Values: “1” for Java, “2” for Python, “3” for Ruby\.
+Required when using custom GitHub extensions\.
+
+
+
+*Type:*
+null or one of “1”, “2”, “3”
+
+
+
+*Default:*
+
+```nix
+null
+```nix
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -197,10 +286,138 @@ boolean
 
 
 *Default:*
-` true `
+
+```nix
+true
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.serialversion
+
+
+
+Serial version for custom extensions fetched from sources other than the BApp store\.
+Required when using custom GitHub extensions\.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+
+```nix
+"1"
+```nix
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.settings
+
+
+
+Sets preferences for this extension via the Java Preferences API\.
+Options added here are only applied, if the prefs file doesn’t already exist\.
+
+
+
+*Type:*
+JSON value
+
+
+
+*Default:*
+
+```nix
+{ }
+```
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.extensions\.\<name>\.uuid
+
+
+
+UUID for custom extensions fetched from sources other than the BApp store\.
+Required when using custom GitHub extensions\.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+
+```nix
+""
+```nix
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.license
+
+
+
+Burp Suite license key\.
+When set, will be added to Java preferences as license1\.
+
+
+
+*Type:*
+string
+
+
+
+*Default:*
+
+```nix
+""
+```
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
+
+
+
+## programs\.burp\.preferences
+
+
+
+Sets preferences set by Burpsuite via the Java Preferences API\.
+Options added here are only applied, if the prefs file doesn’t already exist\.
+
+
+
+*Type:*
+JSON value
+
+
+
+*Default:*
+
+```nix
+{ }
+```nix
+
+*Declared by:*
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -218,15 +435,21 @@ boolean
 
 
 *Default:*
-` false `
+
+```nix
+false
+```
 
 
 
 *Example:*
-` true `
+
+```nix
+true
+```nix
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -245,10 +468,13 @@ JSON value
 
 
 *Default:*
-` { } `
+
+```nix
+{ }
+```
 
 *Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 
 
@@ -267,45 +493,12 @@ attribute set of absolute path
 
 
 *Default:*
-` { } `
-
-*Declared by:*
- - [modules/burp\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp\.nix)
-
-
-
-## programs\.java\.userPrefs
-
-
-
-Java user preferences as nested attribute sets\. Each top-level key is a preference path, with nested key-value pairs for individual preferences\.
-
-
-
-*Type:*
-attribute set of attribute set of string
-
-
-
-*Default:*
-` { } `
-
-
-
-*Example:*
 
 ```nix
-{
-  burp = {
-    "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
-  };
-  "burp/extensions/_HTTP Request Smuggler" = {
-    "global.suite.deviceId" = "vyogc3mm6uedd3ntpi58";
-  };
-}
-```
+{ }
+```nix
 
 *Declared by:*
- - [modules/javaUserPrefs/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/javaUserPrefs/default\.nix)
+ - [modules/burp/default\.nix](https://github.com/Red-Flake/burpsuite-nix/blob/master/modules/burp/default\.nix)
 
 

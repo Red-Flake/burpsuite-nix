@@ -6,17 +6,23 @@
   runCommand,
   self,
   pkgs,
+  home-manager,
 }:
 let
   webUrl = "https://github.com/Red-Flake/burpsuite-nix/blob/master";
 
-  eval = lib.evalModules {
+  eval = home-manager.lib.homeManagerConfiguration {
+    inherit pkgs;
     modules = [
       {
-        config._module.check = false;
-        options._module.args = lib.mkOption { internal = true; };
+        config = {
+          home = {
+            stateVersion = "26.05";
+            username = "alice";
+            homeDirectory = "/home/alice";
+          };
+        };
       }
-      { _module.args.pkgs = pkgs; }
       self.homeManagerModules.default
     ];
   };
@@ -49,7 +55,9 @@ let
 
   docs =
     (nixosOptionsDoc {
-      inherit (eval) options;
+      options = {
+        programs.burp = eval.options.programs.burp;
+      };
       transformOptions = lib.flip lib.pipe [
         removeTrailingNewlineInLiteralExpression
         fixDeclarations

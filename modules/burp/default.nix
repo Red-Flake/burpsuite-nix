@@ -19,9 +19,7 @@ let
 
   cfg = config.programs.burp;
 
-  helpers = import ./lib.nix {
-    inherit lib;
-  };
+  helpers = import ./lib.nix { inherit lib; };
 
   inherit (helpers)
     extTypes
@@ -44,11 +42,7 @@ let
 in
 {
 
-  imports = [
-    (import ./options.nix {
-      inherit lib pkgs burpPackages;
-    })
-  ];
+  imports = [ (import ./options.nix { inherit lib pkgs burpPackages; }) ];
 
   config = mkIf cfg.enable {
     programs.burp = {
@@ -85,10 +79,7 @@ in
               );
           }
         else
-          commonArgs
-          // {
-            burpArgs = cfg.cliArgs;
-          }
+          commonArgs // { burpArgs = cfg.cliArgs; }
       );
       finalSettings = recursiveMerge [
         (importJSON ../../data/config.json)
@@ -96,9 +87,7 @@ in
           user_options = recursiveMerge [
             {
               extender = recursiveMerge [
-                {
-                  extensions = map mkExtensionEntry enabledExtensions;
-                }
+                { extensions = map mkExtensionEntry enabledExtensions; }
 
                 (optionalAttrs cfg.enableJython {
                   python.location_of_jython_standalone_jar_file = "${pkgs.jython}/share/jython.jar";
@@ -124,9 +113,7 @@ in
         burp = recursiveMerge [
           cfg.preferences
 
-          (optionalAttrs (cfg.license != "") {
-            license1 = cfg.license;
-          })
+          (optionalAttrs (cfg.license != "") { license1 = cfg.license; })
 
           {
             # Hardcoded pkcs12 file with the private key and certificate

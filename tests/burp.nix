@@ -1,18 +1,14 @@
 {
   pkgs,
   home-manager,
-  lib,
   ...
 }:
-let
-  hmLib = import "${home-manager}/modules/lib/stdlib-extended.nix" lib;
-in
 {
 
   nodes.client = {
-    imports = [
-      "${pkgs.path}/nixos/tests/common/x11.nix"
-    ];
+    imports = [ "${pkgs.path}/nixos/tests/common/x11.nix" ];
+    # Reduce closure size
+    services.speechd.enable = false;
 
     home-manager.users.root = {
       home.stateVersion = "26.05";
@@ -21,7 +17,7 @@ in
         enable = true;
 
         extensions."param-miner".enable = true;
-        extensions."jwt-editor" = hmLib.hm.dag.entryAfter [ "param-miner" ] {
+        extensions."jwt-editor" = home-manager.lib.hm.dag.entryAfter [ "param-miner" ] {
           enable = true;
           settings = {
             # YELLOW is not default, Orange is

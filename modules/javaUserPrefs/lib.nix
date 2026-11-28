@@ -43,10 +43,7 @@ rec {
     in
     assert lib.all (value: isString value || isAttrs value) values;
 
-    (lib.optionalAttrs (entries != { } && prefsPath != "") {
-      "${prefsPath}" = entries;
-    })
-    // childPrefs;
+    (lib.optionalAttrs (entries != { } && prefsPath != "") { "${prefsPath}" = entries; }) // childPrefs;
 
   parentPaths =
     prefsPath:
@@ -54,11 +51,7 @@ rec {
       parts = lib.filter (x: x != "") (lib.splitString "/" prefsPath);
 
       prefixes = foldl' (
-        acc: part:
-        acc
-        ++ [
-          (if acc == [ ] then part else "${lib.last acc}/${part}")
-        ]
+        acc: part: acc ++ [ (if acc == [ ] then part else "${lib.last acc}/${part}") ]
       ) [ ] parts;
     in
     lib.init prefixes;
